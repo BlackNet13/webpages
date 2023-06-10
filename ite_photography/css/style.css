@@ -1,0 +1,532 @@
+/* global reset */
+html, body, h2, h4, h5, h6, p, img, ul, li
+{
+margin: 0; /*-- sets the default margin to zero --*/
+padding: 0; /*-- sets the default padding to zero --*/
+}
+
+body
+{
+font-weight: normal; /*-- sets the font weight for all the content in the body to be normal --*/
+background: white; /*-- assigns a background color to the body --*/
+font-family: Myriad Pro; /*-- sets the font family of all the content in the body to be myriad pro --*/
+}
+
+/*-----------------space between sections--------------------*/
+
+/*-- navigation --*/
+
+#navi
+{
+float: left;    /*-- floats the navi to the left --*/
+background-color: #C7B299; /*-- assigns a background color for the navi --*/
+width: 960px; /*-- assigns a width for navi --*/
+border-top: 1px solid black; /*-- assigns border properties for the border top of navi --*/
+border-bottom: 1px solid black; /*-- assigns border properties for the border bottom of navi --*/
+}
+
+#navi p
+{
+text-align: center; /*-- aligns the paragraph to the center of the document --*/
+}
+
+#navi a:link
+{
+padding: 5px 30px 5px 30px; /*-- spacing between links --*/
+width: 70px; /*-- width of a link --*/
+text-decoration: none; /*-- to remove the default underline --*/
+display: inline-block; /*-- to display as a inline block level object --*/
+color: black; /*-- color of text links --*/
+}
+
+#navi a:hover
+{
+color: white; /*-- changes the text links on hover --*/
+}
+
+#navi a.highlight
+{
+color: #6b6052; /*-- changes the text links when currently on the page itself --*/
+}
+
+/*-- end of navi style --*/
+
+
+/*-----------------space between sections--------------------*/
+
+
+/*-- copyright --*/
+
+#copyright
+{
+font-family: American Typewriter; /*-- sets font family for copyright --*/
+font-size: 12px; /* assigns a font size for the copyright --*/
+text-align: center; /*-- to align the text to the center of document --*/
+color: #5C21DB; /*-- color of text --*/
+padding: 5px; /*-- sets padding for the text --*/
+}
+
+/*-- end of copyright style --*/
+
+/*-- above content is same for all pages --*/
+
+
+
+/*-----------------space between sections--------------------*/
+
+
+
+/*-- for index.html --*/
+#mainContainer
+{
+width: 960px; /*-- sets the width for the maincontainer for index.html --*/
+height: 580px; /*-- sets the height for the maincontainer for index.html --*/
+background-color: white; /*-- sets the background color of the maincontainer to be white --*/
+margin: 0 auto; /*-- aligns the document to the center of the browser --*/
+border: 1px solid black; /*-- sets the border for the maincontainer --*/
+background-image:url(../images/tinted_bg.jpg); /*-- sets the background image --*/
+background-size:960px 583px; /*-- width, height --*/ /*-- sets the background size --*/
+}
+
+/*-- logo (index.html) --*/
+
+.bigLogo
+{
+padding: 130px 20px 30px 70px; /*-- sets the padding for the logo --*/
+font-size: 48px; /*-- assigns a font size to the logo --*/
+}
+
+.bigLogo a:link
+{
+font-weight: lighter;  /*-- sets the font weight for logo --*/
+color: white; /*-- assigns a color for the logo text --*/
+text-decoration: none; /*-- to remove the default underline --*/
+}
+
+.bigLogo a:visited
+{
+color: white; /*-- keeps the the color white even after the link been visited. --*/
+}
+
+.indexPassage
+{
+color: white;      /*-- assigns a text color for the content --*/
+float: right;     /*-- floats the content to the right --*/
+width: 352px;    /*-- assigns a width for content --*/
+font-size: 12px;     /*-- sets the font size for the content --*/
+padding-right: 90px; /*-- sets the padding right for content --*/
+}
+
+/*-- end of index.html style --*/
+
+/*-- logo styling for all pages --*/
+
+.fakeLogo
+{
+float: left; /*-- floats the fakelogo to the left to allow the navigation to rest at exactly where it's suppose to be even without the actual logo being there. --*/
+width: 958px; /*-- assigns a width to the fakelogo --*/
+height: 90px; /*-- assigns a height to the fakelogo --*/
+}
+
+#logo
+{
+padding: 17px 30px 11px 30px; /*-- sets the padding for logo --*/
+font-size: 20px; /*-- assigns a font size for logo --*/
+color: black; /*-- assigns a color to the text for logo --*/
+}
+
+#logo a:link, a:visited
+{
+font-weight: lighter; /*-- sets the font weight for the logo to be lighter --*/
+color: black; /*-- sets the text color to be black --*/
+text-decoration: none; /*-- removes the underline under the text --*/
+}
+
+/*-- end of logo styling for all pages --*/
+
+
+/*-- content styling for all pages --*/
+#content
+{
+float: left; /*-- floats the content to the left --*/
+margin: 10px 0 0 160px; /*-- assigns margin to the content --*/
+}
+/*-- end of content styling for all pages --*/
+
+
+
+/*-----------------space between sections--------------------*/
+
+
+/*-- for bio.html --*/
+#mainContainer2
+{
+width: 960px; /*-- sets the width for the mainContainer2 for bio.html --*/
+height: 580px; /*-- sets the height for the mainContainer2 for bio.html --*/
+margin: 0 auto; /*-- aligns mainContainer2 to the center of the body --*/
+border: 1px solid black; /*-- sets the border for mainContainer2 --*/
+background-color: #9e8e79; /*-- assigns a color to the background of mainContainer2 --*/
+}
+
+/*-- paragraph (bio.html) --*/
+.paragraph
+{
+margin: 0 auto; /*-- aligns paragraph to the center of the mainContainer2 --*/
+width: 638px; /*-- sets a width for paragraph --*/
+height: 340px; /*-- sets a height for paragraph --*/
+background-image:url(../images/bioSmallbg.jpg); /*-- sets a background image for paragraph --*/
+background-size: 690px 380px; /*-- sets the size of the background image --*/
+text-align: left; /*-- aligns the text in paragraph to the left --*/
+padding: 25px 0 15px 20px; /*-- assigns padding for paragraph --*/
+}
+
+.paragraph img
+{
+float: right; /*-- floats paragraph img to the right --*/
+margin-top: -120px; /*-- assigns a margin top for paragraph img --*/
+margin-right: 55px; /*-- assigns a margin right for paragraph img --*/
+}
+
+/*-- end of bio.html styling --*/
+
+
+
+/*-----------------space between sections--------------------*/
+
+
+
+/*-- for contact.html --*/
+#mainContainer3
+{
+width: 960px; /*-- sets the width for the mainContainer3 for bio.html --*/
+height: 650px; /*-- sets the height for the mainContainer3 for bio.html --*/
+margin: 0 auto; /*-- aligns mainContainer3 to the center of the body --*/
+border: 1px solid black; /*-- sets the border for mainContainer3 --*/
+background-color: #ebb36c; /*-- assigns a color to the background of mainContainer3 --*/
+}
+
+/*-- paragraph (contact.html) --*/
+
+.paragraph2
+{
+margin: 0 auto; /*-- aligns paragraph2 to the center of the mainContainer3 --*/
+width: 638px; /*-- sets a width for paragraph2 --*/
+height: 430px; /*-- sets a height for paragraph2 --*/
+background-image:url(../images/contactSmallbg.jpg); /*-- sets a background image for paragraph2 --*/ 
+background-repeat: no-repeat; /*-- ensures that the background image does not uneccesarily repeats itself. --*/
+background-size: 690px 380px; /*-- sets the size of the background image --*/
+background-color: #6b6052; /*-- sets the background color for uncovered background --*/
+text-align: left; /*-- aligns the text in paragraph2 to the left --*/
+padding: 10px 0 30px 20px;  /*-- assigns padding for paragraph2 --*/
+}
+
+.paragraph2 img
+{
+
+float: right; /*-- floats paragraph2 img to the right --*/
+margin-top: -460px; /*-- assigns a margin top for paragraph2 img --*/
+margin-right: 55px; /*-- assigns a margin right for paragraph2 img --*/
+}
+
+.paragraph2 p
+{
+width: 250px; /*-- sets the width of paragraph2 p --*/
+color: #ebd2b3; /*-- sets the text color for paragraph2 p --*/
+}
+
+.paragraph2 p a
+{
+color: #ebd2b3; /*-- sets the text color for paragraph2 p a --*/
+text-decoration: none; /*-- removes the default text decoration for paragraph2 p a --*/
+}
+
+.paragraph2 p a:hover, .paragraph2 p a:visited
+{
+color: white; /*-- sets the text color for paragraph2 p a:hover and paragraph2 p a:visited --*/
+}
+
+#contactP
+{
+padding-top: 20px; /*-- sets the padding top for contactP --*/
+padding-bottom: 10px; /*-- sets the padding bottom for contactP --*/
+}
+
+.form
+{
+padding: 10px 0 10px 10px; /*-- sets the padding for form --*/
+width: 360px; /*-- sets the width for form --*/
+height: 320px; /*-- sets the height for form --*/
+background: white; /*-- sets the background for form --*/
+}
+
+label
+{
+display:block; /*-- makes label display in block form --*/
+padding-bottom:5px;  /*-- sets a padding bottom for label --*/
+}
+
+textarea
+{
+resize: none; /*-- prevents the textarea from stretching --*/
+}
+
+#contactForm
+{
+width:800px; /*-- sets the width for contactForm --*/
+}
+ 
+#contactForm li
+{
+list-style-type:none; /*-- removes the bullets point from contactForm li --*/
+padding: 5px; /*-- sets a padding for contactForm li --*/
+}
+
+#contactForm li .fieldbox input
+{
+padding-top: 5px; /*-- sets a padding top for contactForm li fieldbox input --*/
+width:300px; /*-- sets a width for contactForm li fieldbox input --*/
+}
+
+ 
+#contactForm li .msgbox textarea
+{
+padding-top: 5px; /*-- assigns a padding top to the contactForm li msgbox textarea --*/
+height: 70px; /*-- sets the height for contactForm li msgbox textarea --*/
+width: 300px; /*-- sets the width for contactForm li msgbox textarea --*/
+}
+
+.form p
+{
+padding-bottom: 5px; /*-- sets the padding bottom for form p --*/
+}
+
+
+.formfill
+{
+float: left; /*-- floats formfill to the left --*/
+}
+
+.buttonExternal
+{
+float: left; /*-- floats buttonExternal to the left --*/
+padding: 10px 5px 5px 0; /*-- sets the padding for buttonExternal --*/
+}
+
+.button
+{
+background-color: white; /*-- sets the background color for button to be white --*/
+border-radius: 30px; /*-- to make the button rounded --*/
+border-color: black; /*-- sets the border color to black --*/
+}
+
+.button:hover
+{
+background-color: #ADD8E6; /*-- sets the background color for button:hover --*/
+}
+
+#update, #update1, #update2
+{
+height: 20px; /*-- sets the height for update, update1, update2 --*/
+width: 300px; /*-- sets the width for update, update1, update2 --*/
+margin-top: 7px; /*-- sets the margin top for update, update1, update2 --*/
+margin-bottom: 4px; /*-- sets the margin bottom for update, update1, update2 --*/
+font-size: 10px; /*-- sets the font size for update, update1, update2 --*/
+color: grey; /*-- sets the text color for update, update1, update2 --*/
+}
+
+#content p.someText
+{
+width: 600px; /*-- sets the width for content p.someText --*/
+padding-top: 10px; /*-- sets the padding top for content p.someText --*/
+font-size: 10px; /*-- sets the font size for content p.someText --*/
+color: pink; /*-- sets the text color for content p.someText --*/
+}
+
+/*-- end of contact.html styling --*/
+
+
+
+/*-----------------space between sections--------------------*/
+
+
+
+/*-- for faq.html --*/
+#mainContainer4
+{
+width: 960px; /*-- sets the width for mainContainer4 --*/
+height: 1100px; /*-- sets the height for mainContainer4 --*/
+margin: 0 auto; /*-- aligns mainContainer4 to the center of the body --*/
+border: 1px solid black; /*-- sets the border for mainContainer4 --*/
+background-color: #af8551; /*-- sets the background color for mainContainer4 --*/
+}
+
+/*-- paragraph (faq.html) --*/
+.paragraph3
+{
+margin: 0 auto; /*-- aligns paragraph3 to the center of mainContainer4 --*/
+width: 650px; /*-- sets the width for paragraph3 --*/
+height: auto; /*-- sets the height for pargraph3 --*/
+background-color: white; /*-- sets the background color for paragraph3 --*/
+text-align: left; /*-- aligns the text in paragraph 3 to the left --*/
+padding: 25px 0 15px 20px; /*-- sets the padding for paragraph3 --*/
+}
+
+.list
+{
+margin-left: -20px; /*-- sets the margin left for list --*/
+}
+
+.list ul
+{
+list-style-type: none; /*-- removes the default bullet points from list ul --*/
+padding: 10px; /*-- sets the padding for list ul --*/
+}
+
+.list li
+{
+padding: 10px; /*-- sets the padding for list li --*/
+}
+
+.list p
+{
+text-align: justify; /*-- sets the text align to justify --*/
+padding: 10px; /*-- sets the padding for list p --*/
+}
+
+.alittleSomething
+{
+width: 224px; /*-- sets the width for alittleSomething --*/
+color: #ebd2b3; /*-- sets the text color for alittleSomething --*/
+padding-bottom: 17px; /*-- sets padding bottom --*/
+}
+
+#someLine
+{
+margin-top: 10px; /*-- sets margin top for someLine --*/
+margin-left: -20px; /*-- sets margin left for someLine --*/
+width: auto; /*-- sets the width for someLine --*/
+height: 10px; /*-- sets the height for someLine --*/
+border-bottom: 5px solid grey; /*-- sets the border bottom for someLine --*/
+}
+
+#shortcuts
+{
+padding-top: 15px; /*-- sets padding top for shortcuts --*/
+}
+
+#shortcuts a:link, #shortcuts a:visited
+{
+color: #af8551; /*-- sets the text color for shortcuts a:link, shortcuts a:visited --*/
+text-decoration: none; /*-- removes the default underline --*/
+width: 600px; /*-- sets the width for shortcuts a:link, shortcuts a:visited --*/
+display: inline-block; /*-- sets shortcuts a:link, shortcuts a:visited to display as an inline-block --*/
+}
+
+#shortcuts a:hover, #shortcuts a:active
+{
+color: #d0ba9f; /*-- sets the text color for shortcuts a:hover, shortcuts a:active --*/
+}
+
+#blackSpace
+{
+margin-right: 55px; /*-- sets the margin right for blackSpace --*/
+margin-top: -720px; /*-- sets the margin top for blackSpace --*/
+filter:alpha(opacity=10); /*-- sets the transparency of blackSpace --*/
+opacity:.1; /*-- sets the transparency of blackSpace --*/
+width: 140px; /*-- sets the width of blackSpace --*/
+height: 735px; /*-- sets the height of blackSpace --*/
+float: right; /*-- floats blackSpace to the right --*/
+background-color: black; /*-- sets the blackground color for blackSpace --*/
+}
+
+/*-- #blackSpace:hover
+{
+filter:alpha(opacity=20);
+opacity:.2;
+background-color: none;
+} --*/ /*-- not in use but learn something new --*/
+
+#blackSpace img 
+{
+margin-top: 550px; /*-- sets margin top for blackSpace img --*/
+}
+
+.backTop
+{
+text-decoration: none; /*-- removes the default underline --*/
+color: black;
+float: right;
+margin-top: -20px;
+padding-right: 20px;
+}
+
+.backTop:hover
+{
+color: grey;
+}
+
+/*-- end of faq.html styling --*/
+
+
+/*-----------------space between sections--------------------*/
+
+
+
+/*-- for gallery.html --*/
+#mainContainer5
+{
+width: 960px; /*-- sets the width for mainContainer5 --*/
+height: 580px; /*-- sets the height for mainContainer5 --*/
+margin: 0 auto; /*-- aligns the mainContainer5 to the center of the body --*/
+border: 1px solid black; /*-- sets the border for mainContainer5 --*/
+background-color: #ebd2b3; /*-- sets the background color for mainContainer5 --*/
+}
+
+.paragraph4
+{
+margin: 0 auto; /*-- aligns paragraph4 to the center of mainContainer5 --*/
+width: 638px; /*-- sets the width for paragraph4 --*/
+height: 340px; /*-- sets the height for paragraph4 --*/
+background-image:url(../images/gallerySmallbg.jpg); /*-- sets background image for paragraph4 --*/
+background-size: 690px 380px; /*-- sets the size of the background image --*/
+text-align: left; /*-- aligns the text in paragraph4 to the left --*/
+padding: 25px 0 15px 20px; /*-- sets the padding for paragraph4 --*/
+}
+
+#theSign img
+{
+float: right; /*-- floats theSign img to the right --*/
+margin-top: -355px; /*-- sets the margin top for theSign img --*/
+margin-right: 55px; /*-- sets the margin right for theSign img --*/
+}
+
+#gallery
+{
+width: 400px; /*-- sets the width for gallery --*/
+height: 330px; /*-- sets the height for gallery --*/
+
+}
+
+
+.thumbnail
+{
+height: 99px; /*-- sets the height for thumbnail --*/
+width: 99px; /*-- sets the width for thumbnail --*/
+float: left; /*-- floats thumbnail to the left --*/
+margin: 10px 0 0 10px; /*-- sets the margin for thumbnail --*/
+}
+
+.thumbnail a
+{
+display: block; /*-- sets thumbnail a to display as a block --*/
+height: 99px; /*--sets the heigth for thumbnail a --*/
+width: 99px; /*-- sets the width for thumbnail a --*/
+border: 2px solid transparent; /*-- sets a border for thumbnail a --*/
+}
+
+.thumbnail a:hover
+{
+border: 2px solid white; /*-- sets border for thumbnail a:hover --*/
+}
+*/
+/*-- end of codes --*/
