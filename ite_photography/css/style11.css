@@ -1,0 +1,189 @@
+/*-- global reset --*/
+html, body, p, img, h3, ul, li, .naviMenu, .naviMenu ul, .naviMenu li
+{
+    margin: 0; /*-- resets margin to 0 --*/
+    padding: 0; /*-- resets padding to 0 --*/
+}
+
+#cloud
+{
+    z-index: 100; /*-- to place it behind the logo --*/
+    position: absolute; /*-- allows usage of z-index --*/
+}
+
+#flashContent
+{
+    width:100%; height:100%; /*-- settings for flash gallery --*/
+}
+
+body, a
+{
+    cursor: url(../images/mouseCursor.png), progress; /*-- changes the mousecursor to a custom one --*/
+}
+
+a:hover
+{
+    cursor: url(../images/mouseHover.png), progress; /* --changes the mousecursor when on hover to a custom one --*/
+}
+
+
+
+/* -- body styles --*/
+body
+{
+    background-color: black; /*-- sets the background color --*/
+}
+
+
+
+/*-- naviMenu styles --*/
+
+.floatingNavi
+{
+    padding-top: 40px; /*-- sets the padding top --*/
+    position: fixed; /*-- makes sure it stays in that position.. making a floating navi --*/
+    float: left; /*-- sets it to float left --*/
+    z-index: 1000; /*-- make sure it is above content and clickable at all times.. --*/
+}
+
+
+.content
+{
+    /*-- delay transition --*/
+    opacity: 0; /*-- use as transition property for navigation to give the same effect as hover intent --*/
+  -webkit-transition: opacity 200ms linear 700ms; /*-- transition delays --*/
+  transition: opacity 200ms linear 700ms; /*-- transition delays --*/
+}
+
+
+
+.floatingNavi:active .content
+{
+    display: block; /*-- sets display to block --*/
+}
+
+
+
+.content:hover
+{
+    display: block; /*-- sets display to block --*/
+    opacity: 1; /*-- to show the content/options --*/
+    
+}
+
+/*-- styling below --*/
+.button
+{
+    background-color: #6699FF; /*-- sets the background color for .button --*/
+    border: 1px solid #3366cc; /*-- sets the border for .button --*/
+    text-align:center; /*-- aligns the text for .button to the center --*/
+    height: 20px; /*-- sets the height of .button --*/
+    width: 150px; /*-- sets the width of .button --*/
+}
+
+
+
+.content
+{
+    position: absolute; /*-- ensures that it stays where you want it to --*/
+    padding-top: 20px; /*-- sets padding top for .content --*/
+    width: 150px; /*-- sets the width of .content --*/
+}
+
+
+
+.content li
+{
+    background-color: #104356; /*-- sets the background color for .content li --*/
+    list-style-type:none; /*-- removes the list-style-type for .content li --*/
+    border: 1px solid #6b948a; /*-- sets the border for .content li --*/
+    text-align: center; /*-- aligns text to center for .content li --*/
+}
+
+li a:link, li a:active, li a:visited
+{
+    color: white; /*-- sets text color for li --*/
+    text-decoration: none; /*-- removes text-decoration --*/
+}
+
+li a:hover
+{
+    color: #ef10ac; /*-- sets the text color of li on hover --*/
+}
+
+/*-- end of naviMenu styles --*/
+
+
+
+
+/* -- mainContainer styles -- */
+#mainContainer
+{
+    margin: 0 auto; /*-- aligns it to the center of page --*/
+    width: 960px; /*-- sets the width for #mainContainer --*/
+    height: 3600px; /*-- sets the height for #mainContainer --*/
+    background-image:url(../images/BG.jpg);  /*-- sets the background image for #mainContainer --*/
+}
+
+/* -- section styles -- */
+#home /* sectionOne */
+{
+    height: 900px; /*-- sets height of section #home --*/
+    /*--background: red;--*/ /*-- use for testing the section --*/
+}
+
+#logo
+{
+ margin-left: 230px;  /*-- sets the padding-left for #logo --*/
+ padding-top: 200px; /*-- sets the padding-top for #logo --*/
+ z-index: 200; /*-- sets the z-index to be on top of #cloud --*/
+ position: absolute; /*-- allows usage of z-index --*/
+}
+
+#welcomeText
+{
+    color: grey; /*-- sets the text color for #welcomeText --*/
+    padding: 10px 0px; /*-- sets padding for #welcomeText , [top&bottom , right&left] --*/
+    border-bottom: 2px dashed black; /*-- sets border for #welcomeText --*/
+}
+
+#about /* sectionTwo */
+{
+    height: 900px; /*-- sets height of section #about --*/
+    /*--background:blue;--*/ /*-- use for testing the section --*/
+}
+
+#gallery /* sectionThree */
+{
+    height: 900px; /*-- sets height of section #gallery --*/
+    /*--background: green;--*/ /*-- use for testing the section --*/
+}
+
+#contact /* sectionFour */
+{
+    height: 900px; /*-- sets height of section #contact --*/
+    /*--background:pink;--*/ /*-- use for testing the section --*/
+}
+
+#contact a:link
+{
+    text-decoration: none; /*-- removes text-decoration --*/
+    color: white; /*-- sets text color for #contact --*/
+}
+
+#contact a:hover
+{
+    color: #ef4f91;  /*-- sets text color for #contact on hover --*/
+}
+
+#padding
+{
+    padding: 550px 0px 70px 20px; /*-- sets padding for #padding , [top, right, bottom, left]--*/
+    border-bottom: 3px dashed white; /*-- sets border for #padding --*/
+}
+
+div#padding > p
+{
+    color: #cff2f5; /*-- sets text color for div#padding's p --*/
+    font-size: 20px; /*-- sets font size for div#padding's p --*/
+}
