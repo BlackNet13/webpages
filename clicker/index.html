@@ -1,27 +1,12 @@
-<!--base code learn from: --->
+<!--base code learned from: Leeson's youtube: https://youtube.com/playlist?list=PLHbBjML3iwhHQN1cuNGxE1JxfTFBSlma0--->
 <script>
-	function update(){
-		document.getElementById('showAmt').value = count;
-		document.title = count + " clicks";
-		document.getElementById("ttAutoClick").innerHTML = autoclick;
-		document.getElementById("priceAutoClick").innerHTML = ((autoclick+1)*20);
-	}
-
-	var count = 0;
-	var autoclick =0;
 	
-	function timer(){
-		count =count +autoclick;
-		update();
-	}
-	
-	setInterval(timer, 1000);
-	//localStorage.clear();
 </script>
 <html>
 	<head>
 		<title> Clicks</title>
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+		<script src="scripts/javascript.js"></script>
 	</head>
 	<body>
 		<a href=# onclick="add()">
@@ -43,34 +28,17 @@
 				</button>
 				<p><span id="priceAutoClick">20</span> Clicks</p>
 				<p>You have <span id="ttAutoClick">0</span> Auto Clickers</p>
+				
+				
+				<h4>Buy 1 multiplier</h4>
+				<button onclick="buyMulti()">
+						<i class="bi bi-calculator"></i>
+				</button>
+				<p><span id="priceMulti">30</span> Clicks</p>
+				<p>You have <span id="ttMulti">0</span> Multipliers</p>
 					
 	<script>
-			function add(){
-				count = count+1;
-				update();
-			}
 			
-			function save(){
-				localStorage.setItem("count", count);
-				localStorage.setItem("autoclick",autoclick);
-			}
-			
-			function load(){
-				count=parseInt(localStorage.getItem("count"));
-				document.getElementById("showAmt").value = count;
-				autoclick = parseInt(localStorage.getItem("autoclick"));
-				document.getElementById("ttAutoClick").value=autoclick;
-				
-				update();
-			}
-			
-			function buyAutoClick(){
-				if(count >=(autoclick+1)*20){
-					count = count -(autoclick+1)*20;
-					autoclick = autoclick +1;
-					update();
-				}
-			}
 					</script>
 				</body>
 			</html>
