@@ -1,0 +1,76 @@
+<!--base code learn from: --->
+<script>
+	function update(){
+		document.getElementById('showAmt').value = count;
+		document.title = count + " clicks";
+		document.getElementById("ttAutoClick").innerHTML = autoclick;
+		document.getElementById("priceAutoClick").innerHTML = ((autoclick+1)*20);
+	}
+
+	var count = 0;
+	var autoclick =0;
+	
+	function timer(){
+		count =count +autoclick;
+		update();
+	}
+	
+	setInterval(timer, 1000);
+	//localStorage.clear();
+</script>
+<html>
+	<head>
+		<title> Clicks</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+	</head>
+	<body>
+		<a href=# onclick="add()">
+			<img src="images/heartTest.png" width="100px" height="100px"/>
+		</a>
+		
+		Clicks:<input type="text" id="showAmt" disabled style="text-align:center">
+				<button>
+					<a href="#" onclick="save()">Save</a>
+				</button>
+				<button>
+					<a href="#" onclick="load()">Load</a>
+				</button>
+				<hr>
+				<!--upgrades-->
+				<h4>Buy 1 auto clicker</h4>
+				<button onclick="buyAutoClick()">
+						<i class="bi bi-hand-index-thumb"></i>
+				</button>
+				<p><span id="priceAutoClick">20</span> Clicks</p>
+				<p>You have <span id="ttAutoClick">0</span> Auto Clickers</p>
+					
+	<script>
+			function add(){
+				count = count+1;
+				update();
+			}
+			
+			function save(){
+				localStorage.setItem("count", count);
+				localStorage.setItem("autoclick",autoclick);
+			}
+			
+			function load(){
+				count=parseInt(localStorage.getItem("count"));
+				document.getElementById("showAmt").value = count;
+				autoclick = parseInt(localStorage.getItem("autoclick"));
+				document.getElementById("ttAutoClick").value=autoclick;
+				
+				update();
+			}
+			
+			function buyAutoClick(){
+				if(count >=(autoclick+1)*20){
+					count = count -(autoclick+1)*20;
+					autoclick = autoclick +1;
+					update();
+				}
+			}
+					</script>
+				</body>
+			</html>
