@@ -1,4 +1,6 @@
 <!--base code learned from: Leeson's youtube: https://youtube.com/playlist?list=PLHbBjML3iwhHQN1cuNGxE1JxfTFBSlma0--->
+<!--base code for achievements learned from: Cukmekerb's coding class's youtube: https://youtu.be/E7jT9ssGFmQ-->
+
 <script>
 	
 </script>
@@ -6,39 +8,60 @@
 	<head>
 		<title> Clicks</title>
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 		<script src="scripts/javascript.js"></script>
+		<link rel="stylesheet" href="scripts/style.css">
 	</head>
 	<body>
-		<a href=# onclick="add()">
-			<img src="images/heartTest.png" width="100px" height="100px"/>
-		</a>
-		
-		Clicks:<input type="text" id="showAmt" disabled style="text-align:center">
+		<div class="upper-content row">
+			<span class="col-2"> <!--details-->
+				Welcome, Yvonne.
+			</span>
+			
+			<span class="col-2"><!--status-->
+				<p><b>You have(<span id="countPerSec"></span> ):</b> <br> 
+				<span id="ttAutoClick">0</span> Auto Clickers<br>
+				<span id="ttMulti">0</span> Multipliers
+				
+				</p>
+			</span>
+			
+			<span class="col-4">
+				<b>Click Me: </b>
+				<a href=# onclick="add()">
+					<img src="images/heartTest.png" width="100px" height="100px"/>
+				</a>
+				Clicks:<input type="text" id="showAmt" disabled style="text-align:center">
 				<button>
 					<a href="#" onclick="save()">Save</a>
 				</button>
 				<button>
 					<a href="#" onclick="load()">Load</a>
 				</button>
-				<hr>
-				<!--upgrades-->
-				<h4>Buy 1 auto clicker</h4>
+			</span>
+			
+			
+			<span class="col-4"><!--Purchases-->
+				<h4><b>Buy: 1 | 10 | 100</b></h4><br>
 				<button onclick="buyAutoClick()">
 						<i class="bi bi-hand-index-thumb"></i>
 				</button>
-				<p><span id="priceAutoClick">20</span> Clicks</p>
-				<p>You have <span id="ttAutoClick">0</span> Auto Clickers</p>
+				<span id="priceAutoClick">20</span> Clicks
 				
-				
-				<h4>Buy 1 multiplier</h4>
 				<button onclick="buyMulti()">
 						<i class="bi bi-calculator"></i>
 				</button>
-				<p><span id="priceMulti">30</span> Clicks</p>
-				<p>You have <span id="ttMulti">0</span> Multipliers</p>
-					
-	<script>
+				<span id="priceMulti">30</span> Clicks
+				
+			</span>
+		</div>
+	
+	
+		
+		
+		
+				<hr>
 			
-					</script>
 				</body>
 			</html>
