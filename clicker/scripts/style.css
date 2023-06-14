@@ -6,6 +6,10 @@ span.col-2,span.col-4{
 	padding:30px
 }
 
+span{
+	border: 1px solid black;
+}
+
 b{
 	position:fixed;
 	background:white;

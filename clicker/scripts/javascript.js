@@ -21,6 +21,22 @@ function timer(){
 }
 	
 setInterval(timer, 1000);
+
+function editName(){
+	var n = document.getElementById("name");
+	var rn = n.readonly;
+	
+	if(rn=true){
+		n.setAttribute("readonly",false);
+		n.style.color="white";
+	}else{
+		n.style.color="black";
+		n.setAttribute("readonly", true);
+		
+		
+	}
+}
+
 //localStorage.clear();
 	
 	

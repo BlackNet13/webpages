@@ -12,11 +12,16 @@
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 		<script src="scripts/javascript.js"></script>
 		<link rel="stylesheet" href="scripts/style.css">
+		<style>
+			#name:focus{
+			outline: none;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="upper-content row">
 			<span class="col-2"> <!--details-->
-				Welcome, Yvonne.
+				Welcome, <input id="name" style="background:gray; border:none; width:60px; display:inline-block;" type="text" name="userName" value="click to edit" readonly/><i style="font-size:15px;" class="bi bi-pencil" onclick="editName()"></i>
 			</span>
 			
 			<span class="col-2"><!--status-->
