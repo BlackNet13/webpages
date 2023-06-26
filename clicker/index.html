@@ -6,7 +6,7 @@
 </script>
 <html>
 	<head>
-		<title> Clicks</title>
+		<title> Cash</title>
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
@@ -19,31 +19,135 @@
 		</style>
 	</head>
 	<body>
+		
+	
 		<div class="upper-content row">
 			<span class="col-2"> <!--details-->
 				Welcome, <input id="name" style="background:gray; border:none; width:60px; display:inline-block;" type="text" name="userName" value="click to edit" readonly/><i style="font-size:15px;" class="bi bi-pencil" onclick="editName()"></i>
+			
 			</span>
 			
-			<span class="col-2"><!--status-->
+			<span class="col-2">
+			</span>
+			
+			<span class="col-4"> 
+				<ul class="nav nav-pills " role="tablist">
+	<li class="nav-item">
+      <a class="nav-link" data-bs-toggle="tab" href="#stats">Stats</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" data-bs-toggle="tab" href="#home">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="tab" href="#office">Office</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="tab" href="#mine">Mines & Farms</a>
+    </li>
+	<li class="nav-item">
+      <a class="nav-link" data-bs-toggle="tab" href="#studio">Studio</a>
+    </li>
+  </ul>
+			</span>
+			
+			
+			<span class="col-4">
+				<button>
+					<a href="#" onclick="save()">Save to local</a>
+				</button>
+				<button>
+					<a href="#" onclick="load()">Load from local</a>
+				</button>
+				<button>
+					<a href="#" onclick=""></a>
+				</button>
+				
+			</span>
+		</div>
+		
+		<div class="middle-content row">
+			<span class="col-2">
+				
+			</span>
+			
+			<span class="col-2">
+			
+			<div class="container-fluid mt-3">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Relations</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td onclick="Relations">John</td>
+      </tr>
+      <tr>
+        <td>Mary</td>
+      </tr>
+      <tr>
+        <td hidden>July</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+			</span>
+			
+			<span class="col-4"> <!--clicker stuff -->
+			
+				<div class="tab-content">
+	<div id="stats" class="container tab-pane"><br>
+      <h4>Stats</h4>
+      <p>
+				<a href=# onclick="add()">
+				+
+					<!--<img src="images/heartTest.png" width="100px" height="100px"/>-->
+				</a>
+				Total Cash:<input type="text" id="showAmt" disabled style="text-align:center">
+				</p>
+				
+				<p>
+				<a href=# onclick="add()">
+				+
+					<!--<img src="images/heartTest.png" width="100px" height="100px"/>-->
+				</a>
+				Total Cash:<input type="text" id="showAmt" disabled style="text-align:center">
+				</p>
+				
+				<br>
+				<hr>
+				
+				<!--status-->
 				<p><b>You have(<span id="countPerSec"></span> ):</b> <br> 
 				<span id="ttAutoClick">0</span> Auto Clickers<br>
 				<span id="ttMulti">0</span> Multipliers
 				
 				</p>
-			</span>
+    </div>
+    <div id="home" class="container tab-pane active"><br>
+      <h3>HOME</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+    <div id="office" class="container tab-pane fade"><br>
+      <h3>Office<designer/programmer/business/sales></h3>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <div id="mine" class="container tab-pane fade"><br>
+      <h3>Mines & Farms<crystals/vegetables/fruits/animals</h3>
+      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+    </div>
+	
+	<div id="studio" class="container tab-pane fade"><br>
+      <h3>Studio<arts/fashion/crafts/flim/photography></h3>
+      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+    </div>
+  </div>
 			
-			<span class="col-4">
-				<b>Click Me: </b>
-				<a href=# onclick="add()">
-					<img src="images/heartTest.png" width="100px" height="100px"/>
-				</a>
-				Clicks:<input type="text" id="showAmt" disabled style="text-align:center">
-				<button>
-					<a href="#" onclick="save()">Save</a>
-				</button>
-				<button>
-					<a href="#" onclick="load()">Load</a>
-				</button>
+				<!--<b>Click Me: </b>-->
+				
+				
+				
 			</span>
 			
 			
@@ -52,16 +156,15 @@
 				<button onclick="buyAutoClick()">
 						<i class="bi bi-hand-index-thumb"></i>
 				</button>
-				<span id="priceAutoClick">20</span> Clicks
+				<span id="priceAutoClick">20</span> Cash
 				
 				<button onclick="buyMulti()">
 						<i class="bi bi-calculator"></i>
 				</button>
-				<span id="priceMulti">30</span> Clicks
+				<span id="priceMulti">30</span> Cash
 				
 			</span>
 		</div>
-	
 	
 		
 		

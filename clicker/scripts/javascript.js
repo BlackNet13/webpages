@@ -1,8 +1,8 @@
 
 // top functions
 function update(){
-		document.getElementById('showAmt').value = count;
-		document.title = count + " clicks";
+		document.getElementById('showAmt').value = cash;
+		document.title = cash + " cash";
 		document.getElementById("ttAutoClick").innerHTML = autoclick;
 		document.getElementById("priceAutoClick").innerHTML = ((autoclick+1)*20);
 		document.getElementById("ttMulti").innerHTML = multi;
@@ -10,13 +10,13 @@ function update(){
 		document.getElementById("countPerSec").innerHTML = "Rate is: "+ parseInt((autoclick)+(multi*2)) + " /sec";
 }
 
-var count = 0;
+var cash = 0;
 var autoclick =0;
 var multi = 0;
 	
 function timer(){
-	count =count +autoclick;
-	count = count + multi*2;
+	cash =cash +autoclick;
+	cash = cash + multi*2;
 	update();
 }
 	
@@ -42,19 +42,19 @@ function editName(){
 	
 //working functions
 function add(){
-		count = (count+1);	
+		cash = (cash+1);	
 	update();
 }
 			
 			
 function save(){
-	localStorage.setItem("count", count);
+	localStorage.setItem("cash", cash);
 	localStorage.setItem("autoclick",autoclick);
 			}
 			
 function load(){
-	count=parseInt(localStorage.getItem("count"));
-	document.getElementById("showAmt").value = count;
+	cash=parseInt(localStorage.getItem("cash"));
+	document.getElementById("showAmt").value = cash;
 	autoclick = parseInt(localStorage.getItem("autoclick"));
 	document.getElementById("ttAutoClick").value=autoclick;
 				
@@ -62,16 +62,16 @@ function load(){
 }
 			
 function buyAutoClick(){
-	if(count >=(autoclick+1)*20){
-		count = count -(autoclick+1)*20;
+	if(cash >=(autoclick+1)*20){
+		cash = cash -(autoclick+1)*20;
 		autoclick = autoclick +1;
 		update();
 	}
 }
 
 function buyMulti(){
-	if(count >=(multi+1)*30){
-		count = count -(multi+1)*30;
+	if(cash >=(multi+1)*30){
+		cash = cash -(multi+1)*30;
 		multi = multi +1;
 		update();
 	}

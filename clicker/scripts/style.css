@@ -1,9 +1,18 @@
+html{
+	font-size: 16px;
+}
+
+.row{
+	width:100%;
+	overflow:scroll;
+	display: flex;
+}
+
 span.col-2,span.col-4{
 	background:gray;
-	height:120px;
 	overflow:scroll;
 	text-align:left;
-	padding:30px
+	padding:2rem;
 }
 
 span{
