@@ -75,14 +75,15 @@ body{
 }
 
 .op1{
+    display: none;
     z-index:70; 
     width:100%;
     text-align: right;
     padding-right:50px;
     margin-top:70vh;
     position:fixed;
-    font-size:max(0.8rem,30px); 
-    opacity: 0.2;
+    font-size:max(1rem,30px); 
+    opacity: 0.1;
     
 }
 
@@ -134,13 +135,17 @@ nav a{
 }
 
 
-@media (min-aspect-ratio: 2/1)  {
+@media (min-aspect-ratio: 2/1)  { /*when screen is full*/
     .logo2{
         display:block;
     }
 
     #logo1{
         display:none;
+    }
+    
+    .op1{
+        display:block;
     }
 
 
