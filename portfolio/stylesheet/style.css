@@ -39,7 +39,7 @@ body{
 }
 
 #mainContent{
-    font-size:max(1rem,30px); 
+    font-size:max(0.5rem,10px); 
     z-index: 5;
 }
 
