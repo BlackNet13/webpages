@@ -47,6 +47,18 @@ body{
     overflow: scroll;
 }
 
+#mainContent a{
+    text-decoration: none;
+    color: #4D3060;
+    opacity: 0.7;
+}
+
+#mainContent a:hover{
+    color:black;
+    opacity: 1;
+    text-decoration: underline;
+}
+
 #sideContent{
     float:right; 
     z-index:20; 
