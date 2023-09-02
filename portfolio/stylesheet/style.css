@@ -43,25 +43,26 @@ body{
     margin:40px 90px;
     padding-bottom: 100px;
     font-size:max(0.5rem,10px); 
-    z-index: 5;
+    z-index: 20;
     overflow: scroll;
 }
 
-#mainContent a{
+a.resume{
     text-decoration: none;
     color: #4D3060;
     opacity: 0.7;
+    cursor:pointer;
 }
 
-#mainContent a:hover{
-    color:black;
+a.resume:hover{
+ 
     opacity: 1;
     text-decoration: underline;
 }
 
 #sideContent{
     float:right; 
-    z-index:20; 
+    z-index:12; 
     text-align: right;
     margin-right:5vw;
     margin-top:50vh; 
@@ -88,8 +89,9 @@ body{
 
 .op1{
     display: none;
-    z-index:70; 
-    width:100%;
+    z-index:8; 
+    width:50%;
+    margin-left:50vw;
     text-align: right;
     padding-right:50px;
     margin-top:70vh;
@@ -168,6 +170,7 @@ nav a{
 .sticky-icon-bar {
     position: fixed;
     top: 70%;
+    z-index: 30;
     box-shadow:5px 0 20px rgba(0,0,0,0.4);
     transform: translateY(-50%);
 }
@@ -179,6 +182,7 @@ nav a{
     transition: all 0.3s ease;
     color: black;
     font-size: 17px;
+    z-index: 35;
     background-color: #CCBAAC;
 }
 
