@@ -123,15 +123,19 @@ nav{
 
 }
 
+
 nav a{
     font-size: 15px;
     display: inline-block;
 }
 
-.nav-link:hover{
-    background: #4D3060;
-    color:#CCBAAC;
+.nav-link{
+    margin:-5px;
+}
 
+.nav-link:hover{
+
+    color:#CCBAAC;
 }
 
 .right{
@@ -189,4 +193,63 @@ nav a{
 .sticky-icon-bar a:hover {
     background-color: black;
     color: #CCBAAC;
+}
+
+/*----------*/
+ul#nav {
+  position: relative;
+}
+
+ul#nav > li.selected {
+    color: white !important;
+    border-bottom: 0.15rem solid white !important;
+    max-width: 80%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+ul#nav>li {
+  display: inline-block;
+  margin: 0;
+}
+
+ul#nav>li:not(.selected):not(#nav_indicator):hover {
+  border-bottom: 0.15rem solid #CCBAAC;
+}
+
+ul#nav>li:not(#nav_indicator) {
+  border-bottom: 0.15rem solid #4D3060;
+  cursor: pointer;
+  transition-duration: 0.5s, 0.5s;
+  transition-property: color, border-color;
+  /*transition-delay: 0.1s, 0.1s;*/
+}
+
+/*
+ul#nav>li#nav_indicator {
+  position: absolute;
+  display: inline-block;
+  width: 0px;
+  bottom: 0;
+  padding: 0;
+  background-color: white;
+  height: 0.15rem;
+  transition-property: left, width;
+  transition-duration: 1s, 1s;
+}*/
+
+ul#nav > li#nav_indicator::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.15rem; /* Use relative units */
+  background-color: white;
+  transform: scaleX(0); /* Initially, the line has no width */
+  transform-origin: left;
+}
+
+ul#nav > li.selected::before {
+  transform: scaleX(1); /* Expand the line to full width */
 }
