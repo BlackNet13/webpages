@@ -253,3 +253,33 @@ ul#nav > li#nav_indicator::before {
 ul#nav > li.selected::before {
   transform: scaleX(1); /* Expand the line to full width */
 }
+
+/*------*/
+.transition-Holder{
+    float:left;
+    display:none;
+    background:#F0EDE6;
+    height:100vh;
+    width:100vh;
+}
+
+.transition-bars {
+    float:left;
+    z-index: 50;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 20vh;
+    background: linear-gradient(to right, #4D3060 40%, transparent 100%);
+    animation: slideRight 3s ease-in-out forwards;
+    display:none;
+}
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}

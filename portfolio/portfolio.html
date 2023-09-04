@@ -18,9 +18,20 @@ and open the template in the editor.
         <link href="stylesheet/style.css" rel="stylesheet" type="text/css"/>
 
         <link rel="stylesheet" href="https://use.typekit.net/gyc1igq.css">
+        <script src="javascript/script.js"></script>
         <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
     </head>
     <body>
+        
+         <div class="transition-Holder" id="transitionHolder">
+                <div class="transition-bars"></div>
+                <div class="transition-bars"></div>
+                <div class="transition-bars"></div>
+                <div class="transition-bars"></div>
+                <div class="transition-bars"></div>
+                <div class="transition-bars"></div>
+        </div>
+        
         <div id="hero">
 
             <span class='op1'>Creative Design and Code</span>
@@ -54,25 +65,26 @@ and open the template in the editor.
                 <div class='nav-bg'>
 
 
-                    <div class="container-fluid" >
+                   <div class="container-fluid" >
                         <ul id="nav" class="navbar-nav right" style='font-size:1rem; margin-top:30px;' >
                             <li class="nav-item">
-                                <b><a class="nav-link" href="index.html">Home</a></b>
+                                <b><a class="nav-link" href="index.html" onclick="goTo()">Home</a></b>
                             </li>
                             <li class="nav-item">
-                                <b><a class="nav-link" href="about.html">About</a></b>
+
+                                <b><a class="nav-link" href="about.html" onclick="goTo()">About</a></b>
                             </li>
                             <li class="nav-item selected">
-                                <b><a class="nav-link" href="portfolio.html">Portfolio</a></b>
+                                <b><a class="nav-link" href="portfolio.html" onclick="goTo()">Portfolio</a></b>
                             </li>
                             <li class="nav-item">
-                                <b><a class="nav-link" href="contact.html">Contact</a></b>
+                                <b><a class="nav-link" href="contact.html" onclick="goTo()">Contact</a></b>
                             </li>  
                             <li id="nav_indicator"></li>
 
                         </ul>
                     </div>
-                    <a class="nav-link" href="#" style='width:70vw;' ><span id='logo1'><img src='images/catLogo.png' style='width: 3rem; margin-top: 20px'/></span>
+                    <a class="nav-link" id="logoLink" href="index.html" style='width:70vw;'><span id='logo1'><img src='images/catLogo.png' style='width: 3rem; margin-top: 20px'/></span>
                         <span class='logo2'><span class='big' style='font-family: "minion-pro", serif;
                                                   font-weight: 400;
                                                   font-style: normal; font-size:0.9rem;'>Slumberous Cat</span>by Yvonne</span></a>
