@@ -17,8 +17,9 @@ and open the template in the editor.
 
 html{
     font-size: min(5vw, 3em); 
-
 }
+
+
 
 body{
     display: flex;
@@ -45,6 +46,13 @@ body{
     font-size:max(0.5rem,10px); 
     z-index: 20;
     overflow: scroll;
+
+}
+
+/*https://stackoverflow.com/questions/43186015/css-hide-scroll-bar-but-have-element-scrollable*/
+#mainContent::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
 }
 
 a.resume{
@@ -55,7 +63,7 @@ a.resume{
 }
 
 a.resume:hover{
- 
+
     opacity: 1;
     text-decoration: underline;
 }
@@ -98,7 +106,7 @@ a.resume:hover{
     position:fixed;
     font-size:max(1rem,30px); 
     opacity: 0.1;
-    
+
 }
 
 
@@ -161,7 +169,7 @@ nav a{
     #logo1{
         display:none;
     }
-    
+
     .op1{
         display:block;
     }
@@ -197,7 +205,7 @@ nav a{
 
 /*----------*/
 ul#nav {
-  position: relative;
+    position: relative;
 }
 
 ul#nav > li.selected {
@@ -209,20 +217,20 @@ ul#nav > li.selected {
 }
 
 ul#nav>li {
-  display: inline-block;
-  margin: 0;
+    display: inline-block;
+    margin: 0;
 }
 
 ul#nav>li:not(.selected):not(#nav_indicator):hover {
-  border-bottom: 0.15rem solid #CCBAAC;
+    border-bottom: 0.15rem solid #CCBAAC;
 }
 
 ul#nav>li:not(#nav_indicator) {
-  border-bottom: 0.15rem solid #4D3060;
-  cursor: pointer;
-  transition-duration: 0.5s, 0.5s;
-  transition-property: color, border-color;
-  /*transition-delay: 0.1s, 0.1s;*/
+    border-bottom: 0.15rem solid #4D3060;
+    cursor: pointer;
+    transition-duration: 0.5s, 0.5s;
+    transition-property: color, border-color;
+    /*transition-delay: 0.1s, 0.1s;*/
 }
 
 /*
@@ -239,19 +247,19 @@ ul#nav>li#nav_indicator {
 }*/
 
 ul#nav > li#nav_indicator::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 0.15rem; /* Use relative units */
-  background-color: white;
-  transform: scaleX(0); /* Initially, the line has no width */
-  transform-origin: left;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.15rem; /* Use relative units */
+    background-color: white;
+    transform: scaleX(0); /* Initially, the line has no width */
+    transform-origin: left;
 }
 
 ul#nav > li.selected::before {
-  transform: scaleX(1); /* Expand the line to full width */
+    transform: scaleX(1); /* Expand the line to full width */
 }
 
 /*------*/
@@ -283,3 +291,51 @@ ul#nav > li.selected::before {
         transform: translateX(100%);
     }
 }
+
+/*--------------------*/
+/*--https://www.w3schools.com/css/tryit.asp?filename=trycss_form_focus2--*/
+
+input[type = "text"], input[type = "email"] {
+    width: max(50vw,200px);
+    height:1rem;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 4px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+}
+
+input[type=text]:focus, input[type="email"]:focus {
+    border-bottom: 4px solid #4D3060;
+}
+
+textarea{
+    width: max(50vw,200px);
+    min-height: 20vh;
+    border: 4px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+}
+
+textarea:focus {
+    border: 4px solid #4D3060;
+}
+
+.btn-bg{
+    background: #4D3060;
+}
+
+.btn{
+    color:#ccc; 
+    font-weight: bold;
+    font-size: 0.5rem;
+}
+
+.btn:hover{
+    font-weight: bold;
+    color:white;
+}
+
+
