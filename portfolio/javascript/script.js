@@ -6,15 +6,15 @@
 
 
 document.addEventListener('DOMContentLoaded', function (event) {
-    
-    
-     var logoLink = document.getElementById("logoLink");
-    
-        logoLink.addEventListener('click', function (event) {
-            event.preventDefault();
-            var href = "index.html";
-            showTransitionBars(href);
-        });
+
+
+    var logoLink = document.getElementById("logoLink");
+
+    logoLink.addEventListener('click', function (event) {
+        event.preventDefault();
+        var href = "index.html";
+        showTransitionBars(href);
+    });
 
 
 
@@ -69,7 +69,15 @@ document.addEventListener('DOMContentLoaded', function (event) {
     }
 
 
+
+
 });
+
+/*-------------*/
+
+
+
+
 
 
 

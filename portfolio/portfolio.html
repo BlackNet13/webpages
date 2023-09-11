@@ -15,88 +15,624 @@ and open the template in the editor.
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-        <link href="stylesheet/style.css" rel="stylesheet" type="text/css"/>
-
         <link rel="stylesheet" href="https://use.typekit.net/gyc1igq.css">
         <script src="javascript/script.js"></script>
+        <link href="stylesheet/style.css" rel="stylesheet" type="text/css"/>
         <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-    </head>
-    <body>
-        
-         <div class="transition-Holder" id="transitionHolder">
-                <div class="transition-bars"></div>
-                <div class="transition-bars"></div>
-                <div class="transition-bars"></div>
-                <div class="transition-bars"></div>
-                <div class="transition-bars"></div>
-                <div class="transition-bars"></div>
-        </div>
-        
-        <div id="hero">
 
-            <span class='op1'>Creative Design and Code</span>
+        <style>
+            .main {
+                max-width: 1200px;
+                margin: 0 0 0 50px;
+                z-index:30;
+            }
 
-            <p style='text-align: right; width:100vw; padding-right:2vw; margin-top:80vh; z-index:5; position: fixed; font-size:0.35em;'>Copyright © Slumberous Cat 2023</p>
 
-            <div class="sticky-icon-bar"> <!--https://lenadesign.org/2021/08/06/css-sticky-social-media-bar/-->
-                <a href="https://www.linkedin.com/in/yvonyen8/" class="linkedin"><i class="fa-brands fa-linkedin-in"></i></a> 
-                <a href="https://github.com/BlackNet13" class="github"><i class="fa-brands fa-github"></i></a> 
+            .row {
+                margin: 10px - 70px;
+            }
+
+
+            .row,
+            .row > .col-md-4 {
+                padding: 8px;
+            }
+
+
+            .col-md-4 {
+                /*width: 33.33%;*/
+                display: none;
+            }
+
+            /* Content */
+            .content {
+                padding: 10px;
+                margin:20px;
+                text-align: center;
+                /*min-width: 40px;
+                min-height:160px;
+                max-height:45vh;*/
+            }
+
+            .content p{
+                font-size: 0.4rem;
+                font-weight: bold;
+            }
+
+            .content img{
+                margin: auto 0;
+            }
+
+            /* The "show" class is added to the filtered elements */
+            .show {
+                display: block;
+            }
+
+            /* Style the buttons */
+            .subNav{
+                border: none;
+                outline: none;
+                padding: 12px 16px;
+                color: #CCBAAC;
+                background:none;
+                /*background-color: white;*/
+                cursor: pointer;
+                font-weight: bold;
+            }
+
+            .subNav:hover {
+                /*background-color: #ddd;*/
+                color:white;
+            }
+
+            .subNav.active {
+                /*background-color: #666;*/
+                color: #4D3060;
+            }
+
+            /*--------------*/ /*---https://www.w3schools.com/howto/howto_css_modals.asp---*/
+
+            body.modal-open {
+                overflow: hidden;
+            }
+
+            .modal {
+                display: none; /* Hidden by default */
+                position: fixed; /* Stay in place */
+                z-index: 1; /* Sit on top */
+                padding-top: 50px; /* Location of the box */
+                left: 0;
+                top: 0;
+                width: 100% ; /* Full width */
+                height: 100% ; /* Full height */
+                background-color: rgb(0, 0, 0); /* Fallback color */
+                background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+            }
+
+            /* Modal Content */
+            .modal-content { /*w3 school*/
+                background-color: #F0EDE6;
+                margin: auto;
+                padding: 20px;
+                border: 1px solid #888;
+                width: 80% ;
+                height: 70vh;
+                overflow:hidden;
+                animation: animatezoom 0.6s;
+            }
+
+            .modal-content row{
+                margin:20px;
+                background:grey;
+            }
+
+            /*.col-md-11{
+                height: 50vh;
+                overflow-y:scroll;
+                scrollbar-color: #4D3060 #CCBAAC;
+                scrollbar-width: thin;
+            }*/
+
+            .col-md-6{
+                height:50vh;
+                overflow-y:scroll;
+                scrollbar-color: #4D3060 #CCBAAC;
+                scrollbar-width: thin;
+
+            }
+
+            .col-md-6::-webkit-scrollbar {
+                width: 0px;
+                background: transparent; /* make scrollbar transparent */
+            }
+
+            /*------*/
+            .colorBox{
+                width: max(1.8rem,50px);
+                font-size:0.4rem;
+                height: 2.2rem;
+                text-align: center;
+                cursor:pointer;
+                display:inline-block;
+                position:relative;
+            }
+
+            .colorBox::after{
+                content: attr(data-color);
+                display: block;
+                position: absolute;
+                top: 65%; /* Position below the .colorBox element */
+                left: 0;
+                width:100%;
+                background:white;
+                opacity:0;
+                margin:auto;
+            }
+
+            .colorBox:hover::after {
+                opacity: 1;
+            }
+
+            @media (max-width: 768px) {
+                .modal-content {
+                    margin:20px;
+                    margin-right:-200px;
+                    height: auto+20%; /* Allow modal content to grow with its content on smaller screens */
+                    overflow-y:scroll;
+                    scrollbar-color: #4D3060 #CCBAAC;
+                    scrollbar-width: thin;
+                }
+
+                .modal-content::-webkit-scrollbar {
+                    width: 0px;
+                    background: transparent; /* make scrollbar transparent */
+                }
+
+                .col-md-6 {
+                    margin-top:20px;
+                    height: auto; /* Allow the content in .col-md-6 to expand on smaller screens */
+                    overflow: hidden;
+
+                }
+
+                .colorBox::after{
+                    opacity: 1;
+                    font-size: 0.4rem;
+                }
+            }
+
+
+            @keyframes animatezoom{
+                from{transform:scale(0)} to{transform:scale(1)}}
+
+                /* The Close Button */
+                .close {
+                    color: #aaaaaa;
+                    text-align: right;
+                    font-size: 0.8rem; /*28px*/
+                    margin-bottom: -20px;
+                    margin-top:-10px;
+                    font-weight: bold;
+                    z-index:50;
+                }
+
+                .close:hover,
+                .close:focus {
+                    color: #000;
+                    text-decoration: none;
+                    cursor: pointer;
+                }
+
+                .contentLink{
+
+                    background:white;
+
+                }
+
+
+
+
+            </style>
+        </head>
+        <body>
+
+            <div class="transition-Holder" id="transitionHolder">
+                <div class="transition-bars"></div>
+                <div class="transition-bars"></div>
+                <div class="transition-bars"></div>
+                <div class="transition-bars"></div>
+                <div class="transition-bars"></div>
+                <div class="transition-bars"></div>
             </div>
 
+            <div id="hero">
 
+                <!--<span class='op1'>Creative Design and Code</span>-->
 
+                <p class="copyright">Copyright © Slumberous Cat 2023</p>
 
-            <!---Main-->
-            <div id='container1'>
-
-                <div id="mainContent">
-                    Work in progress . . .
-
-
-
+                <div class="sticky-icon-bar"> <!--https://lenadesign.org/2021/08/06/css-sticky-social-media-bar/-->
+                    <a href="https://www.linkedin.com/in/yvonyen8/" class="linkedin"><i class="fa-brands fa-linkedin-in"></i></a> 
+                    <a href="https://github.com/BlackNet13" class="github"><i class="fa-brands fa-github"></i></a> 
                 </div>
 
 
-            </div>
-
-            <!--end of main-->
-
-            <nav class="navbar fixed-bottom navbar-expand bg-custom navbar-text">
-                <div class='nav-bg'>
 
 
-                   <div class="container-fluid" >
-                        <ul id="nav" class="navbar-nav right" style='font-size:1rem; margin-top:30px;' >
-                            <li class="nav-item">
-                                <b><a class="nav-link" href="index.html" onclick="goTo()">Home</a></b>
-                            </li>
-                            <li class="nav-item">
+                <!---Main-->
+                <div id='container1'>
 
-                                <b><a class="nav-link" href="about.html" onclick="goTo()">About</a></b>
-                            </li>
-                            <li class="nav-item selected">
-                                <b><a class="nav-link" href="portfolio.html" onclick="goTo()">Portfolio</a></b>
-                            </li>
-                            <li class="nav-item">
-                                <b><a class="nav-link" href="contact.html" onclick="goTo()">Contact</a></b>
-                            </li>  
-                            <li id="nav_indicator"></li>
+                    <div id="mainContent">
 
-                        </ul>
+                        <div class="main"> <!--https://www.w3schools.com/howto/howto_js_portfolio_filter.asp-->
+
+
+                            <div id="subNavBox">
+                                <button class="subNav active" onclick="filterSelection('all')"> ALL</button>
+                                <button class="subNav" onclick="filterSelection('nature')"> DESIGN</button>
+                                <button class="subNav" onclick="filterSelection('cars')"> CODE</button>
+                                <button class="subNav" onclick="filterSelection('people')"> OTHERS</button>
+                            </div>
+
+                            <!-- Portfolio Gallery Grid -->
+                            <div class="container-fluid"> 
+                                <div class="row">
+                                    <div class="col-md-4 nature ">
+                                        <div class="content" data-modal="diners">
+                                            <img src="images/diners.png" alt="Diners" style="max-height: 40vh; width:100%; height:100%;">
+                                            <p>Diners - Website Prototype</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 nature">
+                                        <div class="content" data-modal="gucci" >
+                                            <img src="images/gucci.png" alt="Lights" style="max-height: 40vh; width:100%; height:100%;">
+                                            <p>GUCCI - Magazine Mockup</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 nature">
+                                        <div class="content">
+                                            <img src="images/autiLearners.png" alt="Nature" style="max-height: 40vh; width:90%; height:90%;">
+
+                                            <p>Auti-Learners - App Prototype</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4 cars">
+                                        <div class="content">
+                                            <img src="images/diners.png" alt="Diners" style="max-height: 40vh; width:100%; height:100%;">
+                                            <p>Diners - Website Prototype</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 cars">
+                                        <div class="content">
+                                            <img src="images/diners.png" alt="Diners" style="max-height: 40vh; width:100%; height:100%;">
+                                            <p>Diners - Website Prototype</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 cars">
+                                        <div class="content">
+                                            <img src="images/diners.png" alt="Diners" style="max-height: 40vh; width:100%; height:100%;">
+                                            <p>Diners - Website Prototype</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4 people">
+                                        <div class="content">
+                                            <img src="images/gucci.png" alt="Lights" style="max-height: 40vh; width:100%; height:100%;">
+                                            <p>GUCCI - Magazine Mockup</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 people">
+                                        <div class="content">
+                                            <img src="images/gucci.png" alt="Lights" style="max-height: 40vh; width:100%; height:100%;">
+                                            <p>GUCCI - Magazine Mockup</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 people">
+                                        <div class="content">
+                                            <img src="images/gucci.png" alt="Lights" style="max-height: 40vh; width:100%; height:100%;">
+                                            <p>GUCCI - Magazine Mockup</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--separator-->
+
+                            <div id="diners" class="modal">
+
+                                <!-- Modal content -->
+                                <div class="modal-content">
+                                    <div class="row">
+
+                                        <span class="close">&times;</span>
+                                        <b style="margin-left:1rem;">Diners Commercial Webpage Prototype</b><br>
+                                        <div class="col-md">
+                                            <div class="row">
+                                                <div class="col-md-6 order-12" style="height:50%; overflow: hidden;">
+                                                    <img src="images/web1.png" style="width:max(30vw,300px);"/><br>
+                                                    <span class="contentLink"><a href="#">See on Adobe XD</a></span>
+                                                </div>
+                                                <div class="col-md-6 order-1">
+                                                    <h6>Diners</h6>
+                                                    <p>"Healthy meals made easier" is the tagline for the placeholder 
+                                                        brand call Diners, the image seen is what the customer's of this brand 
+                                                        will see on the website when they first enter.</p>
+
+                                                    <h6>Color Scheme</h6>
+                                                    <span class="colorBox" style="background:#009688;" data-color="#009688"></span>
+                                                    <span class="colorBox" style="background:#FF9800;" data-color="#FF9800"></span>
+                                                    <span class="colorBox" style="background:#FFC107;" data-color="#FFC107"></span>
+                                                    <span class="colorBox" style="background:#153243;" data-color="#153243"></span>
+                                                    <span class="colorBox" style="background:#284B63;" data-color="#284B63"></span><br>
+                                                    <p>The color scheme is split complementary which consist of blue and green to reflect 
+                                                        the freshness the brand aims to provide, the orange and yellow gives touches of 
+                                                        warmth, enthusiasm to the visual identity</p>
+
+                                                    <h6>Brand story</h6>
+                                                    <p>This placeholder brand was build around providing nourishing  healthy options to the 
+                                                        common public. Their menu ranges from bento boxes that consist of lean proteins, 
+                                                        vibrant vegetables that are paired with rice or soba, to acai bowls and kombucha 
+                                                        drinks. They source their ingredients from local and foreign farms.</p>
+
+                                                    <h6>Other details</h6>
+                                                    <img src="images/typography1.png" style="width:90%;"/><br><br>
+                                                    <p>
+                                                        The typography chosen appeals to their target audience which consist of 
+                                                        mostly women therefore a cursive style can frame the brand as something 
+                                                        more delicate and feminine.
+                                                    </p>
+                                                    
+                                                    <img src="images/siteMap1.png" style="width:90%;"/><br><br>
+                                                    <p>
+                                                        The site map shows an overview of the contents of each page
+                                                    </p>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+
+
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                            
+                            <!--separator-->
+
+                            <div id="gucci" class="modal">
+
+                                <!-- Modal content -->
+                                <div class="modal-content">
+                                    <div class="row">
+
+                                        <span class="close">&times;</span>
+                                        <b style="margin-left:1rem;">Data to be replaced.. WIP</b><br>
+                                        <div class="col-md">
+                                            <div class="row">
+                                                <div class="col-md-6 order-12" style="height:50%; overflow: hidden;">
+                                                    <img src="images/web1.png" style="width:max(30vw,300px);"/><br>
+                                                    <span class="contentLink"><a href="#">See on Adobe XD</a></span>
+                                                </div>
+                                                <div class="col-md-6 order-1">
+                                                    <h6>Diners</h6>
+                                                    <p>"Healthy meals made easier" is the tagline for the placeholder 
+                                                        brand call Diners, the image seen is what the customer's of this brand 
+                                                        will see on the website when they first enter.</p>
+
+                                                    <h6>Color Scheme</h6>
+                                                    <span class="colorBox" style="background:#009688;" data-color="#009688"></span>
+                                                    <span class="colorBox" style="background:#FF9800;" data-color="#FF9800"></span>
+                                                    <span class="colorBox" style="background:#FFC107;" data-color="#FFC107"></span>
+                                                    <span class="colorBox" style="background:#153243;" data-color="#153243"></span>
+                                                    <span class="colorBox" style="background:#284B63;" data-color="#284B63"></span><br>
+                                                    <p>The color scheme is split complementary which consist of blue and green to reflect 
+                                                        the freshness the brand aims to provide, the orange and yellow gives touches of 
+                                                        warmth, enthusiasm to the visual identity</p>
+
+                                                    <h6>Brand story</h6>
+                                                    <p>This placeholder brand was build around providing nourishing  healthy options to the 
+                                                        common public. Their menu ranges from bento boxes that consist of lean proteins, 
+                                                        vibrant vegetables that are paired with rice or soba, to acai bowls and kombucha 
+                                                        drinks. They source their ingredients from local and foreign farms.</p>
+
+                                                    <h6>Other details</h6>
+                                                    <img src="images/typography1.png" style="width:90%;"/><br><br>
+                                                    <p>
+                                                        The typography chosen appeals to their target audience which consist of 
+                                                        mostly women therefore a cursive style can frame the brand as something 
+                                                        more delicate and feminine.
+                                                    </p>
+                                                    
+                                                    <img src="images/siteMap1.png" style="width:90%;"/><br><br>
+                                                    <p>
+                                                        The site map shows an overview of the contents of each page
+                                                    </p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                            
+                            <!--separator-->
+
+
+                        </div>
+
+
                     </div>
-                    <a class="nav-link" id="logoLink" href="index.html" style='width:70vw;'><span id='logo1'><img src='images/catLogo.png' style='width: 3rem; margin-top: 20px'/></span>
-                        <span class='logo2'><span class='big' style='font-family: "minion-pro", serif;
-                                                  font-weight: 400;
-                                                  font-style: normal; font-size:0.9rem;'>Slumberous Cat</span>by Yvonne</span></a>
+
+                    <!--end of main-->
+
+                    <nav class="navbar fixed-bottom navbar-expand bg-custom navbar-text">
+                        <div class='nav-bg'>
+
+
+                            <div class="container-fluid" >
+                                <ul id="nav" class="navbar-nav right" style='font-size:1rem; margin-top:30px;' >
+                                    <li class="nav-item">
+                                        <b><a class="nav-link" href="index.html" onclick="goTo()">Home</a></b>
+                                    </li>
+                                    <li class="nav-item">
+
+                                        <b><a class="nav-link" href="about.html" onclick="goTo()">About</a></b>
+                                    </li>
+                                    <li class="nav-item selected">
+                                        <b><a class="nav-link" href="portfolio.html" onclick="goTo()">Portfolio</a></b>
+                                    </li>
+                                    <li class="nav-item">
+                                        <b><a class="nav-link" href="contact.html" onclick="goTo()">Contact</a></b>
+                                    </li>  
+                                    <li id="nav_indicator"></li>
+
+                                </ul>
+                            </div>
+                            <a class="nav-link" id="logoLink" href="index.html" style='width:70vw;'><span id='logo1'><img src='images/catLogo.png' style='width: 3rem; margin-top: 20px'/></span>
+                                <span class='logo2'><span class='big' style='font-family: "minion-pro", serif;
+                                                          font-weight: 400;
+                                                          font-style: normal; font-size:0.9rem;'>Slumberous Cat</span>by Yvonne</span></a>
+
+
+                        </div>
+
+                    </nav>
 
 
                 </div>
+            </div>
 
-            </nav>
+            <script>
+                filterSelection("all");
+                function filterSelection(c) {
+                    var x, i;
+                    x = document.getElementsByClassName("col-md-4");
+                    if (c == "all") {
+                        c = "";
+                    }
+                    for (i = 0; i < x.length; i++) {
+                        w3RemoveClass(x[i], "show");
+                        if (x[i].className.indexOf(c) > -1)
+                            w3AddClass(x[i], "show");
+                    }
+                }
+
+                function w3AddClass(element, name) {
+                    var i, arr1, arr2;
+                    arr1 = element.className.split(" ");
+                    arr2 = name.split(" ");
+                    for (i = 0; i < arr2.length; i++) {
+                        if (arr1.indexOf(arr2[i]) == -1) {
+                            element.className += " " + arr2[i];
+                        }
+                    }
+                }
+
+                function w3RemoveClass(element, name) {
+                    var i, arr1, arr2;
+                    arr1 = element.className.split(" ");
+                    arr2 = name.split(" ");
+                    for (i = 0; i < arr2.length; i++) {
+                        while (arr1.indexOf(arr2[i]) > -1) {
+                            arr1.splice(arr1.indexOf(arr2[i]), 1);
+                        }
+                    }
+                    element.className = arr1.join(" ");
+                }
 
 
+                // Add active class to the current button (highlight it)
+                var btnContainer = document.getElementById("subNavBox");
+                var btns = btnContainer.getElementsByClassName("subNav");
+                for (var i = 0; i < btns.length; i++) {
+                    btns[i].addEventListener("click", function () {
+                        var current = document.getElementsByClassName("active");
+                        current[0].className = current[0].className.replace(" active", "");
+                        this.className += " active";
+                    });
+                }
+
+                /*---------------*/
+                /*var contents = document.getElementsByClassName("content");
+                 var modal = document.getElementById("myModal");
+                 var body = document.body;
+                 var span = document.getElementsByClassName("close")[0];
+                 var showModal = function () {
+                 modal.style.display = "block";
+                 body.classList.add('modal-open'); 
+                 };
+                 for (var i = 0; i < contents.length; i++) {
+                 contents[i].addEventListener('click', showModal, false);
+                 }
+                 
+                 // When the user clicks on <span> (x), close the modal
+                 span.onclick = function () {
+                 modal.style.display = "none";
+                 body.classList.remove('modal-open');
+                 };
+                 // When the user clicks anywhere outside of the modal, close it
+                 window.onclick = function (event) {
+                 if (event.target == modal) {
+                 modal.style.display = "none";
+                 body.classList.remove('modal-open');
+                 }
+                 };*/
+
+                function toggleModal(modal, open) {
+                    modal.style.display = open ? "block" : "none";
+                    document.body.classList.toggle('modal-open', open);
+                }
 
 
-        </div>
-    </body>
-</html>
+                // Function to handle clicks outside the modal
+                function outBoundaryClick(event, modal) {
+                    if (event.target === modal) {
+                        toggleModal(modal, false);
+                    }
+                }
+
+
+                // Select all elements with the data-modal attribute
+                const buttons = document.querySelectorAll('[data-modal]');
+
+                buttons.forEach(button => {
+                    button.addEventListener("click", () => {
+                        const modalId = button.getAttribute('data-modal');
+                        const modal = document.getElementById(modalId);
+                        toggleModal(modal, true);
+                    });
+                });
+
+
+                // Select all elements with the class "close"
+                const spans = document.querySelectorAll('.close');
+
+                spans.forEach(span => {
+                    span.addEventListener("click", () => {
+                        const modalId = span.closest('.modal').getAttribute('id');
+                        const modal = document.getElementById(modalId);
+                        toggleModal(modal, false);
+                    });
+                });
+
+                window.addEventListener("click", (event) => {
+                    const modals = document.querySelectorAll('.modal');
+                    modals.forEach(modal => {
+                        outBoundaryClick(event, modal);
+                    });
+                });
+
+            </script>
+        </body>
+    </html>
