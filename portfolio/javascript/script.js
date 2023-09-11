@@ -75,7 +75,123 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
 /*-------------*/
 
+function filterSelection(c) {
+    var x, i;
+    x = document.getElementsByClassName("col-md-4");
+    if (c == "all") {
+        c = "";
+    }
+    for (i = 0; i < x.length; i++) {
+        w3RemoveClass(x[i], "show");
+        if (x[i].className.indexOf(c) > -1)
+            w3AddClass(x[i], "show");
+    }
+}
 
+function w3AddClass(element, name) {
+    var i, arr1, arr2;
+    arr1 = element.className.split(" ");
+    arr2 = name.split(" ");
+    for (i = 0; i < arr2.length; i++) {
+        if (arr1.indexOf(arr2[i]) == -1) {
+            element.className += " " + arr2[i];
+        }
+    }
+}
+
+function w3RemoveClass(element, name) {
+    var i, arr1, arr2;
+    arr1 = element.className.split(" ");
+    arr2 = name.split(" ");
+    for (i = 0; i < arr2.length; i++) {
+        while (arr1.indexOf(arr2[i]) > -1) {
+            arr1.splice(arr1.indexOf(arr2[i]), 1);
+        }
+    }
+    element.className = arr1.join(" ");
+}
+
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("subNavBox");
+var btns = btnContainer.getElementsByClassName("subNav");
+for (var i = 0; i < btns.length; i++) {
+    btns[i].addEventListener("click", function () {
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+    });
+}
+
+/*---------------*/
+/*var contents = document.getElementsByClassName("content");
+ var modal = document.getElementById("myModal");
+ var body = document.body;
+ var span = document.getElementsByClassName("close")[0];
+ var showModal = function () {
+ modal.style.display = "block";
+ body.classList.add('modal-open'); 
+ };
+ for (var i = 0; i < contents.length; i++) {
+ contents[i].addEventListener('click', showModal, false);
+ }
+ 
+ // When the user clicks on <span> (x), close the modal
+ span.onclick = function () {
+ modal.style.display = "none";
+ body.classList.remove('modal-open');
+ };
+ // When the user clicks anywhere outside of the modal, close it
+ window.onclick = function (event) {
+ if (event.target == modal) {
+ modal.style.display = "none";
+ body.classList.remove('modal-open');
+ }
+ };*/
+
+function toggleModal(modal, open) {
+    modal.style.display = open ? "block" : "none";
+    document.body.classList.toggle('modal-open', open);
+}
+
+
+// Function to handle clicks outside the modal
+function outBoundaryClick(event, modal) {
+    if (event.target === modal) {
+        toggleModal(modal, false);
+    }
+}
+
+
+// Select all elements with the data-modal attribute
+const buttons = document.querySelectorAll('[data-modal]');
+
+buttons.forEach(button => {
+    button.addEventListener("click", () => {
+        const modalId = button.getAttribute('data-modal');
+        const modal = document.getElementById(modalId);
+        toggleModal(modal, true);
+    });
+});
+
+
+// Select all elements with the class "close"
+const spans = document.querySelectorAll('.close');
+
+spans.forEach(span => {
+    span.addEventListener("click", () => {
+        const modalId = span.closest('.modal').getAttribute('id');
+        const modal = document.getElementById(modalId);
+        toggleModal(modal, false);
+    });
+});
+
+window.addEventListener("click", (event) => {
+    const modals = document.querySelectorAll('.modal');
+    modals.forEach(modal => {
+        outBoundaryClick(event, modal);
+    });
+});
 
 
 
