@@ -137,7 +137,7 @@ and open the template in the editor.
                                     <div class="row">
                                         <div class="col-md-6 order-12" style="height:50%; overflow: hidden;">
                                             <img src="images/web1.png" style="width:90%"/><br>
-                                            <span class="contentLink"><a href="#">See on Adobe XD</a></span>
+                                            <span class="contentLink"><a href="https://xd.adobe.com/view/b0b34507-7a51-4013-9ac6-eb8e2a6f7c48-e5e0/">See on Adobe XD</a></span>
                                         </div>
                                         <div class="col-md-6 order-1">
                                             <h6>Diners</h6>
@@ -297,6 +297,76 @@ and open the template in the editor.
         <script>
 
             filterSelection("all");
+
+            /*---------------*/
+            /*var contents = document.getElementsByClassName("content");
+             var modal = document.getElementById("myModal");
+             var body = document.body;
+             var span = document.getElementsByClassName("close")[0];
+             var showModal = function () {
+             modal.style.display = "block";
+             body.classList.add('modal-open'); 
+             };
+             for (var i = 0; i < contents.length; i++) {
+             contents[i].addEventListener('click', showModal, false);
+             }
+             
+             // When the user clicks on <span> (x), close the modal
+             span.onclick = function () {
+             modal.style.display = "none";
+             body.classList.remove('modal-open');
+             };
+             // When the user clicks anywhere outside of the modal, close it
+             window.onclick = function (event) {
+             if (event.target == modal) {
+             modal.style.display = "none";
+             body.classList.remove('modal-open');
+             }
+             };*/
+
+            function toggleModal(modal, open) {
+                modal.style.display = open ? "block" : "none";
+                document.body.classList.toggle('modal-open', open);
+            }
+
+
+            // Function to handle clicks outside the modal
+            function outBoundaryClick(event, modal) {
+                if (event.target === modal) {
+                    toggleModal(modal, false);
+                }
+            }
+
+
+            // Select all elements with the data-modal attribute
+            const buttons = document.querySelectorAll('[data-modal]');
+
+            buttons.forEach(button => {
+                button.addEventListener("click", () => {
+                    const modalId = button.getAttribute('data-modal');
+                    const modal = document.getElementById(modalId);
+                    toggleModal(modal, true);
+                });
+            });
+
+
+            // Select all elements with the class "close"
+            const spans = document.querySelectorAll('.close');
+
+            spans.forEach(span => {
+                span.addEventListener("click", () => {
+                    const modalId = span.closest('.modal').getAttribute('id');
+                    const modal = document.getElementById(modalId);
+                    toggleModal(modal, false);
+                });
+            });
+
+            window.addEventListener("click", (event) => {
+                const modals = document.querySelectorAll('.modal');
+                modals.forEach(modal => {
+                    outBoundaryClick(event, modal);
+                });
+            });
         </script>
     </body>
 </html>

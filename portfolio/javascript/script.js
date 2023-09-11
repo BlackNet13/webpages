@@ -82,13 +82,13 @@ function filterSelection(c) {
         c = "";
     }
     for (i = 0; i < x.length; i++) {
-        w3RemoveClass(x[i], "show");
+        removeClass(x[i], "show");
         if (x[i].className.indexOf(c) > -1)
-            w3AddClass(x[i], "show");
+            addClass(x[i], "show");
     }
 }
 
-function w3AddClass(element, name) {
+function addClass(element, name) {
     var i, arr1, arr2;
     arr1 = element.className.split(" ");
     arr2 = name.split(" ");
@@ -99,7 +99,7 @@ function w3AddClass(element, name) {
     }
 }
 
-function w3RemoveClass(element, name) {
+function removeClass(element, name) {
     var i, arr1, arr2;
     arr1 = element.className.split(" ");
     arr2 = name.split(" ");
@@ -123,75 +123,7 @@ for (var i = 0; i < btns.length; i++) {
     });
 }
 
-/*---------------*/
-/*var contents = document.getElementsByClassName("content");
- var modal = document.getElementById("myModal");
- var body = document.body;
- var span = document.getElementsByClassName("close")[0];
- var showModal = function () {
- modal.style.display = "block";
- body.classList.add('modal-open'); 
- };
- for (var i = 0; i < contents.length; i++) {
- contents[i].addEventListener('click', showModal, false);
- }
- 
- // When the user clicks on <span> (x), close the modal
- span.onclick = function () {
- modal.style.display = "none";
- body.classList.remove('modal-open');
- };
- // When the user clicks anywhere outside of the modal, close it
- window.onclick = function (event) {
- if (event.target == modal) {
- modal.style.display = "none";
- body.classList.remove('modal-open');
- }
- };*/
-
-function toggleModal(modal, open) {
-    modal.style.display = open ? "block" : "none";
-    document.body.classList.toggle('modal-open', open);
-}
-
-
-// Function to handle clicks outside the modal
-function outBoundaryClick(event, modal) {
-    if (event.target === modal) {
-        toggleModal(modal, false);
-    }
-}
-
-
-// Select all elements with the data-modal attribute
-const buttons = document.querySelectorAll('[data-modal]');
-
-buttons.forEach(button => {
-    button.addEventListener("click", () => {
-        const modalId = button.getAttribute('data-modal');
-        const modal = document.getElementById(modalId);
-        toggleModal(modal, true);
-    });
-});
-
-
-// Select all elements with the class "close"
-const spans = document.querySelectorAll('.close');
-
-spans.forEach(span => {
-    span.addEventListener("click", () => {
-        const modalId = span.closest('.modal').getAttribute('id');
-        const modal = document.getElementById(modalId);
-        toggleModal(modal, false);
-    });
-});
-
-window.addEventListener("click", (event) => {
-    const modals = document.querySelectorAll('.modal');
-    modals.forEach(modal => {
-        outBoundaryClick(event, modal);
-    });
-});
+/*-----*/
 
 
 
