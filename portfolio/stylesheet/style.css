@@ -192,6 +192,14 @@ nav a{
     .op1{
         display:block;
     }
+    
+    .col-md-5{
+        margin-right:-50px;
+    }
+    
+    .imgAdjust{
+        margin-left:-50px; margin-top:30px;
+    }
 
 
 }
@@ -465,7 +473,7 @@ body.modal-open {
     scrollbar-width: thin;
 }*/
 
-.col-md-6{
+.col-md-5, .col-md-7{
     height:50vh;
     overflow-y:scroll;
     scrollbar-color: #4D3060 #CCBAAC;
@@ -473,7 +481,7 @@ body.modal-open {
 
 }
 
-.col-md-6::-webkit-scrollbar {
+.col-md-5::-webkit-scrollbar, .col-md-7::-webkit-scrollbar {
     width: 0px;
     background: transparent; /* make scrollbar transparent */
 }
@@ -561,10 +569,15 @@ body.modal-open {
         cursor: pointer;
     }
 
-    .contentLink{
+    .contentLink a{
+      padding-top:20px;
+      text-decoration: none;
+      color: black;
 
-        background:white;
-
+    }
+    
+    .contentLink a:hover{
+        color:white;
     }
 
 
