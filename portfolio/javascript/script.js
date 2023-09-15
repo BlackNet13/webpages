@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
 
 // Add click event listeners to all <a> elements
-    var links = document.querySelectorAll('a');
+    var links = document.querySelectorAll('.nav-link');
     for (var i = 0; i < links.length; i++) {
         links[i].addEventListener('click', function (event) {
             // Prevent the default link behavior and then trigger the transition bars animation

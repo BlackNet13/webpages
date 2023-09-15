@@ -74,7 +74,7 @@ and open the template in the editor.
                                 </div>
                             </div>
                             <div class="col-md-4 design">
-                                <div class="content" data-modal="">
+                                <div class="content" data-modal="autiLearn">
                                     <img src="images/autiLearners.png" alt="Nature" style="max-height: 40vh; width:90%; height:90%;">
 
                                     <p>Auti-Learners - App Prototype</p>
@@ -136,17 +136,22 @@ and open the template in the editor.
                                 <div class="col-md">
                                     <div class="row">
 
-                                        <div class="col-md-5" style="height:50%; overflow: hidden; margin-right:-50px;">
-                                            <img src="images/web1.png" style="width:100%"/><br>
-                                            <span class="contentLink"><a href="https://xd.adobe.com/view/b0b34507-7a51-4013-9ac6-eb8e2a6f7c48-e5e0/">See on Adobe XD</a></span>
+                                        <div class="col-md-5" style="height:50%; overflow: hidden; margin-left:20px; margin-right:-50px;">
+                                            <img data-img="modal-img1" src="images/web1.png" style="width:100%;"/><br>
+
+                                            <div id="modal-img1" class="modal" style="background:rgba(0,0,0,0.8); z-index:40;">
+                                                <img class="modal-content imgContent1" id="imgModal1" style="max-width:650px;  background:none; border:none;">
+                                            </div>
+
+                                            <span class="contentLink"><a href="https://xd.adobe.com/view/b0b34507-7a51-4013-9ac6-eb8e2a6f7c48-e5e0/" target="_blank">See on Adobe XD</a></span>
                                         </div>
                                         <div class="col-md-7">
-                                            <h6>Diners</h6>
+                                            <h6><b>Diners</b></h6>
                                             <p>"Healthy meals made easier" is the tagline for the placeholder 
                                                 brand call Diners, the image seen is what the customer's of this brand 
                                                 will see on the website when they first enter.</p>
 
-                                            <h6>Color Scheme</h6>
+                                            <h6><b>Color Scheme</b></h6>
                                             <span class="colorBox" style="background:#009688;" data-color="#009688"></span>
                                             <span class="colorBox" style="background:#FF9800;" data-color="#FF9800"></span>
                                             <span class="colorBox" style="background:#FFC107;" data-color="#FFC107"></span>
@@ -156,21 +161,29 @@ and open the template in the editor.
                                                 the freshness the brand aims to provide, the orange and yellow gives touches of 
                                                 warmth, enthusiasm to the visual identity</p>
 
-                                            <h6>Brand story</h6>
+                                            <h6><b>Brand story</b></h6>
                                             <p>This placeholder brand was build around providing nourishing  healthy options to the 
                                                 common public. Their menu ranges from bento boxes that consist of lean proteins, 
                                                 vibrant vegetables that are paired with rice or soba, to acai bowls and kombucha 
                                                 drinks. They source their ingredients from local and foreign farms.</p>
 
-                                            <h6>Other details</h6>
-                                            <img src="images/typography1.png" style="width:90%;"/><br><br>
+                                            <h6><b>Other details</b></h6>
+                                            <input type="checkbox" id="zoom1.1">
+                                            <label for="zoom1.1">
+                                                <img src="images/typography1.png" style="width:90%;"/>
+                                            </label>
+                                            <br><br>
                                             <p>
                                                 The typography chosen appeals to their target audience which consist of 
                                                 mostly women therefore a cursive style can frame the brand as something 
                                                 more delicate and feminine.
                                             </p>
 
-                                            <img src="images/siteMap1.png" style="width:90%;"/><br><br>
+                                            <input type="checkbox" id="zoom1.2">
+                                            <label for="zoom1.2">
+                                                <img src="images/siteMap1.png" style="width:90%;"/>
+                                            </label>
+                                            <br><br>
                                             <p>
                                                 The site map shows an overview of the contents of each page
                                             </p>
@@ -202,18 +215,24 @@ and open the template in the editor.
                                 <b style="margin-left:1rem; margin-top:-0.5rem; padding-bottom: 20px; opacity:0.7;"><i>'Gucci' Magazine Spread</i></b><br>
                                 <div class="col-md">
                                     <div class="row">
-                                        <div class="col-md-5" style="height:50%; overflow: hidden;">
-                                            <img class='imgAdjust' src="images/mag2.png" style="width:100%;"/><br>
+                                        <div class="col-md-5" style="height:50%; overflow: hidden; margin-left:20px; margin-right:-50px;">
+                                            <img data-img="modal-img2" class='imgAdjust' src="images/mag2.png" style="width:100%; margin-top:0px;"/><br>
+
+                                            <div id="modal-img2" class="modal" style="background:rgba(0,0,0,0.8); z-index:40;">
+                                                <img class="modal-content imgContent2" id="imgModal2" style="max-width:650px;  background:none; border:none;">
+                                            </div>
+
                                             <span class="contentLink">Click image to expand</span>
+
                                         </div>
 
                                         <div class="col-md-7">
-                                            <h6>'Gucci' Magazine</h6>
+                                            <h6><b>'Gucci' Magazine</b></h6>
                                             <p>This is a mockup of a fashion magazine spread but it has no real
                                                 relation to the actual brand GUCCI except for the look of the 
                                                 Gucci name.</p>
 
-                                            <h6>Color Scheme</h6>
+                                            <h6><b>Color Scheme</b></h6>
                                             <span class="colorBox" style="background:#3F5A3D;" data-color="#3F5A3D"></span>
                                             <span class="colorBox" style="background:#FF9800;" data-color="#FF9800"></span>
                                             <span class="colorBox" style="background:#4E554E;" data-color="#4E554E"></span>
@@ -222,7 +241,7 @@ and open the template in the editor.
                                             <p>The color scheme makes use of grey scale and color to make the subject pop</p>
 
 
-                                            <h6>Other details</h6>
+                                            <h6><b>Other details</b></h6>
                                             <p>
                                                 The focus is on minimalistic design to give it a posh look. Lesser words more 
                                                 focus on the overall feeling of the design. The fake overlay of color lighting 
@@ -230,7 +249,11 @@ and open the template in the editor.
                                                 realism of the surroundings.
                                             </p>
 
-                                            <img src="images/moodBoard2.png" style="width:90%;"/><br><br>
+                                            <input type="checkbox" id="zoom2">
+                                            <label for="zoom2">
+                                                <img src="images/moodBoard2.png" style="width:90%;"/>
+                                            </label>
+                                            <br><br>
                                             <p>
                                                 During the research, the mood board is primarily focus on how other 
                                                 photographers capture a certain look and what the end goal of the 
@@ -254,7 +277,72 @@ and open the template in the editor.
 
                     <!--separator-->
 
+                    <div id="autiLearn" class="modal">
 
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                            <div class="row">
+
+                                <span class="close">&times;</span>
+                                <b style="margin-left:1rem; margin-top:-0.5rem; padding-bottom: 20px; opacity:0.7;"><i>Auti-learners App Prototype</i></b><br>
+                                <div class="col-md">
+                                    <div class="row">
+
+                                        <div class="col-md-5" style="height:50%; overflow: hidden; margin-left:20px; margin-right:-50px;">
+                                            <img class="imgAdjust2" src="images/app3.png" style="width:100%;"/><br>
+                                            <span class="contentLink"><a href="https://xd.adobe.com/view/7deece64-621a-4427-b895-3aa27bf001f3-28bd/" target="_blank">See on Adobe XD</a></span>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <h6><b>Auti-learners</b></h6>
+                                            <p>Auti-learners is made for MINDS (Movement for the intellectually 
+                                                Disabled of Singapore) for kids having Autism Spectrum Disorder. 
+                                                The app has games base on matching, sorting and quizzes, with 
+                                                a tutorial beforehand that shows the user how to interact with 
+                                                the app. It uses auditory and haptic feedback to communicate 
+                                                errors/success to support their learning.</p>
+
+                                            <h6><b>Color Scheme</b></h6>
+                                            <span class="colorBox" style="background:#1232B0;" data-color="#1232B0"></span>
+                                            <span class="colorBox" style="background:#32427D;" data-color="#32427D"></span>
+                                            <span class="colorBox" style="background:#00A5E3;" data-color="#00A5E3"></span>
+                                            <span class="colorBox" style="background:#E67A3A;" data-color="#E67A3A"></span>
+                                            <span class="colorBox" style="background:#B03512;" data-color="#B03512"></span><br>
+                                            <p>The color scheme is compound color based on the base colors extracted from their 
+                                                webpage: #00A5E3(light mode), #34383D(dark mode), the colors shown are for 
+                                                the aforementioned light mode.</p>
+
+                                            <h6><b>Other details</b></h6>
+                                            <p>
+                                                MINDS center their brand around the belief of the inherent worth and potential of the 
+                                                individuals with intellectual disabilities and creating a inclusive society where individuals 
+                                                can be recognized, respected and supported with the opportunities to thrive. This app 
+                                                hopes work with kids with autism on their skill sets. 
+
+                                            </p>
+
+                                            <input type="checkbox" id="zoom3">
+                                            <label for="zoom3">
+                                                <img src="images/siteMap3.png" style="width:90%;"/>
+                                            </label>
+                                            <br><br>
+                                            <p>
+                                                The site map shows an overview of the contents of each page
+                                            </p>
+                                        </div>
+
+
+                                    </div>
+
+                                </div>
+
+
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
 
                     <!--separator-->
 
@@ -384,6 +472,25 @@ and open the template in the editor.
                     outBoundaryClick(event, modal);
                 });
             });
+
+            /*----------*/
+
+            const btn2 = document.querySelectorAll('[data-img]');
+
+            btn2.forEach(btn => {
+                btn.addEventListener("click", () => {
+                    const modalId = btn.getAttribute('data-img');
+                    const modal = document.getElementById(modalId);
+                    var modalImg = document.getElementById(`imgModal${modalId.charAt(modalId.length - 1)}`);
+                    modal.style.display = "block";
+                    modalImg.src = btn.src;
+                });
+            });
+
+
+
+
+
         </script>
     </body>
 </html>

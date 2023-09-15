@@ -180,31 +180,6 @@ nav a{
 }
 
 
-@media (min-aspect-ratio: 2/1)  { /*when screen is full*/
-    .logo2{
-        display:block;
-    }
-
-    #logo1{
-        display:none;
-    }
-
-    .op1{
-        display:block;
-    }
-    
-    .col-md-5{
-        margin-right:-50px;
-    }
-    
-    .imgAdjust{
-        margin-left:-50px; margin-top:30px;
-    }
-
-
-}
-
-
 /*----*/
 .sticky-icon-bar {
     position: fixed;
@@ -473,6 +448,10 @@ body.modal-open {
     scrollbar-width: thin;
 }*/
 
+.col-md-5{
+    padding-bottom:20px;
+}
+
 .col-md-5, .col-md-7{
     height:50vh;
     overflow-y:scroll;
@@ -514,11 +493,10 @@ body.modal-open {
 }
 
 @media (max-width: 768px) {
-    
     .main{
         margin: 40px 0 90px 50px;
     }
-    
+
     .modal-content {
         margin:20px;
         margin-right:-200px;
@@ -545,6 +523,49 @@ body.modal-open {
         opacity: 1;
         font-size: 0.4rem;
     }
+
+    .col-md-5 img{
+        margin-top:-20px;
+        margin-left:-20px;
+    }
+
+    .imgAdjust2{
+        padding-left:50px;
+    }
+    
+    #imgModal1, #imgModal2{
+        margin:20px; 
+        max-height:300px;
+    }
+
+}
+
+@media (min-aspect-ratio: 2/1)  { /*when screen is full*/
+    .logo2{
+        display:block;
+    }
+
+    #logo1{
+        display:none;
+    }
+
+    .op1{
+        display:block;
+    }
+
+    .col-md-5{
+        margin-right:-50px;
+    }
+
+    .imgAdjust{
+        margin-left:-50px; margin-top:30px;
+    }
+
+
+
+
+
+
 }
 
 
@@ -559,7 +580,7 @@ body.modal-open {
         margin-bottom: -20px;
         margin-top:-10px;
         font-weight: bold;
-        z-index:50;
+        z-index:20;
     }
 
     .close:hover,
@@ -570,14 +591,30 @@ body.modal-open {
     }
 
     .contentLink a{
-      padding-top:20px;
-      text-decoration: none;
-      color: black;
+        padding-top:20px;
+        text-decoration: none;
+        color: black;
 
     }
-    
+
     .contentLink a:hover{
         color:white;
+    }
+
+    /*-----------*/ /*--https://stackoverflow.com/questions/39858998/zoom-in-and-out-on-mouse-click-with-css--*/
+    input[type=checkbox] {
+        display: none;
+    }
+
+    label img {
+        transition: transform 0.25s ease;
+        cursor: zoom-in;
+    }
+
+    input[type=checkbox]:checked + label > img {
+        transform: scale(2);
+        cursor: zoom-out;
+        margin:300px;
     }
 
 
