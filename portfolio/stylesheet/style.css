@@ -492,7 +492,7 @@ body.modal-open {
     opacity: 1;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) { /*mobile*/
     .main{
         margin: 40px 0 90px 50px;
     }
@@ -535,7 +535,9 @@ body.modal-open {
     
     #imgModal1, #imgModal2{
         margin:20px; 
+        margin-left:-10px;
         max-height:300px;
+        width:90%;
     }
 
 }
