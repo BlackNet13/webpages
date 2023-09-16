@@ -326,18 +326,28 @@ textarea:focus {
 }
 
 .btn-bg{
-    background: #4D3060;
+    /*background: #4D3060;*/
+    background-image: linear-gradient(to right,  #4D3060 0%, #CCBAAC  51%,  #4D3060  100%);
 }
 
 .btn{
     color:#ccc; 
     font-weight: bold;
     font-size: 0.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
 }
 
 .btn:hover{
-    font-weight: bold;
-    color:white;
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
 }
 
 /*---------------------*/
@@ -350,7 +360,7 @@ textarea:focus {
 
 
 .row {
-    margin: 10px - 70px;
+   /* margin: 10px 70px; */
 }
 
 
@@ -488,6 +498,15 @@ body.modal-open {
     margin:auto;
 }
 
+.itemList{
+    padding: 20px;
+}
+
+
+
+
+
+
 .colorBox:hover::after {
     opacity: 1;
 }
@@ -532,13 +551,17 @@ body.modal-open {
     .imgAdjust2{
         padding-left:50px;
     }
-    
-    #imgModal1, #imgModal2{
+
+    .imgContent1, .imgContent2, .imgContent3{
         margin:20px; 
         margin-left:-10px;
         max-height:300px;
         width:90%;
     }
+    
+  
+    
+    
 
 }
 
@@ -604,7 +627,7 @@ body.modal-open {
     }
 
     /*-----------*/ /*--https://stackoverflow.com/questions/39858998/zoom-in-and-out-on-mouse-click-with-css--*/
-    input[type=checkbox] {
+    /*input[type=checkbox] {
         display: none;
     }
 
@@ -617,7 +640,7 @@ body.modal-open {
         transform: scale(2);
         cursor: zoom-out;
         margin:300px;
-    }
+    }*/
 
 
 
