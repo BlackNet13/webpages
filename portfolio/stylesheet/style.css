@@ -364,7 +364,7 @@ textarea:focus {
 }
 
 
-.col-md-4 {
+.col-md-6 {
     /*width: 33.33%;*/
     display: none;
 }
@@ -503,10 +503,6 @@ body.modal-open {
 }
 
 
-
-
-
-
 .colorBox:hover::after {
     opacity: 1;
 }
@@ -553,13 +549,18 @@ body.modal-open {
     }
 
     .imgContent1, .imgContent2, .imgContent3{
-        margin:20px; 
-        margin-left:-10px;
-        max-height:300px;
-        width:90%;
+        /*margin:20px; 
+        margin-left:-10px;*/
+        margin: auto;
+        max-height:350px;
+        width:100%;
     }
     
-  
+    .imgContent4{
+        width:100%;
+        margin:auto;
+        padding-left:40px;
+    }
     
     
 
@@ -585,10 +586,6 @@ body.modal-open {
     .imgAdjust{
         margin-left:-50px; margin-top:30px;
     }
-
-
-
-
 
 
 }
@@ -619,6 +616,7 @@ body.modal-open {
         padding-top:20px;
         text-decoration: none;
         color: black;
+        font-size:0.4rem;
 
     }
 

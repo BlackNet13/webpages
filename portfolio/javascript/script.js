@@ -72,10 +72,27 @@ document.addEventListener('DOMContentLoaded', function (event) {
 });
 
 /*-------------*/
-
 function filterSelection(c) {
+    var items = document.getElementsByClassName("col-lg-4");
+
+    for (var i = 0; i < items.length; i++) {
+        var item = items[i];
+        var categories = item.getAttribute("data-cate").split(" ");
+
+        // Check if the item has the specified category
+        if (categories.includes(c) || c === "all") {
+            item.classList.add("show");
+        } else {
+            item.classList.remove("show");
+        }
+    }
+}
+
+/*-works if html has lesser classes example only col-md-6 design-*/
+/*function filterSelection(c) { 
+    console.log("Filtering by category:", c);
     var x, i;
-    x = document.getElementsByClassName("col-md-4");
+    x = document.getElementsByClassName("col-md-6");
     if (c == "all") {
         c = "";
     }
@@ -107,7 +124,7 @@ function removeClass(element, name) {
         }
     }
     element.className = arr1.join(" ");
-}
+}*/
 
 
 
