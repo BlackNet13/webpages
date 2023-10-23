@@ -1,14 +1,10 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
---> 
 <html lang="en" dir="ltr"> <!--https://dequeuniversity.com/rules/axe/4.7/html-has-lang-->
     <head>
         <title>SlumberousCat: Home</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Index Home Page of Slumberous Cat , Yvonne's Portfolio">
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -38,8 +34,8 @@ and open the template in the editor.
             <p class="copyright">Copyright © Slumberous Cat 2023</p>
 
             <div class="sticky-icon-bar"> <!--https://lenadesign.org/2021/08/06/css-sticky-social-media-bar/-->
-                <a href="https://www.linkedin.com/in/yvonyen8/" class="linkedin"><i class="fa-brands fa-linkedin-in"></i></a> 
-                <a href="https://github.com/BlackNet13" class="github"><i class="fa-brands fa-github"></i></a> 
+                <a href="https://www.linkedin.com/in/yvonyen8/" aria-label='Connect on Linkedin' class="linkedin"><i class="fa-brands fa-linkedin-in"></i></a> 
+                <a href="https://github.com/BlackNet13" aria-label='Connect on github' class="github"><i class="fa-brands fa-github"></i></a> 
             </div>
 
 
@@ -48,7 +44,7 @@ and open the template in the editor.
             <!---Main-->
             <div id='container1'>
                 <div id='sideContent'><p><b>Slumberous Cat</b><br><span class='op'>Creative Design and Code</span></p></div>
-                <img src='images/cat.webp' style='margin-left:40vw; height:90%; position:fixed;'/>
+                <img src='images/cat.webp' alt='cat lounging on its back playfully' style='margin-left:40vw; height:90%; position:fixed;'/>
 
             </div>
 
@@ -65,23 +61,23 @@ and open the template in the editor.
                     <div class="container-fluid" >
                         <ul id="nav" class="navbar-nav right" style='font-size:1rem; margin-top:30px;' >
                             <li class="nav-item selected">
-                                <b><a class="nav-link" href="index.html" onclick="goTo()">Home</a></b>
+                                <b><a class="nav-link" href="index.html" aria-label='link to index page' onclick="goTo()">Home</a></b>
                             </li>
                             <li class="nav-item">
 
-                                <b><a class="nav-link" href="about.html" onclick="goTo()">About</a></b>
+                                <b><a class="nav-link" href="about.html" aria-label='link to about page' onclick="goTo()">About</a></b>
                             </li>
                             <li class="nav-item">
-                                <b><a class="nav-link" href="portfolio.html" onclick="goTo()">Portfolio</a></b>
+                                <b><a class="nav-link" href="portfolio.html" aria-label='link to portfolio page' onclick="goTo()">Portfolio</a></b>
                             </li>
                             <li class="nav-item">
-                                <b><a class="nav-link" href="contact.html" onclick="goTo()">Contact</a></b>
+                                <b><a class="nav-link" href="contact.html" aria-label='link to contact page' onclick="goTo()">Contact</a></b>
                             </li>  
                             <li id="nav_indicator"></li>
 
                         </ul>
                     </div>
-                    <a class="nav-link" id="logoLink" href="index.html" style='width:70vw;'><span id='logo1'><img src='images/catLogo.webp' style='width: 3rem; margin-top: 20px'/></span>
+                    <a class="nav-link" id="logoLink" href="index.html" aria-label='link to index page' style='width:70vw;'><span id='logo1'><img src='images/catLogo.webp' alt='cat logo' style='width: 3rem; margin-top: 20px'/></span>
                         <span class='logo2'><span class='big' style='font-family: "minion-pro", serif;
                                                   font-weight: 400;
                                                   font-style: normal; font-size:0.9rem;'>Slumberous Cat</span>by Yvonne</span></a>

@@ -56,11 +56,11 @@ document.addEventListener('DOMContentLoaded', function (event) {
         transitionBars.forEach((bar, index) => {
             setTimeout(() => {
                 bar.style.display = 'block'; // Set display to 'block'
-            }, index * 800); // Delay each bar by 800 milliseconds
+            }, index * 400); // Delay each bar by 800 milliseconds, default
         });
 
         // Calculate the total duration of all bars
-        const totalDuration = transitionBars.length * 800;
+        const totalDuration = transitionBars.length * 400;
 
         // Simulate a delay before navigating to the specified href
         setTimeout(() => {
