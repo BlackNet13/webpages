@@ -1,0 +1,167 @@
+<html>
+   <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet"> 
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+   <body>
+
+    <nav class="navbar navbar-expand-sm fixed-top">
+      <div class="container-fluid">
+        <a class="svg" href="index.html">
+          <img src="images/wxLogo.svg" alt="wxLogo"/>
+        </a>
+      
+        <button class="navbar-toggler order-2" type="button" data-bs-toggle="collapse" data-bs-target="#hamburger">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse order-1" id="hamburger">
+          <ul class="navbar-nav me-auto">
+          </ul>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+           
+            </li class="nav-item right">
+            <li>
+                <a href="index.html" class="active"><b>Home</b></a>
+            </li>
+            <li class="nav-item right">
+                <a href="#"><b>Package tours</b></a>
+            </li>
+            <li class="nav-item right">
+                <a href="#"><b>Rediscover</b></a>
+            </li>
+            <li class="nav-item right">
+                <a href="#"><b>Singapore</b></a>
+            </li>
+                <li class="nav-item right dropdown" >
+                  <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#" ><b>Cruises</b></a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="resortsWorld.html"><b>Resorts World Cruise</b></a></li>
+                    <li><a class="dropdown-item" href="royalCaribbean.html"><b>Royal Caribbean Cruise</b></a></li>
+                    <li><a class="dropdown-item" href="#"><b>Cruise Promotion Packages</b></a></li>
+                  </ul>
+                </li>
+            <li class="nav-item right">
+                <a href="#"><b>Contact Us</b></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+
+
+    <div class="replaceVid"><img class="bgImg" src="images/boatView.jpg"></div>
+      <video autoplay muted loop id="vid">
+        <source src="videos/wx_video.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+      </video>
+      <div class="gradientEff"></div>
+        
+        <section class="container-fluid mt-3">
+                <div class="row">
+                  <article class="col p-3 ">
+
+                    <img class="one" src="images/mirrorLake.jpg" width="180px"/><br><br>
+                    <p class="text">Kuala Selangor Beach is better known as “Mirror of the Sky “as the shallow waters of this “Secret Island” reflects the sky in all its going, thus creating <span class="dots">...</span><span class="rMore">  many unique photography opportunities.The Island makes a perfect travel destination for your holiday, it is also a habitat for many marine agriculture.</span></p>
+                    <button onclick="readMore(0)" class="rMBtn">Read More</button>
+
+                    <!--<button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modal1">
+                        <img class="one" src="images/mirrorLake.jpg" width="180px"/>
+                      </button>
+                    
+                      <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="modal1" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p class="text">Kuala Selangor Beach is better known as “Mirror of the Sky “as the shallow waters of this “Secret Island” reflects the sky in all its going, thus creating many unique photography opportunities.The Island makes a perfect travel destination for your holiday, it is also a habitat for many marine agriculture.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>-->
+                        
+                  </article>
+
+                  <article class="col p-3 ">
+
+                    <img class="two" src="images/plane.jpg" width="180px"/><br><br>
+                    <p class="text">Dreaming of a getaway that takes you to new heights? Look no further! Our travel agency is thrilled to present our unbeatable plane deals<span class="dots">...</span><span class="rMore">that will whisk you away to the destination of your dreams. Whether you're a sun-seeker, an adventurer, or a culture enthusiast, we have the perfect flight offers tailored just for you.</span></p>
+                    <button onclick="readMore(1)" class="rMBtn">Read More</button>
+
+                    <!--<button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modal2">
+                        <img class="two" src="images/plane.jpg" width="180px"/>
+                      </button>
+                    
+                      <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="modal1" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p class="text">Dreaming of a getaway that takes you to new heights? Look no further! Our travel agency is thrilled to present our unbeatable plane deals that will whisk you away to the destination of your dreams. Whether you're a sun-seeker, an adventurer, or a culture enthusiast, we have the perfect flight offers tailored just for you.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>-->
+
+                </article>
+
+                  <article class="col p-3 ">
+
+                    <img class="three" src="images/river.jpg" width="180px"/><br><br>
+                    <p class="text">Are you yearning for a travel experience that connects you with nature, where the soothing sounds of the river harmonize<span class="dots">...</span><span class="rMore"> with the whispering leaves? Look no further! Our travel agency is thrilled to introduce our Riverside Retreat Package – an exhilarating adventure designed for nature enthusiasts and outdoor aficionados.</span></p>
+                    <button onclick="readMore(2)" class="rMBtn">Read More</button>
+
+                    <!--<button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modal3">
+                        <img class="three" src="images/river.jpg" width="180px"/>
+                      </button>
+                    
+                      <div class="modal fade" id="modal3" tabindex="-1" aria-labelledby="modal1" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p class="text">Are you yearning for a travel experience that connects you with nature, where the soothing sounds of the river harmonize with the whispering leaves? Look no further! Our travel agency is thrilled to introduce our Riverside Retreat Package – an exhilarating adventure designed for nature enthusiasts and outdoor aficionados.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>-->
+
+                </article>
+                </div>
+        </section>
+        <footer>
+            <i>WX World Explore Tour © Copyright</i>
+        </footer>
+        
+        <script>
+                function readMore(num) {
+        const dots = document.getElementsByClassName("dots");
+        const txt = document.getElementsByClassName("rMore");
+        const btn = document.getElementsByClassName("rMBtn");
+
+        if (btn[num].innerHTML === "Read Less") {
+            dots[num].style.display = "inline";
+            btn[num].innerHTML = "Read More";
+            txt[num].style.display = "none";
+        } else {
+            dots[num].style.display = "none";
+            btn[num].innerHTML = "Read Less";
+            txt[num].style.display = "inline";
+        }
+    }
+        </script>
+   </body> 
+</html>
