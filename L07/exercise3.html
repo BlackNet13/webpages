@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <title>jQuery and Bootstrap Exercises</title>
+    <style>
+        body {
+            margin: 100px;
+        }
+
+        .circle, .square {
+            width: 90px;
+            aspect-ratio: 1;
+            border-radius: 100%;
+            background: dodgerblue;
+        }
+
+        .square {
+            border-radius: 0;
+            background: slateblue;
+        }
+
+        .box {
+            background: #ddd;
+            width: 114px;
+            aspect-ratio: 1;
+            padding: 10px;
+            border: 2px dashed #aaa;
+        }
+    </style>
+</head>
+
+<body>
+    <button type="button" class="btn btn-warning btn-lg mb-5" data-bs-toggle="tooltip" title="This is a button">Button</button>
+
+    <div class="circle mb-5"></div>
+
+    <div class="square mb-2"></div>
+    <button type="button" class="btn-sm btn-dark mb-4 btn-add">Add</button>
+    <div class="box"></div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Initialise tooltips
+            $('[data-bs-toggle="tooltip"]').tooltip();
+
+            $('.circle').click(function () {
+                $(this).toggleClass('bg-success');
+            });
+            
+
+            $('.btn-add').click(function () {
+                var $squareClone = $('.square').clone();
+                $('.box').append($squareClone);
+            });
+            
+
+        });
+    </script>
+</body>
+
+</html>
