@@ -74,23 +74,29 @@
                         <a class="nav-link active"
                             href="https://blacknet13.github.io/webpages/L06_exercise1/exercise1">About</a>
                     </li>
-                        <li class="nav-item my-3 dropdown">
-                            <div class="dropdown">
-                                <button class="btn text-light dropdown-toggle" type="button" id="coursesDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Courses
-                                </button>
-                                <ul class="dropdown-menu bg-secondary" aria-labelledby="coursesDropdown">
-                                    <li><a class="dropdown-item" href="https://blacknet13.github.io/webpages/L06_exercise2/">HTML</a></li>
-                                    <li><a class="dropdown-item" href="https://blacknet13.github.io/webpages/L07/exercise1.html">CSS</a></li>
-                                    <li><a class="dropdown-item" href="https://blacknet13.github.io/webpages/L07/exercise2.html">PHP</a></li>
-                                    <li><a class="dropdown-item" href="https://blacknet13.github.io/webpages/L07/exercise3.html">Javascript</a></li>
-                                    <li><a class="dropdown-item" href="#">Python</a></li>
-                                    <li><a class="dropdown-item" href="#">Java</a></li>
-                                    <li><a class="dropdown-item" href="#">IOS</a></li>
-                                    <li><a class="dropdown-item" href="#">React</a></li>
-                                </ul>
-                            </div>
-                        </li>
+                    <li class="nav-item my-3 dropdown">
+                        <div class="dropdown">
+                            <button class="btn text-light dropdown-toggle" type="button" id="coursesDropdown"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Courses
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu1 bg-secondary" aria-labelledby="coursesDropdown">
+                                <li><a class="dropdown-item"
+                                        href="https://blacknet13.github.io/webpages/L06_exercise2/">HTML</a></li>
+                                <li><a class="dropdown-item"
+                                        href="https://blacknet13.github.io/webpages/L07/exercise1.html">CSS</a></li>
+                                <li><a class="dropdown-item"
+                                        href="https://blacknet13.github.io/webpages/L07/exercise2.html">PHP</a></li>
+                                <li><a class="dropdown-item"
+                                        href="https://blacknet13.github.io/webpages/L07/exercise3.html">Javascript</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#">Python</a></li>
+                                <li><a class="dropdown-item" href="#">Java</a></li>
+                                <li><a class="dropdown-item" href="#">IOS</a></li>
+                                <li><a class="dropdown-item" href="#">React</a></li>
+                            </ul>
+                        </div>
+                    </li>
                     <li class="nav-item mt-3 mr-5">
                         <a class="nav-link" href="#">Contact</a>
                     </li>
@@ -98,7 +104,7 @@
                         <a href="#">
                             <button type="button" class="btn btn-outline-light bi bi-bell dropdown-toggle "
                                 id="dropdownBtn" data-bs-toggle="dropdown" aria-expanded="false"></button>
-                            <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownBtn">
+                            <ul class="dropdown-menu dropdown-menu2 dropdown-menu-right" aria-labelledby="dropdownBtn">
                                 <li><a class="dropdown-item" href="#">
                                         <h6>Title 2</h6>
                                         <p>Short paragraph of information about Title 2</p>
@@ -393,9 +399,19 @@
                 delay: 100
             });
 
-            $("#dropdownBtn").click(function () {
+            /*$("#dropdownBtn").click(function () {
                 $(".dropdown-menu").toggle();
 
+            });*/
+
+            $("#coursesDropdown").click(function (e) {
+                e.stopPropagation();
+                $(".dropdown-menu1").toggle();
+            });
+
+            $("#dropdownBtn").click(function (e) {
+                e.stopPropagation();
+                $(".dropdown-menu2").toggle();
             });
 
 
