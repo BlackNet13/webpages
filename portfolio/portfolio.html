@@ -134,12 +134,21 @@
                                     <p>Movies Review - Website</p>
                                 </div>
                             </div>
+
                             <div class="col-sm-6 col-md-6 col-lg-4" data-cate='code'>
                                 <div class="content" data-modal="ccaRegistration">
                                     <img src="images/login.webp" alt="CCA Registration System Java Programme" loading="lazy" style="max-height: 40vh; width:100%; height:100%; margin-bottom: 20px; margin-top:50px;">
                                     <p>CCA Registration - Java Programme[Team]</p>
                                 </div>
                             </div>
+
+                            <div class="col-sm-6 col-md-6 col-lg-4" data-cate='code'>
+                                <div class="content" data-modal="wardManagement">
+                                    <img src="images/main.webp" alt="CCA Registration System Java Programme" loading="lazy" style="max-height: 40vh; width:100%; height:100%; margin-bottom: 20px; margin-top:50px;">
+                                    <p>Patient / Ward Management - Java Programme</p>
+                                </div>
+                            </div>
+
                             <div class="col-sm-6 col-md-6 col-lg-4" data-cate='code'>
                                 <div class="content" data-modal="movieListApp">
                                     <img src="images/app9.webp" alt="Movie List Android App" loading="lazy" style="max-height: 40vh; width:80%; height:100%;">
@@ -160,6 +169,120 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+
+                    <!--separator-->
+
+                    <div id="wardManagement" class="modal">
+
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                            <div class="row">
+
+                                <span class="close">&times;</span>
+                                <b style="margin-left:1rem; margin-top:-0.5rem; padding-bottom: 20px; opacity:0.7;"><i>Patient/Ward Management System</i></b><br>
+                                <div class="col-md">
+                                    <div class="row">
+                                        <div class="col-md-5" style="height:50%; overflow: hidden; margin-left:20px; margin-right:-50px;">
+                                            <img class='imgAdjust' src="images/main.webp" loading="lazy" style="width:100%; margin-top:20px; margin-bottom:20px;"/><br>
+
+                                            <span class="contentLink"><a href="https://github.com/BlackNet13/ward_Management" target="_blank">See project on Github</a>
+
+                                        </div>
+
+                                        <div class="col-md-7">
+                                            <h6><b>Patient/Ward Management System</b></h6>
+
+                                            <h6><b>Project Task</b></h6>
+                                            <p>Create a system on eclipse that allows that user to view all ward/patient information, 
+                                                admit/discharge/remove patient, register and end visits, I have added payment related functions too.</p>
+
+                                            <p>I was provided the skeleton base with the base loop for the options without any functionality, 
+                                                I was also provided some details to include like some mock patient's details and also ward information.</p>
+
+                                            <h6><b>Skills/Tools Used</b></h6>
+                                            <p>Java, Eclipse, Github for version control.</p>
+
+
+                                            <h6><b>Features</b></h6>
+
+                                            The features in the final system produced are:
+
+                                            <ol class='itemList'>
+                                                <li>View all Ward Info</li>                    
+                                                <li>Display Patient List[Extra: added a display for the amount patient owed and have paid]</li>                  
+                                                <li>Admit Patient<br>
+                                                    - user does this by inputing patient's IC's first four digits,name, ward, bed,date warded, will reject if bed is occupied already/or does not exist(bug found: system does not display proper error msg for bed does not exist)</li>                         
+                                                <li>Discharge Patient<br>
+                                                    - user does this by inputing patient's IC and Name that matches and exist in the system records,date discharged, system will kick visitors off from visiting and (extra)calculate charges</li>      
+                                                <li>Remove Patient<br>
+                                                    - user does this by inputing patient's IC and Name and confirming that they want to delete the patient's records(will not delete if patient have not been discharged and paid their dues fully)</li>
+                                                <li>Register Visit<br>
+                                                    - user does this by inputing patient's IC and Name, number of visitors(cannot exceed max visitors includes existing visitors), visitor's IC and Name(if existing records exist, will be prompted if changes need to be made or continue with existing records.)</li>                        
+                                                <li>End Visit<br>
+                                                    - user does this by inputing patient's IC and Name along side with the amount of visitor's ending their visit and their IC and Names</li>                          
+                                                <li>Display Ward Overview</li>        
+                                                <li>Visitor List</li>                
+                                                <li>Payment Related[Extra]
+                                                    <ul> 
+                                                        <li>View Patient's Payables<br>
+                                                            - user does this by inputing patient's IC and Name that have existing payment owing</li>
+                                                        <li>Make Payment<br>
+                                                            - user does this by inputing patient's IC and Name and amount being paid(shows what is the remaining payment owed)</li>
+                                                        <li>Overwrite Debt<br>
+                                                            - user does this by inputing patient's IC and Name and confirming to overwrite the debt 
+                                                            of patient(clears the amount of owing, wont count as patient paying their debt but counts as a bad debt)</li>
+                                                        <li>Overview</li>
+                                                    </ul>
+                                                        
+                                                </li>
+
+                                            </ol>
+
+                                            <h6><b>Other details</b></h6>
+
+                                            <img src="images/main.webp" loading="lazy" style="width:80%;"/>
+                                            <br><br>
+
+                                            <img src="images/wardInfo.webp" loading="lazy" style="width:80%;"/>
+                                            <br><br>
+
+                                            <img src="images/patientList.webp" loading="lazy" style="width:80%;"/>
+                                            <br><br>
+
+                                            <img src="images/wardOverview.webp" loading="lazy" style="width:80%;"/>
+                                            <br><br>
+
+                                            <img src="images/visitorList.webp" loading="lazy" style="width:90%;"/>
+                                            <br><br>
+                                            
+                                             <img src="images/paymentOverview.webp" loading="lazy" style="width:80%;"/>
+                                            <br><br>
+
+
+                                            <h6><b>Lessons Learned</b></h6>
+                                            <ul class='itemList'>
+                                                <li>
+                                                     It was a good experience to comment each section so that you know which section of the code is for what.<br><br>
+                                                </li>
+                                                <li>
+                                                    It was also a good experience to experiment and add new features as I was allowed free range on the design and the add on functionality <br><br>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+
+                                    </div>
+
+                                </div>
+
+
+
+                            </div>
+
+
+                        </div>
+
                     </div>
 
                     <!--separator-->
