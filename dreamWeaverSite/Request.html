@@ -1,0 +1,421 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Hearto No Eternal Primrose</title>
+<style type="text/css">
+body,td,th {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #93F;
+	text-align: justify;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	border-radius:7px;
+	padding-bottom: 15px;
+}
+body {
+	background-image: url(images/backgroundMain.jpg);
+	background-repeat: no-repeat;
+	background-color: #9E78A7;
+}
+.copyright {
+	float: right;
+	margin-top: -10px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	padding-top: 20px;
+	padding-right: 15px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+}
+.Title {
+	padding-left: 15px;
+	padding-bottom: -15px;
+	padding-top: 15px;
+	padding-right: 0px;
+	color: #93F;
+}
+.paragraph {
+	padding-right: 18px;
+	padding-bottom: 0px;
+	padding-left: 18px;
+	text-align: justify;
+	margin-bottom: 18px;
+	margin-top: 20px;
+	padding-top: 0px;
+	color: #93F;
+}
+.logo {
+	text-align: center;
+}
+Dropdown {
+	text-align: center;
+}
+dropdownMenu {
+	text-align: center;
+}
+
+/*--form--*/
+input[type=text], select {
+  width: 40%;
+  padding: 8px 20px;
+  margin: 8px 0;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 20%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 5px 10px;
+  margin: -25px 20px 0 105px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-algin:center;
+  display:block;
+  position:relative;
+}
+
+input[type=reset] {
+  width: 20%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 5px 10px;
+  margin: 20px 20px 0 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align:center;
+  display:block;
+  position: relative;
+}
+
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+input[type=reset]:hover {
+  background-color: #45a049;
+}
+
+div.container3 {
+  border-radius: 5px;
+  padding: 20px;
+  margin-top:10px;
+  height:auto;
+}
+  
+input.control:checked ~ .conditional
+{
+opacity:1;
+}
+
+input.control:not(:checked) ~ .conditional
+{
+opacity:0.1;
+}
+
+.txtheight
+{
+min-width: 400px;
+min-height:100px;
+max-height: 700px;
+overflow-y:scroll;
+overflow-x:none;
+display:block;
+margin-bottom: 20px;
+}
+
+input[type="text"].txtheight::-webkit-input-placeholder {
+  color: orange;
+  padding-top:-50px;
+}
+
+#genderO
+{
+opacity: 0;
+max-height: 0;
+overflow: hidden;
+background: white;
+margin-bottom: -30px;
+}
+
+.check1:checked ~ #genderO
+{
+opacity: 1;
+max-height: 100px;
+overflow: visible;
+margin-bottom: 5px;
+}
+
+.check1:not(:checked) ~ #genderO
+{
+opacity: 0;
+max-height: 0;
+overflow: hidden;
+margin-bottom: -30px;
+}
+
+#active
+{
+opacity: 0;
+max-height: 0;
+width: 400px;
+overflow: hidden;
+background: white;
+padding: 10px 10px 50px 10px;
+margin-bottom:-100px;
+}
+
+.check2:checked ~ #active
+{
+opacity: 1;
+max-height: 100px;
+overflow: visible;
+margin-bottom: -10px;
+}
+
+.check2:not(:checked) ~ #active
+{
+opacity: 0;
+max-height: 0;
+overflow: hidden;
+margin-bottom:-100px;
+}
+
+.otherItems
+{
+height:20px;
+width: 120px;
+display:inline-block;
+}
+
+#Reason
+{
+display: block;
+padding: 1em;
+width:150px;
+height: 50px;
+}
+
+#formAll
+{
+width: 478px;
+height: auto;
+}
+
+#PN
+{
+width: 400px;
+}
+
+#name
+{
+width: 300px;
+}
+
+/*social media */
+.socialMedia1 {
+	padding-left: 20px;
+	margin-bottom: -25px;
+}
+
+.socialMedia1 a:hover
+{
+opacity:0.7;
+}
+
+</style>
+
+<script src="SpryAssets/SpryValidationTextField.js" type="text/javascript"></script>
+<script src="SpryAssets/SpryValidationTextarea.js" type="text/javascript"></script>
+<script language="javascript">
+
+    function cancelAll()
+	{
+		document.getElementById('formAll').reset();
+	}
+	
+	
+	
+	function submitAll()
+	{
+		var x = document.getElementById("Reason").selectedIndex;
+		var reason = document.getElementsByTagName("option")[x].value;
+		if(!alert("Your" + " " + reason + " " + "have been forwarded to our HQ, please wait 3-4 working days for our reply, Thank you for your" + " " + reason + " " + "!" )){document.getElementById('formAll').reset();}
+	}
+    </script>
+
+<link href="SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
+<link href="SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css" />
+<link href="SpryAssets/SpryValidationTextarea.css" rel="stylesheet" type="text/css" />
+<script src="SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
+</head>
+
+<body>
+<table width="772" border="0">
+  <tr>
+    <td width="143" rowspan="2"><img src="images/transparent.png" width="143" height="160" alt="otomeMock" /></td>
+  <td colspan="2" align="center" valign="middle"><p class="logo"><img src="images/tempLogoName.PNG" width="476" height="93" alt="Hearto no Eternal Primrose"'[ longdesc="Index.html" /></p>
+    <font color="#00CCFF"><font size="+1">
+    <a name="btt" id="btt"></a></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center" valign="middle"><marquee direction="left" scrollamount="3" ><p style="color: #FFCCCC;">&hearts; May your love be forever young &hearts; &ensp; *<b>EVENT!!</b> 20% OFF for Select Goods/Items, Check Products for more info.*</p></marquee></td>
+  </tr>
+  <tr>
+    <td height="30" colspan="3" bgcolor="#EEEEEE"><ul id="MenuBar1" class="MenuBarHorizontal">
+      <li><a href="Index.html">Home</a></li>
+      <li><a href="Products.html">Products</a>        </li>
+      <li>
+          <a href="FAQ.html">FAQ</a>
+      </li>
+      <li>
+          <a class="MenuBarItemSubmenu" href="#">ReachUs</a>
+        <ul>
+<li><a href="AboutUs.html">About</a></li>
+<li><a href="Contact.html">Contact</a></li>
+<li><a href="Request.html">Request</a></li>
+        </ul>
+      </li>
+      <li>
+          <a href="CompanyB.html">CompanyB</a>
+      </li>
+      <li>
+          <a href="Affiliates.html">Affiliates</a>
+      </li>
+    </ul></td>
+  </tr>
+  <tr>
+    <td height="474" width="143" rowspan="5">&nbsp;</td>
+    <td width="478" height="25" bgcolor="#FFFFFF" class="Title">Request or Feedback</td>
+    <td width="137" height="474" rowspan="5">&nbsp;</td>
+  </tr>
+  <tr>
+    <td bgcolor="#FFFFFF">
+    <div class="container3"><form action="mailto:leo7slashsides@gmail.com" onSubmit="return validateForm()" id="formAll">
+    <label for="name">Name</label>
+    <span id="sprytextfield1">
+    <input name="name" type="text" id="name" placeholder="Name & Surname / Nickname" maxlength="51" />
+    <span class="textfieldRequiredMsg">Required Field.</span><span class="textfieldMinCharsMsg">Min.9 Max 18</span><span class="textfieldMaxCharsMsg">Max Amount of characters allowed.</span></span>
+    
+    <label for="email">Email</label>
+    <span id="sprytextfield2">
+    <input name="email" type="text" id="email" placeholder="xxx@gmail.com" maxlength="51" />
+    <span class="textfieldRequiredMsg">Required field.</span><span class="textfieldInvalidFormatMsg">Invalid format.</span></span>
+    
+    <label for="email">Contact No</label>
+    <span id="sprytextfield2"><span id="sprytextfield3">
+    <input name="mobile" type="text" id="mobile" placeholder="45 85522367" maxlength="10" />
+<span class="textfieldMinCharsMsg">country code plus  number</span><span class="textfieldMaxCharsMsg">country code plus number</span></span>
+    <label for="gender">Gender</label><br/>
+    
+  <input name="gender" type="radio" id="male" value="male" checked>
+  <label for="male">M</label><br/>
+  
+  <input type="radio" name="gender" id="female" value="female">
+  <label for="female">F</label><br/>
+  
+  <input type="radio" name="gender" id="other" value="other" class="check1">
+  <label for="other">Other</label>
+  <input name="gender" type="text" id="genderO" placeholder="others." maxlength="21"><br/><br/>
+    
+    <label for="PP">Have you make any previous purchases from us?</label><br/>
+    <input type="radio" name="PP" id="Yes" value="Yes" class="check2">
+  <label for="Yes">Yes</label>
+  
+  <input name="PP" type="radio" id="No" value="No" checked>
+  <label for="female">No</label><br/><br/>
+  
+  <div id="active">
+  <label for="PPY">If yes what are they:</label><br/>
+  
+  <input type="checkbox"><span class="checkmark"></span>
+  <label class="container">Mystic Messenger Value Card TopUp</label><br/>
+
+
+<input type="checkbox"><span class="checkmark"></span>
+<label class="container">Amnesia Crowd Premium</label><br/>
+
+<input type="checkbox"><span class="checkmark"></span> 
+<label class="container">Tokimeiki Memorial Girl's Side 3</label><br/>
+
+ 
+<input type="checkbox"><span class="checkmark"></span>
+<label class="container">Merch</label><br/>
+
+<input type="checkbox"><span class="checkmark"></span>
+<label class="container1">Others:</label>
+<input name="otherP" type="text" class="otherItems" placeholder="pls specify" maxlength="80">
+  </div><br/><br/><br/>
+  
+ <div style="border:dotted; margin-bottom:20px; padding:10px;"> <label for="freeGift"><b>Event!!</b> Random small free gift from your choice will be delivered on your next order(will be under the email you use for this form):Pick 2</label><br />
+<p><input type="checkbox" ><span class="checkmark"></span>
+<label class="container">Amnesia Crowd</label>
+
+<input type="checkbox" ><span class="checkmark"></span>
+<label class="container">Mystic Messenger</label>
+
+<input type="checkbox" ><span class="checkmark"></span>
+<label class="container">Tokimeiki Girl's side</label><br />
+
+<input type="checkbox" ><span class="checkmark"></span>
+<label class="container">Any Indie Otome</label></p></div>
+    
+    <label for="RFC">Reason for Contacting us today: (select the pertaining dropdown to your issue)</label>
+    <select id="Reason" name="RFC">
+      <option value="feedback">Feedback</option>
+      <option value="request">Request</option>
+    </select><br/>
+    
+    <input name="PN" type="text" id="PN" placeholder="Product / Order No.; if none just fill as none" maxlength="18">
+    <span id="sprytextarea1">
+    <textarea name="feedback" class="txtheight" id="feedback" placeholder="enter your feedback/request here" cols="46" rows="7"></textarea>
+    <span id="countsprytextarea1">&nbsp;</span><span class="textareaRequiredMsg">Required field</span><span class="textareaMinCharsMsg">Enter at least a dash</span><span class="textareaMaxCharsMsg">You have exceed the amount of words allowed.</span></span>
+    <p><input type="reset" name="Reset" id="button" value="Cancel" onClick="cancelAll()" />
+     <input type="submit" name="button2" id="button2" value="Submit" onClick="submitAll()" /></p>
+  </form></div>
+    </td>
+  </tr>
+  <tr>
+    <td height="25" bgcolor="#FFFFFF" class="Title"> Other Services</td>
+  </tr>
+  <tr>
+    <td height="287" bgcolor="#FFFFFF"><br /><ul>
+    <li>Valentine Surpise Box</li>
+    <li>Christmas Surpise Box</li>
+    <li>Birthday Surprise Package</li>
+    </ul>
+    <p class="paragraph">Email us, at least 4 months in advance with; <br /> ->"Your Name"(how you want us to address you as), <br />->The important things: your address, the surprise package you are ordering, <br /> 
+    ->Your preferences:favourite color &amp; otome game character etc,<br /> 
+      ->Your birthday(if you ordered the birthday surprise package), <br /><br /> <b>And our staff will review your email and get back to you in 3 working days with confirmation of the details; the price etc and a paypal request for payment of the package. <u>*Do note that there wont be any entertainment of refunds after one month from the confirmation date, due to the nature of product.</u></b> </p>
+      
+      <p class="paragraph">^<a href="#btt">back to top</a></p>
+    </td>
+  </tr>
+  <tr>
+    <td height="40" bgcolor="#FFFFFF" class"roundBorder"><p class="socialMedia1"><a href="https://www.facebook.com/"><img src="images/fbIcon.png" width="30" height="30" /></a>&nbsp;&nbsp;<a href="https://twitter.com/"><img src="images/TWIcon.png" width="30" height="30" /></a></p>
+    <p class="copyright">© Hearto No Eternal Primrose 2019</p></td>
+  </tr>
+  <tr>
+    <td height="100" colspan="3">&nbsp;</td>
+  </tr>
+</table>
+<script type="text/javascript">
+var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {imgDown:"SpryAssets/SpryMenuBarDownHover.gif", imgRight:"SpryAssets/SpryMenuBarRightHover.gif"});
+var sprytextfield1 = new Spry.Widget.ValidationTextField("sprytextfield1", "none", {validateOn:["change"], minChars:9, maxChars:18});
+var sprytextfield2 = new Spry.Widget.ValidationTextField("sprytextfield2", "email", {validateOn:["change"]});
+var sprytextarea1 = new Spry.Widget.ValidationTextarea("sprytextarea1", {validateOn:["change"], minChars:1, maxChars:140, counterType:"chars_remaining", counterId:"countsprytextarea1"});
+var sprytextfield3 = new Spry.Widget.ValidationTextField("sprytextfield3", "none", {validateOn:["change"], minChars:11, maxChars:14, isRequired:false});
+</script>
+</body>
+</html>

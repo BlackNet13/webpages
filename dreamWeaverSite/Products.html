@@ -1,0 +1,853 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/main.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Hearto No Eternal Primrose</title>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<script src="jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+</script>
+<style>
+.copyright
+{
+float:right;
+padding-right:20px;
+}
+.socialMedia1 {
+	margin-top: 0px;
+	padding-left: 20px;
+	display: inline-block;
+}
+
+.socialMedia1:link
+{
+padding-top:20px;
+}
+
+.socialMedia1 a:hover
+{
+opacity:0.7;
+}
+
+
+/*cart and shop tabs */
+.container2
+{
+	width:880px;
+	height:auto;
+	clear:both;
+	margin-left:-5px;
+}
+
+	/* Style the tab */
+	
+.tablinks
+{
+height: 20px; width: 200px;
+border: none;
+background: #CFF;
+}
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  height: 100%;
+  width: 70%;
+}
+
+/*menu*/
+.menu
+{
+width: 360px;
+float: left;
+z-index:20;
+}
+
+.cart
+{
+width: 400px;
+background:#FFDBED;
+float: left;
+position: fixed;
+margin-left: 38%;
+overflow: scroll;
+height: 350px;
+z-index:50;
+}
+
+.cart > div,h2
+{
+padding-left:20px;
+}
+
+.columnLabels
+{
+margin-bottom:20px;
+}
+
+.columnLabels > label
+{
+margin-right:5%;
+}
+
+.productDetails1 { float: left;}
+.productPrice1 { float: left; width: 12%; }
+.productQuantity {margin-left: 75px;}
+.productQuantity1 { float: left; width: 10%;}
+.productQuantity1 > input { width:40px; margin-left:5%; margin-top:-5px; }
+.productTotal1 { float: left; height: 10px;width: 12%; margin-left: 2%;}
+.productRemoval { float: left; width: 9%; }
+.totals1 { float: right; text-align:right; height: auto; width: 200px; margin-top:40px; padding-right:20px; padding-bottom: 50px;}
+
+.checkout
+{
+margin-top:30px;
+}
+
+.innerMenu
+{
+	float:right;
+	margin-right:100px;
+	width:100px;
+}
+
+.innerMenu > select
+{
+	width: 180px;
+}
+
+.price
+{
+	margin-left:20px;
+	margin-top: -85px;
+}
+
+.product
+{
+	border:dotted 1px;
+	padding: 10px 10px 100px 10px;
+	margin-bottom:20px;
+	width: 360px;
+}
+
+.price, .productPrice1:before, .productTotal1:before, .totals-value:after {
+  content: '€';
+}
+
+.tab > ul
+{
+ list-style: none;
+ float: left;
+ display: inline-block;
+ width: 150px;
+}
+
+#externalD
+{
+background-image:url("images/tranpi.png");
+}
+
+#addSolo
+{
+float: right;
+}
+#show
+{
+list-style: none;
+margin-left: -30px;
+}
+.deleteItem, .subtractItem, .addItem
+{
+border: none;
+background: #FFDBED;
+}
+
+.deleteItem:hover
+{
+color:#366;
+}
+
+.subtractItem:hover
+{
+color:#366;
+}
+
+.addItem:hover
+{
+color:#366;
+}
+</style>
+<!-- InstanceEndEditable -->
+<style type="text/css">
+.navTxt 
+{
+text-align: right;
+}
+
+.navTxt a:active
+{
+color: #000000;
+}
+
+.navTxt a:link
+{
+color: #000000;
+}
+
+.navTxt a:hover
+{
+color: #dbedff;
+}
+
+body {
+	background-image: url(images/starBG.jpg);
+	border: none;
+}
+
+#logo1
+{
+position:relative;
+left:-50px;
+}
+</style>
+</head>
+
+<body onload="MM_preloadImages('images/AC1.1.jpg','images/AC2.2.jpg','images/AC3.3.jpg','images/AC4.4.jpg','images/TM1.1.png','images/TM2.2.png','images/TM3.3.png','images/TM4.4.png','images/AM1.png','images/AM2.png','images/AM3.png','images/AM4.png','images/o1.png','images/o2.png','images/o3.png','images/o4.png','images/HB1.png','images/HB2.png','images/HB3.png','images/HB4.4.png','images/SL1.1.jpg','images/SL2.jpg','images/SL3.3.jpg','images/SL4.4.jpg','images/LR1.png','images/LR2.png','images/LR3.png','images/LR4.4.jpg','images/mm2V.jpg')">
+<table width="760" border="0">
+  <tr>
+    <td width="164"><img src="images/transparent.png" width="146" height="169" alt="Logo" /></td>
+    <td colspan="2"><center><img src="images/tempLogoName.PNG" alt="title" name="logo1" width="476" height="93" id="logo1"/></center></td>
+  </tr>
+  <tr>
+    <td colspan="3" bgcolor="#F0FAF1"><marquee direction="left" scrollamount="3" width="760px" ><p style="color: #996699;">&hearts; May your love be forever young &hearts; &ensp; *<b>EVENT!!</b> 20% OFF for Select Goods/Items, Check Products for more info.*</p></marquee></td>
+  </tr>
+  <tr>
+    <td height="31" colspan="3" bgcolor="#F2AD9F" style="border-radius: 10px; padding-right:20px;" ><p class="navTxt"><a href="Index.html">Home</a> | <a href="Products.html">Products</a> | <a href="FAQ.html">FAQ</a> | <a href="AboutUs.html">About</a> | <a href="Contact.html">Contact</a> | <a href="Request.html">Request</a> | <a href="CompanyB.html">Company Blog</a> | <a href="Affiliates.html">Affiliates</a></p></td>
+  </tr>
+  <!-- InstanceBeginEditable name="Content" -->
+  <tr>
+  <div class="tab">
+    <td height="20" id="tabs" style="padding:10px; background-color: #CFF;">
+ <center><button class="tablinks" onClick="openTab(event, 'Products')">PRODUCTS</button></center></td>
+	<td height="20" id="tabs" style="padding:10px; background-color: #CFF;"><center><button class="tablinks" onClick="openTab(event, 'Merch')">MERCH</button></center></td>
+  <td height="20" id="tabs" style="padding:10px; background-color: #CFF;"><center><button class="tablinks" onClick="openTab(event, 'Others')">OTHERS</button></center></td>
+
+</td>
+</div>
+  </tr>
+  <tr>
+    <td height="400" colspan="3"><div id="externalD" style="float: left; height: auto; width: 700px;">
+    <div id="Products" class="tabcontent" style="display:block; border:none;">
+  <h3>Products</h3>
+  
+  <div class="menu">
+  
+   <div class="product">
+  <p class="image"><table width="352" border="1">
+  <tr>
+    <td width="90" height="90"><img src="images/aC1.jpg" alt="aC1" name="aC1" width="90" height="90" id="aC1" onmouseover="MM_swapImage('AC','','images/AC1.1.jpg',1)" onmouseout="MM_swapImgRestore()" /></td>
+    <td rowspan="4" width="246"><center><img src="images/AC.jpg" alt="AC" name="AC" width="182" height="327" id="AC" /></center></td>
+  </tr>
+  <tr>
+    <td height="90"><img src="images/aC2.jpg" alt="aC2" name="aC2" width="90" height="90" id="aC2" onmouseover="MM_swapImage('AC','','images/AC2.2.jpg',1)" onmouseout="MM_swapImgRestore()" /></td>
+  </tr>
+  <tr>
+    <td height="90"><img src="images/aC3.jpg" alt="aC3" name="aC3" width="90" height="90" id="aC3" onmouseover="MM_swapImage('AC','','images/AC3.3.jpg',1)" onmouseout="MM_swapImgRestore()" /></td>
+  </tr>
+  <tr>
+    <td height="90"><img src="images/aC4.jpg" alt="aC4" name="aC4" width="90" height="90" id="aC4" onmouseover="MM_swapImage('AC','','images/AC4.4.jpg',1)" onmouseout="MM_swapImgRestore()" /></td>
+  </tr>
+  </table>
+</p>
+  <p><b>Amnesia Crowd</b><span class="price">18.49 &euro;</span></p>
+  <p>(PSP)</p>
+  <button id="addSolo"class="add" href="#" type="submit"  data-id="01" data-name="Amnesia Crowd" data-price="18.49" data-type="PSP">Add to Cart</button>
+  </div>
+  
+  <div class="product">
+  <p class="image"><table width="352" border="1">
+  <tr>
+    <td width="90" height="90"><img src="images/tM1.jpg" alt="tM1" name="tm1" width="90" height="90" id="tm1" onmouseover="MM_swapImage('tm','','images/TM1.1.png',1)" onmouseout="MM_swapImgRestore()" /></td>
+    <td rowspan="4" width="246"> <center><img src="images/TM.png" alt="TM" name="tm" width="182" height="327" id="tm" /></center></td>
+  </tr>
+  <tr>
+    <td height="90"><img src="images/tM2.jpg" alt="tM2" name="tm2" width="90" height="90" id="tm2" onmouseover="MM_swapImage('tm','','images/TM2.2.png',1)" onmouseout="MM_swapImgRestore()" /></td>
+  </tr>
+  <tr>
+    <td height="90"><img src="images/tM3.jpg" alt="tM3" name="tm3" width="90" height="90" id="tm3" onmouseover="MM_swapImage('tm','','images/TM3.3.png',1)" onmouseout="MM_swapImgRestore()" /></td>
+  </tr>
+  <tr>
+    <td height="90"><img src="images/tM4.jpg" alt="tM4" name="tm4" width="90" height="90" id="tm4" onmouseover="MM_swapImage('tm','','images/TM4.4.png',1)" onmouseout="MM_swapImgRestore()" /></td>
+  </tr>
+  </table>
+</p>
+  <p><b>Tokimeki Memorial Girl's Side 3</b><span class="price"><strike>103.69 &euro;</strike> NOW 82.95&euro; 20% OFF</span></p>
+  <p>(PSP /<strike>DS</strike>) Premium Edition</p>
+    <button id="addSolo"class="add" href="#" type="submit"  data-id="02" data-name="TMGS 3" data-price="82.95" data-type="PSP">Add to Cart</button>
+  </form> 
+  </div>
+  
+  <div class="product">
+  <p class="image"><table width="352" border="1">
+  <tr>
+    <td width="90" height="90"><img src="images/aM1.jpg" alt="aM1" name="am1" width="90" height="90" id="am1" onmouseover="MM_swapImage('am','','images/AM1.png',1)" onmouseout="MM_swapImgRestore()" /></td>
+    <td rowspan="4" width="246"><center><img src="images/AM.png" alt="AM" name="am" width="182" height="327" id="am" /></center></td>
+  </tr>
+  <tr>
+    <td height="90"><img src="images/aM2.jpg" alt="aM2" name="am2" width="90" height="90" id="am2" onmouseover="MM_swapImage('am','','images/AM2.png',1)" onmouseout="MM_swapImgRestore()" /></td>
+  </tr>
+  <tr>
+    <td height="90"><img src="images/aM3.jpg" alt="aM3" name="am3" width="90" height="90" id="am3" onmouseover="MM_swapImage('am','','images/AM3.png',1)" onmouseout="MM_swapImgRestore()" /></td>
+  </tr>
+  <tr>
+    <td height="90"><img src="images/aM4.jpg" alt="aM4" name="am4" width="90" height="90" id="am4" onmouseover="MM_swapImage('am','','images/AM4.png',1)" onmouseout="MM_swapImgRestore()" /></td>
+  </tr>
+  </table>
+</p>
+  <p><b>Amnesia Memories</b><span class="price">12.04 &euro;</span></p>
+  <p>(PC) w/Steam key</p>
+ <button id="addSolo"class="add" href="#" type="submit"  data-id="03" data-name="Amnesia Memories" data-price="12.04" data-type="PC">Add to Cart</button> 
+  </div>
+  
+   <div class="product">
+  <p class="image"><table width="352" border="1">
+  <tr>
+    <td width="90" height="90"><img src="images/o1.jpg" alt="o1" name="o1" width="90" height="90" id="o1" onmouseover="MM_swapImage('o','','images/o1.png',1)" onmouseout="MM_swapImgRestore()" /></td>
+    <td rowspan="4" width="246"><center><img src="images/o.png" alt="o" name="o" width="182" height="327" id="o" /></center></td>
+  </tr>
+  <tr>
+    <td height="90"><img src="images/o2.jpg" alt="o2" name="o2" width="90" height="90" id="o2" onmouseover="MM_swapImage('o','','images/o2.png',1)" onmouseout="MM_swapImgRestore()" /></td>
+  </tr>
+  <tr>
+    <td height="90"><img src="images/o3.jpg" alt="o3" name="o3" width="90" height="90" id="o3" onmouseover="MM_swapImage('o','','images/o3.png',1)" onmouseout="MM_swapImgRestore()" /></td>
+  </tr>
+  <tr>
+    <td height="90"><img src="images/o4.jpg" alt="o4" name="o4" width="90" height="90" id="o4" onmouseover="MM_swapImage('o','','images/o4.png',1)" onmouseout="MM_swapImgRestore()" /></td>
+  </tr>
+  </table>
+</p>
+  <p><b>Ozmafia!</b><span class="price">22.78 &euro;</span></p>
+  <p>(PC) w/Steam key</p>
+  
+   <button id="addSolo"class="add" href="#" type="submit"  data-id="04" data-name="Ozmafia!" data-price="22.78" data-type="PSP">Add to Cart</button> 
+  </div>
+  
+  <div class="product">
+  <p class="image"><table width="352" border="1">
+  <tr>
+    <td width="90" height="90"><img src="images/hb1.jpg" alt="hb1" name="hb1" width="90" height="90" id="hb1" onmouseover="MM_swapImage('hb','','images/HB1.png',1)" onmouseout="MM_swapImgRestore()" /></td>
+    <td rowspan="4" width="246"><center><img src="images/HB.png" alt="HB" name="hb" width="182" height="327" id="hb" /></center></td>
+  </tr>
+  <tr>
+    <td height="90"><img src="images/hb2.jpg" alt="hb2" name="hb2" width="90" height="90" id="hb2" onmouseover="MM_swapImage('hb','','images/HB2.png',1)" onmouseout="MM_swapImgRestore()" /></td>
+  </tr>
+  <tr>
+    <td height="90"><img src="images/hb3.jpg" alt="hn3" name="hb3" width="90" height="90" id="hb3" onmouseover="MM_swapImage('hb','','images/HB3.png',1)" onmouseout="MM_swapImgRestore()" /></td>
+  </tr>
+  <tr>
+    <td height="90"><img src="images/hb4.png" name="hb4" width="90" height="90" id="hb4" onmouseover="MM_swapImage('hb','','images/HB4.4.png',1)" onmouseout="MM_swapImgRestore()" /></td>
+  </tr>
+  </table>
+</p>
+  <p><b>Hatoful Boyfriend</b><span class="price">6.83 &euro;</span></p>
+  <p>(PC) w/Steam key</p>
+  <button id="addSolo"class="add" href="#" type="submit"  data-id="05" data-name="Hatoful Boyfriend" data-price="6.83" data-type="PC">Add to Cart</button>
+  </div>
+  
+  <div class="product">
+  <p class="image"><table width="352" border="1">
+  <tr>
+    <td width="90" height="90"><img src="images/sl1.jpg" alt="sl1" name="sl1" width="90" height="90" id="sl1" onmouseover="MM_swapImage('sl','','images/SL1.1.jpg',1)" onmouseout="MM_swapImgRestore()" /></td>
+    <td rowspan="4" width="246"><center><img src="images/SL.png" alt="SL" name="sl" width="182" height="327" id="sl" /></center></td>
+  </tr>
+  <tr>
+    <td height="90"><img src="images/sl2.png" alt="sl2" name="sl2" width="90" height="90" id="sl2" onmouseover="MM_swapImage('sl','','images/SL2.jpg',1)" onmouseout="MM_swapImgRestore()" /></td>
+  </tr>
+  <tr>
+    <td height="90"><img src="images/sl3.jpg" alt="sl3" name="sl3" width="90" height="90" id="sl3" onmouseover="MM_swapImage('sl','','images/SL3.3.jpg',1)" onmouseout="MM_swapImgRestore()" /></td>
+  </tr>
+  <tr>
+    <td height="90"><img src="images/sl4.png" alt="sl4" name="sl4" width="90" height="90" id="sl4" onmouseover="MM_swapImage('sl','','images/SL4.4.jpg',1)" onmouseout="MM_swapImgRestore()" /></td>
+  </tr>
+  </table>
+</p>
+  <p><b>Storm Lovers Kai!</b><span class="price">59.01 &euro;</span></p>
+  <p>(PSP)</p>
+  <button id="addSolo"class="add" href="#" type="submit"  data-id="06" data-name="Storm Lovers Kai!" data-price="59.01" data-type="PSP">Add to Cart</button>
+  </div>
+  
+  <div class="product">
+  <p class="image"><table width="352" border="1">
+  <tr>
+    <td width="90" height="90"><img src="images/lr1.jpg" alt="lr1" name="lr1" width="90" height="90" id="lr1" onmouseover="MM_swapImage('lr','','images/LR1.png',1)" onmouseout="MM_swapImgRestore()" /></td>
+    <td rowspan="4" width="246"><center><img src="images/LR.png" alt="LR" name="lr" width="182" height="327" id="lr" /></center></td>
+  </tr>
+  <tr>
+    <td height="90"><img src="images/lr2.jpg" alt="lr2" name="lr2" width="90" height="90" id="lr2" onmouseover="MM_swapImage('lr','','images/LR2.png',1)" onmouseout="MM_swapImgRestore()" /></td>
+  </tr>
+  <tr>
+    <td height="90"><img src="images/lr3.jpg" alt="lr3" name="lr3" width="90" height="90" id="lr3" onmouseover="MM_swapImage('lr','','images/LR3.png',1)" onmouseout="MM_swapImgRestore()" /></td>
+  </tr>
+  <tr>
+    <td height="90"><img src="images/lr4.jpg" alt="lr4" name="lr4" width="90" height="90" id="lr4" onmouseover="MM_swapImage('lr','','images/LR4.4.jpg',1)" onmouseout="MM_swapImgRestore()" /></td>
+  </tr>
+  </table>
+</p>
+  <p><b>Otometeki Koi Kakumei * Love Revo!!</b><span class="price">&nbsp;<strike>171.18&euro;</strike>NOW @136.93 &euro;</span></p>
+  <p>(DS)</p>
+  <button id="addSolo"class="add" href="#" type="submit"  data-id="07" data-name="Love Revo!" data-price="136.93" data-type="PSP">Add to Cart</button>
+  </div>
+  
+  </div>
+  
+ </div>
+
+<div id="Merch" class="tabcontent" style="border: none;">
+
+  <h3>Merch</h3>
+  
+  <div class="menu">
+  
+  <div class="product">
+   <p class="image"><table width="352" border="1">
+  <tr>
+    
+  <td rowspan="4" width="352" height="360"><img src="images/noStock.jpg" width="352" height="360" alt="noStock" /></td>
+  
+  </tr>
+  </table>
+</p>
+  <p><b>Amnesia Memories(items)</b><span class="price">4.20 &euro;</span></p>
+  <p>Limited Edition</p>
+  
+  </div>
+  
+  <div class="product">
+   <p class="image"><table width="352" border="1">
+  <tr>
+   <td width="352" height="360"><a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image42','','images/mm2V.jpg',1)"><img src="images/mm1V.jpg" name="Image42" width="352" height="360" border="0" id="Image42" /></a></td>
+  </tr>
+  </table>
+</p>
+  <p><b>Mystic Messenger(VIP)</b><span class="price">62.02 &euro;</span></p>
+  <p>VIP Package</p>
+    <button id="addSolo"class="add" href="#" type="submit"  data-id="09" data-name="MM VIP" data-price="62.02" data-type="VIP">Add to Cart</button>
+  </div>
+  
+  <div class="product">
+   <p class="image"><table width="352" border="1">
+  <tr>
+    <td rowspan="4" width="352" height="360"><img src="images/noStock.jpg" width="352" height="360" alt="noStock" /></td>
+  </tr>
+  </table>
+</p>
+  <p><b>Mystic Messenger(Item)</b><span class="price">fr 4.20 &euro;</span></p>
+  <p>Body Pillow Cover, Cups, Key chain, Cushion Cover</p>
+  </div>
+  
+  </div>
+  
+</div>
+
+
+<div id="Others" class="tabcontent" style="border:none;">
+
+  <h3>Others</h3>
+  
+  <div class="menu" style="padding:80px;">
+  
+ <p>Recomendations(Free or Indie Games)</p>
+ <ul>
+  <li><b>Shall we date Mobile Series</b>(Online, Mobile)</li>
+  <li><b>Princess Closet</b>(Online, Mobile)</li>
+  <li><b>Romantic Diary</b>(Online, Mobile)</li>
+  <li><b>Freakquency</b>(PC)</li>
+  <li><b>Realiastiar</b>(PC)</li>
+ <li><b>Pacthesis</b>(Online, PC)</li>
+ </ul>
+  </div> 
+  
+</div>
+    </div> 
+    
+    <div class="cart">
+<h2>Cart</h2>
+
+<div class="columnLabels">
+    <label class="productDetails1">Product</label>
+    <label class="productQuantity">Quantity/TotalPrice/Type</label> 	
+</div>
+  
+<ul id="show">
+<li>No Items in Cart</li>
+</ul>
+<div>Total:&nbsp;&nbsp;<span id="totalCost">0.00</span>€ &nbsp;</div>
+<div>You&nbsp;have&nbsp;<span id="totalCount">0</span>&nbsp;items&nbsp;in&nbsp;your&nbsp;cart</div>
+
+ 
+ <div class="totals1">
+ 
+    <button id="clear">Clear Cart</button>
+    <button id="submit" class="checkout" onClick="checkout()">Checkout</button>
+    
+ </div>
+      
+</div>
+  </tr>
+  <tr>
+    <td height="55" colspan="3"><div style=" height: 40px; padding:10px; background: white; border-radius:10px;"><p style=" display:inline-block;">follow us @:</p><p class="socialMedia1"><a href="https://www.facebook.com/"><img src="images/fbIcon.png" width="30" height="30" /></a>&nbsp;&nbsp;<a href="https://twitter.com/"><img src="images/TWIcon.png" width="30" height="30" /></a></p>
+    <p class="copyright">© Hearto No Eternal Primrose 2019</p></div>  
+  </tr>
+  <script>
+function openTab(evt, productType) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(productType).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+//^tabs
+
+
+//////
+
+
+
+
+/////////
+
+
+var shipCost = 0.00;
+$("#shipto").change(function(event)
+{
+var y = document.getElementById("shipto").value;
+if (y == "Asia")
+{
+console.log("Asia");
+shipCost = 18.00;
+
+}
+else if (y == "EU_America")
+{
+console.log("EU_America");
+shipCost = 10.00;
+}
+else if (y == "Africa")
+{
+console.log("Africa");
+shipCost = 30.00;
+}
+
+else
+{
+console.log("Australia");
+shipCost= 35.00;
+}
+document.getElementById("showShip").innerHTML = shipCost;
+});
+
+
+
+////////////////////
+
+$(".add").click(function(event)
+{
+event.preventDefault();
+var id =$(this).attr("data-id");
+var name =$(this).attr("data-name");
+var price =Number($(this).attr("data-price"));
+var type =$(this).attr("data-type");
+
+addItem(id, name, price, 1, type);
+displayCart();
+});
+
+
+$("#clear").click(function(event)
+{
+clear();
+});
+
+
+function displayCart()
+{
+var cartArray = updateCart();
+var output = "";
+for (var i in cartArray)
+{
+output += "<li>"+"<button class='deleteItem' data-id='"
++cartArray[i].id+"'>x</button>"+"["
++cartArray[i].id+"]"
++cartArray[i].name+"&nbsp;"
++"<button class='subtractItem' data-id='"
++cartArray[i].id+"'>-</button>"+""
++cartArray[i].quantity+"<button class='addItem' data-id='"
++cartArray[i].id+"'>+</button>"
++"&nbsp;"
++cartArray[i].total+""+"&nbsp;"+"&nbsp;"+cartArray[i].type+""+"</li>"
+}
+$("#show").html(output);
+$("#totalCount").html(countCart() );
+$("#totalCost").html(totalCart() );
+}
+
+
+$("#show").on("click",".deleteItem", function(event)
+{
+var id = $(this).attr("data-id");
+removeItemAll(id);
+displayCart();
+}
+);
+
+$("#show").on("click",".subtractItem", function()
+{
+var id = $(this).attr("data-id");
+removeItem(id);
+displayCart();
+});
+
+$("#show").on("click",".addItem", function()
+{
+var id = $(this).attr("data-id");
+addItem(id, name, 0 , 1);
+displayCart();
+});
+
+//**********//
+//cart functions
+var cart =[ ]; // empty cart^
+
+
+var Item = function(id, name, price, quantity ,type)
+{
+this.id = id //different every item
+this.name= name //same throughout for dropdown
+this.price = price //different base on dropdown
+this.quantity = quantity //editable 
+this.type = type //different base on dropdown : default if no color choice
+
+}
+//creates empty item^
+
+
+function addItem(id, name, price, quantity, type)
+{
+	
+for (var i in cart)
+{
+if (cart[i].id === id) 
+{
+cart[i].quantity +=quantity;
+saveCart();
+return; //stop loop
+}
+}
+var item = new Item(id, name, price, quantity, type);
+cart.push(item);
+saveCart();
+}
+//add item and checks for same id 
+
+
+//addItem(455,"brush" , 1.99, 1, "default", "small");
+//add new item to cart
+
+//console.log(cart); //shows external cart
+//console.log(cart[0]); //shows the first item of cart
+//console.log(cart[0].name);/* shows the name of first item in cart*/
+//for checking cart^
+
+function removeItem(id)
+{
+for (var i in cart)
+{
+if (cart[i].id === id)
+{
+cart[i].quantity -=1;
+if(cart[i].quantity === 0)
+{
+cart.splice(i, 1) /*removes object from (position and 1 objectonly)*/
+}
+saveCart();
+break;
+}
+}
+saveCart();
+}
+ //removes one ^
+ 
+
+function removeItemAll(id)
+{
+for (var i in cart)
+{
+if(cart[i].id === id)
+{
+cart.splice(i,1);
+saveCart();
+break;
+}
+}
+saveCart();
+}
+//removes all X
+
+
+function clear()
+{
+cart=[];
+saveCart();
+location.reload();
+}
+
+function countCart()
+{ var totalCount=0;
+for (var i in cart) 
+{
+totalCount +=cart[i].quantity;
+}
+return totalCount;
+}
+//count total items in cart
+
+
+function totalCart()
+{
+var totalCost = 0;
+for (var i in cart)
+{
+totalCost +=cart[i].price * cart[i].quantity;
+}
+return totalCost.toFixed(2);
+}
+// total cost 
+
+
+function updateCart()
+{
+var cartCopy =[];
+for (var i in cart)
+{
+var item = cart[i];
+var itemCopy = {};
+for(var p in item)
+{
+itemCopy[p] = item[p];
+}
+itemCopy.total = (item.price * item.quantity).toFixed(2);
+cartCopy.push(itemCopy);
+}
+//document.getElementById("tax").innerHTML = tax;
+//document.getElementById("gtotalCost").innerHTML = gTotaL;
+document.getElementById("show").write = cartCopy;
+return cartCopy;
+}
+//display list of cart items
+
+//extraV
+function saveCart()
+{
+localStorage.setItem("shoppingCart", JSON.stringify(cart));
+}
+//save in local storage to make information persist
+
+function loadCart()
+{
+cart = JSON.parse(localStorage.getItem("shoppingCart") );
+}
+//loads item in local storage
+
+
+var shipToW = [];
+
+function shipping()
+{
+var x = document.getElementById("shipto").value;
+document.getElementById("sr").innerHTML = "You selected: " + x;
+if (x === "Asia")
+{
+shipToW = 18.00;
+}
+elseif (x === "EU_America")
+{
+shipToW = 10.00;
+}
+elseif (x === "Africa")
+{
+shipToW = 30.00;
+}
+elseif (x === "Australia")
+{
+shipToW = 35.00;
+}
+document.getElementById("shipFEE").write = shipToW;
+return;
+}
+
+
+function checkout()
+{
+alert("Your Purchase Order has been forwarded to us! Thank you for your support!");
+}
+
+
+loadCart();
+displayCart();
+//^cart
+</script>
+  <!-- InstanceEndEditable -->
+</table>
+</body>
+<!-- InstanceEnd --></html>
