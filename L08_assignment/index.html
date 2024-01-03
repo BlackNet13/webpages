@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://unpkg.com/fullpage.js/dist/fullpage.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="stylesheet/style.css" rel="stylesheet" type="text/css"/>
+    <link href='https://fonts.googleapis.com/css?family=Beth Ellen' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Aleo' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+ 
+  </head>
+  <body>
+    <div id="fullpage">
+      
+
+      <div class="section"><h6>About Me</h6>
+        <!--<a href="#section2">Go to Section 3</a>
+      <a href="#section2/1">Go to Section 3 Slide 2</a>-->
+      <nav class="navbar navbar-expand-sm navbar-custom">
+        <div class="container-fluid">
+            <div class="boxes">
+                <div class="box"></div><br>
+                <div class="box"></div><br>
+                <div class="box"></div><br>
+            </div>
+            
+
+            
+            <img src='imgs/me.jpg' style='width: 100px; height: 137px; object-fit: cover; border-radius: 20%; margin-right:20px;'>
+            <a class="navbar-brand" href="#">Yvonne</a><p id="counter">0</p>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            
+            </div>
+
+                <button class="play">Start</button>
+                <button class="pause">Pause</button>
+
+               
+
+        </div>
+       
+    </nav>
+   
+   
+
+    <div class='container-fluid'>
+        <div class='row'>
+            <div class="main">
+                
+                <ul class="itemStagger">
+                    <li><i>Job:</i> Student/Part Time Restaurent Manager<br><br></li> 
+                    <li><i>Age:</i> 29<br><br></li>
+                    <li><i>Awards:</i> Director's Role of Honor 2022, Edusave Award for Achievement , Good Leadership and Service 2012 & 2016, Edusave Certificate of Academic Achievement 2012,2013,2015,2016, Director's List 2012,2015,2016<br><br></li>
+                    <li><i>Description:</i> I might look lost but at least my life is going on an incline.</li>
+                </ul>
+                
+               
+                <br>
+                <p>Image Source: <a href='https://www.rpgfan.com/game/honkai-star-rail/'>Honkai Star Rail</a>, <a href='https://droidjournal.com/solo-leveling-season-2-release-dates-and-more-details/18259'>Solo Leveling</a></p>
+
+            </div>
+            <div class='sub'>
+                <img src='imgs/HonkaiStarRail.jpg' style='height:50%;'><br>
+                <img src='imgs/koreanColdNoodles.jpg' style='height:50%;'>
+                <img src='imgs/SoloLeveling.jpg' style='height:50%;'>
+                
+
+            </div>
+        </div>
+    </div>
+      </div>
+      <div class="section section2">
+        <div class="slide">
+            <div class="contents"><h5><b>Contact ME</b></h5>
+            <span>Mail: evon.work2@gmail.com</span><br>
+            <span>Mobile: +65 XXXX XXXX</span><br>
+            <i class="bi bi-linkedin"></i>  <i class="bi bi-facebook"></i>  <i class="bi bi-instagram"></i>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="contents">
+                <h5>Other Links</h5>
+                <ul>
+                    <li><a href="https://blacknet13.github.io/webpages/L08_exercise1/aboutMe.html">Exercise 1</a></li>
+                    <li><a href="https://blacknet13.github.io/webpages/L08_exercise2">Exercise 2</a></li>
+                </ul>
+                </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://unpkg.com/fullpage.js/dist/fullpage.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+  
+  <script>
+
+    $(document).ready(function () {
+      $("#fullpage").fullpage({
+        sectionsColor: ["#03A9F4", "#2ECC71", "#00BCD4"],
+        navigation: true,
+        navigationPosition: "right",
+        anchors: ["section1", "section2"],
+        afterLoad: function (origin, destination, direction) {
+          if (destination.index == 1) {
+            var spinTitle = anime({
+targets: ".section2",
+translateY:-50,
+loop:true,
+direction:"alternate",
+autoplay: false,
+duration: 2000
+});
+
+        spinTitle.play(); // Play the Anime.js animation
+          }else if(destination.index == 0){
+            const items = document.querySelectorAll('.itemStagger li');
+
+
+items.forEach(item => {
+    item.style.opacity = 0;
+});
+
+anime({
+    targets: items ,
+    opacity: 1,
+    duration: 1000, // Duration of the animation in milliseconds
+    delay: anime.stagger(100), // Stagger the animation by 100ms for each item
+    easing: 'easeInOutQuad' // Easing function
+});
+
+/*----*/
+const counterElement = document.getElementById('counter');
+
+const targetNumber = 500; // max num to animate counter to
+
+anime({
+    targets: counterElement,
+    innerHTML: [0, targetNumber],
+    round: 1, // Round numbers to whole integers
+    easing: 'linear', // Use linear easing for a consistent counting speed
+    duration: 3000 // Adjust the duration (in milliseconds) for the counting animation
+});
+
+/*----*/
+
+var animation = anime({
+  targets: '.boxes',
+  translateX: 650,
+  opacity:0.5,
+  loop:true,
+  direction: 'alternate',
+  autoplay:false,
+  easing: 'easeInOutQuad',
+});
+
+document.querySelector('.play').onclick = animation.play;
+document.querySelector('.pause').onclick = animation.pause;
+          }
+        },
+      });
+      
+    });
+
+    /*----*/
+
+   
+  </script>
+    </body>
+</html>

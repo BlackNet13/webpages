@@ -1,0 +1,57 @@
+.navbar-custom{
+    background: #a2c4c9;
+    padding:3rem;
+}
+
+.navbar-brand{
+    font-size: 2rem;
+    margin-top:-1rem;
+    font-family: 'Beth Ellen';
+}
+
+h3{
+    font-family: 'Aleo';
+}
+
+h6{
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+
+}
+
+.contents{
+    text-align: center;
+}
+
+#heroImg{
+    text-align:center;
+}
+
+.main{
+    background:#741b47;
+    opacity: 0.7;
+    color:white;
+    height:70vh;
+    width:60vw;
+    margin-left:5vw;
+    padding:2%;
+    z-index:1;
+}
+
+.sub{
+    background: grey;
+    float:right;
+    width:30vw;
+    height:70vh;
+    padding:0;
+    overflow:scroll;
+    z-index:1;
+}
+
+.box{
+    height:100px;
+    width:100px;
+    z-index:10;
+    background:grey;
+}
