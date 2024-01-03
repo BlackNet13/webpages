@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://unpkg.com/fullpage.js/dist/fullpage.min.css"/>
+    <style>
+        .section{
+            font-size: 5rem;
+            text-align: center;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="fullpage">
+      <!--<a href="#section2">Go to Section 3</a>
+      <a href="#section1/1">Go to Section 3 Slide 2</a>-->
+
+      <div class="section">Section 1</div>
+      <div class="section section2">Section 2</div>
+      <div class="section">
+        <div class="slide">Slide 1</div>
+        <div class="slide">Slide 2</div>
+        <div class="slide">Slide 3</div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://unpkg.com/fullpage.js/dist/fullpage.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+  
+  <script>
+
+    $(document).ready(function () {
+      $("#fullpage").fullpage({
+        sectionsColor: ["#03A9F4", "#2ECC71", "#00BCD4"],
+        navigation: true,
+        navigationPosition: "right",
+        anchors: ["section1", "section2", "section3"],
+        afterLoad: function (origin, destination, direction) {
+          if (destination.index == 1) {
+            var spinTitle = anime({
+targets: ".section2",
+rotate: "360deg",
+autoplay: false,
+duration: 5000
+});
+
+        spinTitle.play(); // Play the Anime.js animation
+          }
+        },
+      });
+      
+    });
+  </script>
+    </body>
+</html>
