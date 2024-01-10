@@ -11,7 +11,7 @@
     <link href="https://unpkg.com/tippy.js@6.3.6/dist/tippy.css" rel="stylesheet">
     
     <style>
-        h2 {
+        h1, h2 {
             width: 100%;
             text-align: center;
         }
@@ -49,7 +49,8 @@
     <div id="fullpage">
 
         <div class="section">
-            <h2>Polytechnics in Singapore.</h2>
+            <h1>Polytechnics in Singapore.</h1>
+            <h2>Polytechnic Locations</h2>
             <!--<img class="map" src="singapore.svg" alt="singapore" />-->
             <!--<object id="svg" class="map" type="image/svg+xml" data="singapore.svg"></object>-->
 
@@ -122,6 +123,7 @@
 
         </div>
         <div class="section section2">
+            <h2>Courses in Republic Polytechnic</h2>
             <div class="contain">
                 <table id="tbl" class="display">
                     <thead>
@@ -381,6 +383,7 @@
             </div>
         </div>
         <div class="section">
+            <h2>Student Population</h2>
             <div class="container box3">
                 <canvas id="chart"></canvas>
             </div>
@@ -444,7 +447,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             /*chart-*/
 
-        const labels = ["Singapore Poly", "Ngee Ann Poly", "Temasek Poly", "Nanyang Poly", "Republic Poly"];
+        const labels = ["Republic Poly", "Temasek Poly", "Ngee Ann Poly", "Nanyang Poly", "Singapore Poly"];
 
 const data = {
     labels: labels,
@@ -459,7 +462,7 @@ const data = {
                 "rgb(54, 60, 100)",
             ],
             borderColor: "rgb(255, 99, 132)",
-            data: [3200, 2400, 3000, 2000, 3300, 2000],
+            data: [14400, 13000, 14800, 16220, 15900],
             responsive: true,
         },
 

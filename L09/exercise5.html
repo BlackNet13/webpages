@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tippy.js</title>
+  </head>
+
+  <body>
+    <button id="myButton">My button</button>
+
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script>
+      tippy("#myButton", {
+        content: "My tooltip!",
+        placement: "right", //place tippy to the right 
+        trigger: 'click', //trigger tippy on click
+        interactive: true, //allow interaction in tippy (e.g. click and select text) 
+        content: '<strong>Bolded <span style="color: aqua;">content</span></strong>', 
+        allowHTML: true, //allow HTML in tippy content
+        delay: 500, //delay tippy showing and hiding (in milliseconds) 
+        followCursor: true //get tippy to follow mouse cursor
+      });
+    </script>
+  </body>
+</html>
