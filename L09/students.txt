@@ -1,0 +1,5 @@
+Republic Polytechnic: 14400
+Temasek Polytechnic: 13000
+Ngee Ann Polytechnic: 14800
+Nanyang Polytechnic: 16220
+Singapore Polytechnic: 15900
