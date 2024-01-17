@@ -1,0 +1,129 @@
+.cls-1 {
+  fill: #a62427;
+}
+
+.cls-1, .cls-2 {
+  stroke-width: 0px;
+}
+
+.cls-2 {
+  fill: #f5f6f7;
+}
+
+#header,
+#footer {
+  position: fixed;
+  display: block;
+  width: 100%;
+  z-index: 10;
+  font-size: 1rem;
+  text-align: center;
+  color: #f2f2f2;
+}
+
+#footer {
+  background: #333;
+  bottom: -60px;
+  height: 100px;
+}
+
+#footer p {
+  margin-top: 5px;
+}
+
+.section1 {
+  overflow: scroll;
+  padding-top: 50px;
+}
+
+ul,
+li {
+  list-style-type: none;
+  margin-left: -15px;
+}
+
+.itemStagger li {
+  opacity: 0;
+}
+
+.map {
+  display: block;
+  margin: -10vw auto;
+  padding: 0;
+  width: 60vw;
+}
+
+.nav-item {
+  margin-right: 30px;
+}
+
+.contain {
+  background: rgba(76, 224, 220, 0.8);
+}
+
+.box3 {
+  color: black !important;
+  overflow: scroll;
+  padding-top: 10px;
+}
+
+.container {
+  height: 80vh;
+  padding: 20px;
+  margin-top: 20px;
+  display: block;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.blue {
+  /* Blue color style */
+  filter: hue-rotate(210deg);
+}
+
+.red {
+  /* Red color style */
+  filter: hue-rotate(0deg);
+}
+
+.s2H6 {
+  margin-bottom: 50px;
+}
+
+.center {
+  text-align: center;
+}
+
+.svgMap {
+  margin-top: 10px;
+  width: 70%;
+  height: 70%;
+  min-width: 40vw;
+  align-self: center;
+}
+
+.info,
+.info2 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.info span,
+.info2 span {
+  text-align: center;
+}
+
+.info2 {
+  width: 500px;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.float {
+  float: right;
+  font-size: 0.8rem;
+}
+
+table.dataTable tbody tr {
+  background-color: palegreen;
+}
