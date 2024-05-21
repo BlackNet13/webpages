@@ -106,7 +106,6 @@ body {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0) 25%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0) 75%);
     animation: shimmer 8s 5s infinite;
     pointer-events: none;
-    /* Ensure it doesn't block interactions */
 }
 
 /*---main---*/
@@ -228,13 +227,18 @@ body {
 
 @media screen and (min-width:350px) and (orientation:portrait){
     .main {
+        height: 50vh;
         margin: 60% auto;
-    
     }
 
     .imgAnim {
         width: 100%;
         max-height:(30vh,50px);
+    }
+
+    .container {
+        height:50%;
+        border-radius: 80%;
     }
 
 }
