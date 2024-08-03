@@ -1,0 +1,304 @@
+:root {
+    --clr-body-bg: hsl(0 0% 90%);
+    --clr-card-bg: hsl(0 0% 100%);
+    --clr-text: hsl(0 0% 15%);
+    --clr-heading: hsl(0 0% 25%);
+}
+
+html {
+    overflow-y: hidden;
+}
+
+h1,
+h2,
+h3 {
+    color: var(--clr-heading);
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: black;
+    color: var(--clr-text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+#border {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background:  rgba(6, 58, 198, 0.6);
+    z-index: -1;
+    pointer-events: none;
+}
+
+#staticCanvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    pointer-events: none;
+}
+
+@keyframes noise {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    10% {
+        transform: translate(-100px, 100px);
+    }
+
+    20% {
+        transform: translate(150px, -100px);
+    }
+
+    30% {
+        transform: translate(-100px, 100px);
+    }
+
+    40% {
+        transform: translate(100px, -150px);
+    }
+
+    50% {
+        transform: translate(-100px, 200px);
+    }
+
+    60% {
+        transform: translate(-200px, -100px);
+    }
+
+    70% {
+        transform: translateY(50px, 100px);
+    }
+
+    80% {
+        transform: translate(100px, -150px);
+    }
+
+    90% {
+        transform: translate(0, 200px);
+    }
+
+    100% {
+        transform: translate(-100px, 100px);
+    }
+}
+
+.content-container {
+    position: relative;
+    clip-path: inset(0 round 25px);
+    background-color: var(--clr-body-bg);
+    width: 98vw;
+    height: 98vh;
+    margin:5px auto;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    z-index: 1;
+}
+
+/* Container */
+.container {
+    max-width: 1000px;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+
+}
+
+/* Header */
+header {
+    background-color: #000;
+    color: #fff;
+    width: 100%;
+    padding: 15px;
+    text-align: left;
+    font-size: 1.5em;
+    position: fixed;
+}
+
+header span {
+    padding-left: 5vw;
+}
+
+/* Navigation */
+nav {
+    margin: 5px 30px;
+    display: inline-table;
+    text-align: left;
+    float: right;
+    justify-content: center;
+
+}
+
+nav a {
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 0.5em;
+    color: white;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+
+.v-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.mini {
+    border: none;
+    background: none;
+    text-decoration-line: underline;
+    text-align: center;
+    margin: 4px 2px;
+    cursor: pointer;
+    text-shadow: none;
+    -webkit-text-stroke: 0px;
+}
+
+.color-picker>fieldset {
+    /*border:0;*/
+    display: flex;
+    gap: 2rem;
+    background: #fff;
+    width: fit-content;
+    max-height: 100px;
+    padding: 0.5rem 1rem;
+    border-radius: 0 0 1rem 1rem;
+    margin-inline: auto;
+    position: fixed;
+    margin-top: 10vh;
+    margin-right: 20px;
+    right: 0;
+    transition: height 0.3s ease, opacity 0.3s ease;
+    overflow: hidden;
+}
+
+.color-picker>fieldset .contentMin {
+    transition: opacity 0.3s ease;
+}
+
+.color-picker>fieldset .contentMin.minimized {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.color-picker>fieldset .contentMin:not(.minimized) {
+    opacity: 1;
+}
+
+.color-picker input[type='radio'] {
+    appearance: none;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 3px solid var(--radio-color, currentColor);
+    outline-offset: 10px;
+    /*not working, suppose to create spacing between inner and out border*/
+    border-radius: 50%;
+}
+
+.color-picker input[type='radio']:checked {
+    background-color: var(--radio-color);
+}
+
+legend {
+    width: 100%;
+    text-align: center;
+}
+
+.txtEfx {
+    color: white;
+    /* Text color */
+    -webkit-text-stroke: 1.2px black;
+    font-size: 1.2em;
+    text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+}
+
+.default,
+input[type="radio"]#default {
+    --radio-color: pink;
+}
+
+.theme2,
+input[type="radio"]#theme2 {
+    --radio-color: blue;
+}
+
+.theme3,
+input[type="radio"]#theme3 {
+    --radio-color: green;
+}
+
+:root:has(#default:checked) {
+    --clr-body-bg: hsl(310 50% 90%);
+    --clr-card-bg: hsl(310 50% 100%);
+    --clr-text: hsl(310 50% 15%);
+    --clr-heading: hsl(310 50% 25%);
+}
+
+:root:has(#theme2:checked) {
+    --clr-body-bg: hsl(222, 69%, 50%);
+    --clr-card-bg: hsl(210, 50%, 48%);
+    --clr-text: hsl(226, 84%, 24%);
+    --clr-heading: hsl(210, 60%, 40%);
+}
+
+
+/* Main Content */
+.main-content {
+    margin-top: 70px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+
+    nav a {
+        margin: 10px 0;
+    }
+
+
+}
