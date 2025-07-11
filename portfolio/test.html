@@ -1,0 +1,102 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script>
+      AFRAME.registerComponent('hover-scale', {
+        init: function () {
+          this.el.addEventListener('mouseenter', () => {
+            this.el.object3D.scale.set(1.2, 1.2, 1.2);
+          });
+          this.el.addEventListener('mouseleave', () => {
+            this.el.object3D.scale.set(1, 1, 1);
+          });
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <!-- <a-scene  cursor="rayOrigin: mouse; fuse: false"
+  raycaster="objects: .raycastable">
+  
+      <a-entity position="0 1.6 0">
+        <a-camera>
+          <a-cursor
+            fuse="false"
+            raycaster="objects: .nav-button"
+            material="color: white; shader: flat"
+          ></a-cursor>
+        </a-camera>
+      </a-entity>
+
+
+      <a-entity position="0 1.5 -2">
+
+        <a-box
+          class="nav-button raycastable"
+          position="-1 0 0"
+          depth="0.2"
+          height="0.6"
+          width="0.8"
+          color="#4CC3D9"
+          hover-scale
+          event-set__click="_event: click; _target: #text; text.value: Button 1 clicked!"
+          raycaster="objects: .nav-button"
+        ></a-box>
+
+
+        <a-box
+          class="nav-button raycastable"
+          position="0 0 0"
+          depth="0.2"
+          height="0.6"
+          width="0.8"
+          color="#EF2D5E"
+          hover-scale
+          event-set__click="_event: click; _target: #text; text.value: Button 2 clicked!"
+        >Hello</a-box>
+
+
+        <a-box
+          class="nav-button raycastable"
+          position="1 0 0"
+          depth="0.2"
+          height="0.6"
+          width="0.8"
+          color="#FFC65D"
+          hover-scale
+          event-set__click="_event: click; _target: #text; text.value: Button 3 clicked! "
+        ></a-box>
+      </a-entity>
+
+
+      <a-text
+        id="text"
+        position="0 0.5 -1"
+        align="center"
+        value="Click a button"
+        color="white"
+      ></a-text>
+    </a-scene> -->
+
+    <a-scene background="color: #111" shadow="type: pcfsoft" cursor="rayOrigin: mouse; fuse: false"
+  raycaster="objects: .raycastable">
+  <a-assets>
+    <a-asset-item id="chairModel" src=file/chair.glb"></a-asset-item>
+  </a-assets>
+
+  <a-gltf-model src="#chairModel" position="0 0 0" scale="5 5 5"></a-gltf-model>
+
+  <a-plane rotation="-90 0 0" width="10" height="10" color="#ccc"></a-plane>
+   <a-entity position="0 1.5 4" camera look-controls wasd-controls>
+        <a-camera>
+          <a-cursor 
+    raycaster="objects: .raycastable"
+    fuse="false"
+    material="color: white; shader: flat">
+  </a-cursor>
+        </a-camera>
+      </a-entity>
+</a-scene>
+
+  </body>
+</html>

@@ -1,8 +1,3 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
 /* 
     Created on : 1 Sep, 2023, 11:01:42 AM
     Author     : 22038845
@@ -14,8 +9,6 @@ and open the template in the editor.
     margin: 0;
     box-sizing: border-box;
 }
-
-
 
 html{
     font-size: min(5vw,2.5em)/*min(5vw, 3em)*/; 
@@ -42,6 +35,8 @@ body{
     font-style: normal;
 
 }
+
+
 
 .copyright{
     float:right; 
@@ -795,6 +790,5 @@ body.modal-open {
 }
 
 
-  
 
 
