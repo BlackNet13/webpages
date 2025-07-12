@@ -1,6 +1,7 @@
 <html>
   <head>
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-typed-text-component/dist/aframe-typed-text-component.min.js"></script>
     <script>
       AFRAME.registerComponent('hover-scale', {
         init: function () {
@@ -15,6 +16,10 @@
     </script>
   </head>
   <body>
+    
+
+
+
     <!-- <a-scene  cursor="rayOrigin: mouse; fuse: false"
   raycaster="objects: .raycastable">
   
@@ -78,13 +83,15 @@
       ></a-text>
     </a-scene> -->
 
-    <a-scene background="color: #111" shadow="type: pcfsoft" cursor="rayOrigin: mouse; fuse: false"
+    <a-scene background="color: white" shadow="type: pcfsoft" cursor="rayOrigin: mouse; fuse: false"
   raycaster="objects: .raycastable">
   <a-assets>
     <a-asset-item id="chairModel" src=file/chair.glb"></a-asset-item>
   </a-assets>
 
   <a-gltf-model src="#chairModel" position="0 0 0" scale="5 5 5"></a-gltf-model>
+
+  <a-entity typed-text="text: Hello world! This will type out one letter at a time."></a-entity>
 
   <a-plane rotation="-90 0 0" width="10" height="10" color="#ccc"></a-plane>
    <a-entity position="0 1.5 4" camera look-controls wasd-controls>
