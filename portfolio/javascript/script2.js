@@ -1,3 +1,37 @@
+AFRAME.registerComponent('link-handler', {
+  init: function () {
+    this.el.addEventListener('click', () => {
+      // Try to find any child entity with an ID (text or otherwise)
+      const targetE1 = this.el.querySelector('[id]');
+
+      if (!targetE1) {
+        console.warn('No target with ID found inside:', this.el);
+        return;
+      }
+
+      const id = targetE1.id;
+
+      switch (id) {
+        case 'txt':
+          resetRoom();
+          break;
+        case 'resume':
+          openModal();
+          console.log('Resume button clicked');
+          
+          break;
+        case 'go-to-about':
+          rotateRoom(90);
+          break;
+        default:
+          console.log('No action defined for:', id);
+      }
+    });
+  }
+});
+
+
+    
     let currentYRotation = 0;
       function rotateRoom(amount) {
         currentYRotation += amount;
