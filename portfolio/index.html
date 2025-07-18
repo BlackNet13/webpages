@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Index Home Page of Slumberous Cat">
 
-        <link rel="stylesheet" href="stylesheet/style2.css">
+      <link rel="stylesheet" href="stylesheet/style2.css">
        <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
        <script src="https://unpkg.com/aframe-event-set-component@5.x.x/dist/aframe-event-set-component.min.js"></script>
 
@@ -15,94 +15,55 @@
 
 AFRAME.registerComponent('link-handler', {
   init: function () {
-    this.el.addEventListener('click', (evt) => {
-      // console.log('CLICKED ENTITY', this.el);
-      // alert('CLICK!');
-       resetRoom();
+    this.el.addEventListener('click', () => {
+      // Try to find any child entity with an ID (text or otherwise)
+      const targetE1 = this.el.querySelector('[id]');
+
+      if (!targetE1) {
+        console.warn('No target with ID found inside:', this.el);
+        return;
+      }
+
+      const id = targetE1.id;
+
+      switch (id) {
+        case 'txt':
+          resetRoom();
+          break;
+        case 'resume':
+          openModal();
+          console.log('Resume button clicked');
+          
+          break;
+        case 'go-to-about':
+          rotateRoom(90);
+          break;
+        default:
+          console.log('No action defined for:', id);
+      }
     });
   }
 });
 
-if (/Mobi|Android/i.test(navigator.userAgent)) {
-  document.getElementById('glitchOverlay').style.filter = 'none';
-}
+
+
+// if (/Mobi|Android/i.test(navigator.userAgent)) {
+//   document.getElementById('glitchOverlay').style.filter = 'none';
+// }
 
       </script>
-    <style>
-      body {
-        margin: 0;
-        overflow: hidden;
-        background: #111;
-        font-family: sans-serif;
-      }
-      .controls {
-        position: absolute;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 10;
-      }
-      button {
-        background: #333;
-        color: white;
-        border: 1px solid #555;
-        padding: 10px 20px;
-        margin: 0 10px;
-        cursor: pointer;
-        font-size: 1em;
-      }
-      button:hover {
-        background: #555;
-      }
-
-
-    #glitchOverlay {
-     will-change: background-position, transform, filter;
-    pointer-events: none;
-    position: fixed;
-    opacity:0.4;
-    top: 0; left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 999;
-    mix-blend-mode: screen;
-    background: repeating-linear-gradient(
-      0deg,
-      transparent 0px,
-      transparent 24px,
-      rgba(255, 255, 255, 0.05) 24px,
-      rgba(255, 255, 255, 0.1) 26px
-    );
-    animation: glitchScroll 1.5s linear infinite;
-    filter: url(#wavyGlitch);
-  }
-
-  @keyframes glitchScroll {
-    0% { background-position: 0 0; }
-    100% { background-position: 0 20px; }
-  }
-
-  /* SVG Wavy Filter */
-  svg {
-    position: absolute;
-    width: 0;
-    height: 0;
-  }
-
-  @media (max-width: 768px) {
-  #glitchOverlay {
-    filter: none;
-  }
-}
-
-
-    </style>
 
 
     </head>
   
 
     <body>
+       <div id="pdfModal">
+  <div>
+    <button onclick="closeModal()" style="position:absolute; top:10px; right:10px;">Close</button>
+    <div id="pdfContainer"></div>
+  </div>
+</div>
       
       <div class="animation"></div>
        <!-- Buttons -->
@@ -165,11 +126,7 @@ if (/Mobi|Android/i.test(navigator.userAgent)) {
          castShadow="true">
 </a-light> -->
 
-<a-light id="light-front" light="type: directional; intensity: 3" castShadow="true" position="1 3 2" color="#2c7ac1" angle="45" target=".rm1"></a-light>
-<a-light id="light-back" light="type: directional; intensity: 0" castShadow="true" position="1 3 2" color="red" target=".rm2"></a-light>
-<a-light id="light-left" light="type: directional; intensity: 0" castShadow="true" position="1 3 2" color="pink" target=".rm3"></a-light>
-<a-light id="light-right" light="type: directional; intensity: 0" castShadow="true" position="1 3 2" color="green" target=".rm4"></a-light>
-
+<a-light id="light" light="type: directional; intensity: 3" castShadow="true" position="1 3 2" color="#2c7ac1" angle="45" target=".rm1"></a-light>
 
 <a-entity id="floor" position="0 0 0"></a-entity>
 
@@ -377,6 +334,7 @@ if (/Mobi|Android/i.test(navigator.userAgent)) {
     class="raycastable">
   </a-text> 
 
+
   <a-gltf-model src="file/chair.glb" position="-1 -1 1.8" scale="0.02 0.02 0.02" rotation="-90 50 0"></a-gltf-model>
 
   <a-plane id="slideshow" position="1.4 -0.4 1.6" rotation="0 -45 2" width="4" height="3" scale="0.2 0.2 0.2" material="shader: flat; src: #slide1"></a-plane>
@@ -387,6 +345,44 @@ if (/Mobi|Android/i.test(navigator.userAgent)) {
        <a-plane class="rm1" position="1.5 0 1.5" rotation="0 135 0" width="1.5" height="2" color="orange" material="side: back" set-layer="1"></a-plane> 
        <a-plane class="rm1" position="-1.5 0 1.5" rotation="0 -135 0" width="1.5" height="2" color="orange" material="side: back" set-layer="1"></a-plane> 
 
+      <a-entity 
+        position="1.5 0 0"
+        rotation="0 90 0"
+        scale="2 2 2"
+        class="raycastable clickable hoverable"
+        hover-color
+        link-handler>
+  
+      <!-- <a-plane 
+        width="1.6" 
+        height="0.5" 
+        color="none" 
+        opacity="0" 
+        position="0 0 0.07" 
+        material="transparent: true"
+        scale="0.5 0.5 0.5"
+        visible="false"
+        class="raycastable"
+        event-set__enter="_event: mouseenter; _target: #txt2; text.color: #81C784;"
+        event-set__leave="_event: mouseleave; _target: #txt2; text.color: white;">
+      </a-plane>
+      
+      <a-entity
+        id="txt2"
+        text="value: CLICK ME; font: Barrio-Regular-msdf.json; align: center; width: 4; color: white; shader: msdf; negate: false"
+        material="shader: msdf; color: white"
+        scale="0.5 0.5 0.5"
+        position="0 0 0.01"
+        class="raycastable"
+        hover_color>
+      </a-entity>
+      -->
+
+      <a-plane id="resume" class="raycastable" width="1" height="1.8" color="white" scale="0.2 0.2 0.2" material="src: images/cat.webp; shader: flat; transparent: true"></a-plane>
+
+      
+    </a-entity>
+        
        <a-plane id="rm2" class="rm2" position="1 0 0" rotation="0 -90 0" width="2" height="2" color="pink" material="side: back"></a-plane>
        <a-plane class="rm2"position="1.5 0 1.5" rotation="0 135 0" width="1.5" height="2" color="teal" material="side: front"></a-plane>
        <a-plane class="rm2" position="1.5 0 -1.5" rotation="0 -135 0" width="1.5" height="2" color="teal" material="side: back"></a-plane> 
@@ -406,121 +402,15 @@ if (/Mobi|Android/i.test(navigator.userAgent)) {
       </a-entity>
     </a-scene>
 
-    <script>
-
-      let currentYRotation = 0;
-      function rotateRoom(amount) {
-        currentYRotation += amount;
-        const cube = document.getElementById('cube');
-        cube.setAttribute('animation__rotate', {
-          property: 'rotation',
-          to: `0 ${currentYRotation} 0`,
-          dur: 1000,
-          easing: 'easeInOutQuad'
-        });
-        
-        updateLights(currentYRotation % 360);
-
-      }
-
-      function updateLights(yRot) {
-  // Normalize rotation to 0-360
-  yRot = (yRot + 360) % 360;
-
-  // Get your lights
-  const frontLight = document.getElementById('light-front');
-  const backLight = document.getElementById('light-back');
-  const leftLight = document.getElementById('light-left');
-  const rightLight = document.getElementById('light-right');
-
-  // Reset all lights intensity or visibility
-  frontLight.setAttribute('light', 'intensity', 0);
-  backLight.setAttribute('light', 'intensity', 0);
-  leftLight.setAttribute('light', 'intensity', 0);
-  rightLight.setAttribute('light', 'intensity', 0);
-
-  // Depending on the cube rotation, enable the light for the facing side
-  if (yRot >= 315 || yRot < 45) {
-    frontLight.setAttribute('light', 'intensity',3);
-  } else if (yRot >= 45 && yRot < 135) {
-    rightLight.setAttribute('light', 'intensity', 3);
-  } else if (yRot >= 135 && yRot < 225) {
-    backLight.setAttribute('light', 'intensity', 3);
-  } else if (yRot >= 225 && yRot < 315) {
-    leftLight.setAttribute('light', 'intensity', 3);
-  }
-}
-
- let slides = ['#slide1', '#slide2', '#slide3','#slide4','#slide5', '#slide6', '#slide7'];
-    let currentIndex = 0;
-    let slideEl = document.getElementById('slideshow');
-
-    setInterval(() => {
-      currentIndex = (currentIndex + 1) % slides.length;
-      slideEl.setAttribute('material', 'src', slides[currentIndex]);
-    }, 3000); // Change slide every 3 seconds
-
-
-    AFRAME.registerComponent('face-btn', {
-    init: function () {
-      // Select all cylinders with the "face-button" class
-      const buttons = document.querySelectorAll('.navBtn');
-      const target = document.querySelector('#cube'); // Object to rotate
-
-      buttons.forEach(button => {
-        button.addEventListener('click', function () {
-          const face = button.getAttribute('data-face');
-          console.log('Clicked face:', face);
-
-          // Now rotate based on face
-          let rotation = { x: 0, y: 0, z: 0 };
-
-          switch (face) {
-            case 'main': rotation = { x: 0, y: 0, z: 0 }; break;
-            case 'about': rotation = { x: 0, y: -90, z: 0 }; break;
-            case 'portfolio': rotation = { x: 0, y: -180, z: 0 }; break;
-            case 'contact': rotation = { x: 0, y: -270, z: 0 }; break;
-          }
-
-           // Animate rotation smoothly
-        target.setAttribute('animation__face', {
-          property: 'rotation',
-          to: `${rotation.x} ${rotation.y} ${rotation.z}`,
-          dur: 1000,
-          easing: 'easeInOutQuad'
-        });
-
-        // Update lights to match the new face
-        updateLights(rotation.y);
-        });
-      });
-    }
-  });
-
- function resetRoom() {
-  currentYRotation = 0;
-
-  const cube = document.getElementById('cube');
-  cube.setAttribute('animation__rotate', {
-    property: 'rotation',
-    to: `0 0 0`,
-    dur: 1000,
-    easing: 'easeInOutQuad'
-  });
-
-  updateLights(0);
-}
-
-
-    </script>
-    <div id="glitchOverlay"></div>
+    <script src="javascript/script2.js"></script>
+    <!-- <div id="glitchOverlay"></div>
 
     <svg>
   <filter id="wavyGlitch">
     <feTurbulence type="turbulence" baseFrequency="0.05 0.05" numOctaves="1" result="turbulence" seed="2" />
     <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="2" xChannelSelector="R" yChannelSelector="G"/>
   </filter>
-</svg>
+</svg> -->
 
   </body>
 </html>

@@ -1,112 +1,95 @@
-/* body {
-  margin: 0;
-  background: #111;
-  color: white;
-  font-family: sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
+body {
+        margin: 0;
+        overflow: hidden;
+        background: #111;
+        font-family: sans-serif;
+      }
+      .controls {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+      }
+      button {
+        background: #333;
+        color: white;
+        border: 1px solid #555;
+        padding: 10px 20px;
+        margin: 0 10px;
+        cursor: pointer;
+        font-size: 1em;
+      }
+      button:hover {
+        background: #555;
+      }
 
-.scene {
-  width: 300px;
-  height: 300px;
-  perspective: 500px;
-}
-
-.cube {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  transform-style: preserve-3d;
-  transition: transform 1s;
-}
-
-.face {
-  position: absolute;
-  width: 280px;
-  height: 280px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 2px solid white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5em;
-}
-
-.sp{
-    height:180px; width:160px; margin:50px;
-}
-
-
-.front  { 
-    transform: rotateY(0deg) translateZ(70px); 
-    background:red;
-}
-
-.front2   {
-    transform-origin: left center;
-    width:80px;
-    height:160px;
-    margin-top:18%;
-    transform: perspective(400px) rotateY(-130deg) translateZ(-70px);
-    background:teal;
-}
-
-.front3  { 
-    transform-origin: right center;
-    width:80px;
-    height:160px;
-    margin-top:18%;
-    transform: perspective(400px) rotateY(120deg) translateZ(70px) translateX(-80px);
-    background:lawngreen;
+      #pdfModal {
+        display:none; 
+        position:fixed; 
+        top:0; 
+        left:0; 
+        width:100vw; 
+        height:100vh; 
+        background:rgba(0,0,0,0.8); 
+        justify-content:center; 
+        align-items:center;
+      z-index: 9999;  
     }
 
+    #pdfModal > div {
+        width:80vw; 
+        height:80vh; 
+        background:#fff; 
+        position:relative;
+      }
 
-.left   { transform: rotateY(-90deg) translateZ(100px); 
-    background:green;
-}
+      #pdfContainer {
+        width: 100%;
+        height: 100%;
+      }
 
+      a-text {
+        color: white;
+      }
 
+    /* #glitchOverlay {
+     will-change: background-position, transform, filter;
+    pointer-events: none;
+    position: fixed;
+    opacity:0.4;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+    mix-blend-mode: screen;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent 0px,
+      transparent 24px,
+      rgba(255, 255, 255, 0.05) 24px,
+      rgba(255, 255, 255, 0.1) 26px
+    );
+    animation: glitchScroll 1.5s linear infinite;
+    filter: url(#wavyGlitch);
+  }
 
+  @keyframes glitchScroll {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 20px; }
+  } */
 
-.back   { 
-    transform: rotateY(180deg) translateZ(100px); 
-    background:blue;
-}
+  /* SVG Wavy Filter */
+  /* svg {
+    position: absolute;
+    width: 0;
+    height: 0;
+  }
 
-.right  { 
-    transform: rotateY( 90deg) translateZ(100px); 
-    background:pink;
-    }
-
-
-
-
-
-
-.top    { transform: rotateX( 90deg) translateZ(150px); }
-.bottom { transform: rotateX(-90deg) translateZ(150px); }
-
-.controls {
-  margin-top: 100px;
-  z-index: 1000;
-}
-
-button {
-  background: #333;
-  color: white;
-  border: 1px solid #555;
-  padding: 10px 20px;
-  margin: 0 10px;
-  cursor: pointer;
-  font-size: 1em;
-}
-
-button:hover {
-  background: #555;
+  @media (max-width: 768px) {
+  #glitchOverlay {
+    filter: none;
+  }
 } */
 
 

@@ -14,96 +14,42 @@
         }
       });
     </script>
+
   </head>
   <body>
-    
+   
 
+    <div id="pdfModal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.8); justify-content:center; align-items:center;">
+  <div style="width:80vw; height:80vh; background:#fff; position:relative;">
+    <button onclick="closeModal()" style="position:absolute; top:10px; right:10px;">Close</button>
+    <div id="pdfContainer"></div>
+  </div>
+</div>
 
+<button onclick="openModal()">View PDF</button>
 
-    <!-- <a-scene  cursor="rayOrigin: mouse; fuse: false"
-  raycaster="objects: .raycastable">
-  
-      <a-entity position="0 1.6 0">
-        <a-camera>
-          <a-cursor
-            fuse="false"
-            raycaster="objects: .nav-button"
-            material="color: white; shader: flat"
-          ></a-cursor>
-        </a-camera>
-      </a-entity>
+<script>
+  function openModal() {
+    document.getElementById('pdfModal').style.display = 'flex';
+    // Lazy load PDF only when modal is opened
+    if (!document.getElementById('pdfIframe')) {
+      const iframe = document.createElement('iframe');
+      iframe.id = 'pdfIframe';
+      iframe.src = 'file/resume.pdf#toolbar=0&navpanes=0';
+      iframe.style.width = '100%';
+      iframe.style.height = '100%';
+      iframe.style.border = 'none';
+      document.getElementById('pdfContainer').appendChild(iframe);
+    }
+  }
 
+  function closeModal() {
+    document.getElementById('pdfModal').style.display = 'none';
+    // Optional: remove iframe to free memory
+    // document.getElementById('pdfContainer').innerHTML = '';
+  }
+</script>
 
-      <a-entity position="0 1.5 -2">
-
-        <a-box
-          class="nav-button raycastable"
-          position="-1 0 0"
-          depth="0.2"
-          height="0.6"
-          width="0.8"
-          color="#4CC3D9"
-          hover-scale
-          event-set__click="_event: click; _target: #text; text.value: Button 1 clicked!"
-          raycaster="objects: .nav-button"
-        ></a-box>
-
-
-        <a-box
-          class="nav-button raycastable"
-          position="0 0 0"
-          depth="0.2"
-          height="0.6"
-          width="0.8"
-          color="#EF2D5E"
-          hover-scale
-          event-set__click="_event: click; _target: #text; text.value: Button 2 clicked!"
-        >Hello</a-box>
-
-
-        <a-box
-          class="nav-button raycastable"
-          position="1 0 0"
-          depth="0.2"
-          height="0.6"
-          width="0.8"
-          color="#FFC65D"
-          hover-scale
-          event-set__click="_event: click; _target: #text; text.value: Button 3 clicked! "
-        ></a-box>
-      </a-entity>
-
-
-      <a-text
-        id="text"
-        position="0 0.5 -1"
-        align="center"
-        value="Click a button"
-        color="white"
-      ></a-text>
-    </a-scene> -->
-
-    <a-scene background="color: white" shadow="type: pcfsoft" cursor="rayOrigin: mouse; fuse: false"
-  raycaster="objects: .raycastable">
-  <a-assets>
-    <a-asset-item id="chairModel" src=file/chair.glb"></a-asset-item>
-  </a-assets>
-
-  <a-gltf-model src="#chairModel" position="0 0 0" scale="5 5 5"></a-gltf-model>
-
-  <a-entity typed-text="text: Hello world! This will type out one letter at a time."></a-entity>
-
-  <a-plane rotation="-90 0 0" width="10" height="10" color="#ccc"></a-plane>
-   <a-entity position="0 1.5 4" camera look-controls wasd-controls>
-        <a-camera>
-          <a-cursor 
-    raycaster="objects: .raycastable"
-    fuse="false"
-    material="color: white; shader: flat">
-  </a-cursor>
-        </a-camera>
-      </a-entity>
-</a-scene>
 
   </body>
 </html>
