@@ -11,53 +11,32 @@
        <script src="https://unpkg.com/aframe-event-set-component@5.x.x/dist/aframe-event-set-component.min.js"></script>
 
 
-      <script>
-
-// AFRAME.registerComponent('link-handler', {
-//   init: function () {
-//     this.el.addEventListener('click', () => {
-//       // Try to find any child entity with an ID (text or otherwise)
-//       const targetE1 = this.el.querySelector('[id]');
-
-//       if (!targetE1) {
-//         console.warn('No target with ID found inside:', this.el);
-//         return;
-//       }
-
-//       const id = targetE1.id;
-
-//       switch (id) {
-//         case 'txt':
-//           resetRoom();
-//           break;
-//         case 'resume':
-//           openModal();
-//           console.log('Resume button clicked');
-          
-//           break;
-//         case 'go-to-about':
-//           rotateRoom(90);
-//           break;
-//         default:
-//           console.log('No action defined for:', id);
-//       }
-//     });
-//   }
-// });
-
-
-
-// if (/Mobi|Android/i.test(navigator.userAgent)) {
-//   document.getElementById('glitchOverlay').style.filter = 'none';
-// }
-
-      </script>
-
-
     </head>
   
 
     <body>
+      <video
+  autoplay
+  loop
+  muted
+  playsinline
+  preload="auto"
+  src="video/glitchFilter.mp4"
+  style="
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    pointer-events: none;
+    z-index: 999;
+    opacity: 0.8;
+    mix-blend-mode: screen;
+  ">
+</video>
+
+
        <div id="pdfModal">
   <div>
     <button onclick="closeModal()" style="position:absolute; top:10px; right:10px;">Close</button>
@@ -403,14 +382,6 @@
     </a-scene>
 
     <script src="javascript/script2.js"></script>
-    <!-- <div id="glitchOverlay"></div>
-
-    <svg>
-  <filter id="wavyGlitch">
-    <feTurbulence type="turbulence" baseFrequency="0.05 0.05" numOctaves="1" result="turbulence" seed="2" />
-    <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="2" xChannelSelector="R" yChannelSelector="G"/>
-  </filter>
-</svg> -->
 
   </body>
 </html>

@@ -1,0 +1,41 @@
+  body{
+    background:black;
+  }
+  #glitchOverlay {
+     will-change: background-position, transform, filter;
+    pointer-events: none;
+    position: fixed;
+    opacity:0.4;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+    mix-blend-mode: screen;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent 0px,
+      transparent 24px,
+      rgba(255, 255, 255, 0.05) 24px,
+      rgba(255, 255, 255, 0.1) 26px
+    );
+    animation: glitchScroll 1.5s linear infinite;
+    filter: url(#wavyGlitch);
+  }
+
+  @keyframes glitchScroll {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 20px; }
+  } */
+
+  /* SVG Wavy Filter */
+   svg {
+    position: absolute;
+    width: 0;
+    height: 0;
+  }
+
+  @media (max-width: 768px) {
+  #glitchOverlay {
+    filter: none;
+  }
+}
