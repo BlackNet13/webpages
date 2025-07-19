@@ -76,6 +76,53 @@ AFRAME.registerComponent('link-handler', {
     //   slideEl.setAttribute('material', 'src', slides[currentIndex]);
     // }, 3000); // Change slide every 3 seconds
 
+
+
+AFRAME.registerComponent('flicker-light', {
+  schema: {
+    minIntensity: { type: 'number', default: 1.5 },
+    maxIntensity: { type: 'number', default: 3 },
+    speed: { type: 'number', default: 800 }, // Base flicker interval in ms
+    enabled: { type: 'boolean', default: false }
+  },
+
+  init: function () {
+    this.light = this.el.getObject3D('light');
+    this.lastFlicker = 0;
+    this.nextInterval = this.data.speed + Math.random() * this.data.speed;
+    this.targetIntensity = this.data.maxIntensity;
+  },
+
+  tick: function (time, timeDelta) {
+    if (!this.data.enabled || !this.light) return;
+
+    // Time to update target intensity
+    if (time - this.lastFlicker > this.nextInterval) {
+      this.lastFlicker = time;
+      this.nextInterval = this.data.speed + Math.random() * this.data.speed;
+
+      // Choose a new random target intensity
+      this.targetIntensity = this.data.minIntensity + Math.random() * (this.data.maxIntensity - this.data.minIntensity);
+    }
+
+    // Smoothly interpolate current intensity toward target
+    this.light.intensity = THREE.MathUtils.lerp(this.light.intensity, this.targetIntensity, 0.05);
+  },
+
+  update: function () {
+    if (!this.light) return;
+
+    if (!this.data.enabled) {
+      // When flicker is disabled, reset intensity to max
+      this.light.intensity = this.data.maxIntensity;
+    }
+  }
+});
+
+
+
+
+
       function updateLights(yRot) {
   // Normalize rotation to 0-360
   yRot = (yRot + 360) % 360;
@@ -84,6 +131,7 @@ AFRAME.registerComponent('link-handler', {
   const light = document.getElementById('light');
   let color = '#2c7ac1'; // Default color 
   let targetEl = '.rm1';
+  let enabledFlicker = true;
 
 
   // Depending on the cube rotation, enable the light for the facing side, #2c7ac1 red, pink, green
@@ -95,15 +143,23 @@ AFRAME.registerComponent('link-handler', {
    color = 'green'; 
     targetEl = document.querySelector('.rm4');
     stopSlideshow();
+    enabledFlicker = false;
   } else if (yRot >= 135 && yRot < 225) {
     color = 'red'; 
     targetEl = document.querySelector('.rm3');
+    enabledFlicker = false;
     stopSlideshow();
   } else if (yRot >= 225 && yRot < 315) {
     color = 'pink';
     targetEl = document.querySelector('.rm2');
+    enabledFlicker = false;
     stopSlideshow();
   }
+
+  document.querySelectorAll('.lght').forEach(light => {
+  light.setAttribute('flicker-light', 'enabled', enabledFlicker);
+});
+
 
    light.setAttribute('light', 'color', color);
 
@@ -114,6 +170,7 @@ AFRAME.registerComponent('link-handler', {
   }
 
 }
+
 
     AFRAME.registerComponent('face-btn', {
     init: function () {
