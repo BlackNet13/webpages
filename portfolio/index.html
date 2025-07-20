@@ -120,6 +120,7 @@
         hover-color>
   
       <a-plane
+        id="txtBtn"
         width="1.6" 
         height="0.5" 
         color="none" 
@@ -129,7 +130,8 @@
         visible="false"
         class="raycastable"
         event-set__enter="_event: mouseenter; _target: #txt; text.color: #81C784;"
-        event-set__leave="_event: mouseleave; _target: #txt; text.color: white;">
+        event-set__leave="_event: mouseleave; _target: #txt; text.color: white;"
+        link-handler>
       </a-plane>
 
       <a-entity
@@ -138,8 +140,7 @@
         material="shader: msdf; color: white"
         position="0 0 0.01"
         class="raycastable"
-        hover_color
-        link-handler>
+        hover_color>
       </a-entity>
     </a-entity>
 
