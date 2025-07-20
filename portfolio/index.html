@@ -62,16 +62,18 @@
     <img id="slide5" src="images/movieReview.webp">
     <img id="slide6" src="images/covid19Poster.webp">
     <img id="slide7" src="images/diners.webp">
+    <img id="roundCor" src="images/roundCor.png">
+    <img id="burst" src="images/burst.png">
   </a-assets>
 
       <!-- Camera -->
      <a-entity position="0 1.5 4" camera look-controls wasd-controls>
         <a-camera>
-          <a-cursor 
+          <!-- <a-cursor 
     raycaster="objects: .raycastable"
     fuse="false"
     material="shader: flat; ">
-  </a-cursor>
+  </a-cursor> -->
         </a-camera>
       </a-entity>
      
@@ -356,7 +358,7 @@
       <a-plane id="resume" class="raycastable" width="1.1" height="1.5" scale="0.3 0.3 0.3" color="white" material="src: images/resume_preview.png; shader: flat; transparent: true" link-handler></a-plane>
       
        <a-plane
-  src="images/burst.png"
+  src="#burst"
   transparent="true"
   width="0.4"
   height="0.4"
@@ -414,7 +416,7 @@
   <a-entity position="0 0.3 0">
      <a-plane
      id="histBtn"
-  src="images/roundCor.png"
+  src="#roundCor"
   transparent="true"
   width="0.5"
   height="0.4"
