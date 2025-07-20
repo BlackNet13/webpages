@@ -43,8 +43,6 @@
     <div id="pdfContainer"></div>
   </div>
 </div>
-      
-      <!-- <div class="animation"></div> -->
        <!-- Buttons -->
     <div class="controls">
       <button onclick="rotateRoom(90)">⟲ Left</button>
@@ -69,11 +67,11 @@
       <!-- Camera -->
      <a-entity position="0 1.5 4" camera look-controls wasd-controls>
         <a-camera>
-          <a-cursor 
+          <!-- <a-cursor 
     raycaster="objects: .raycastable"
     fuse="false"
     material="shader: flat; ">
-  </a-cursor>
+  </a-cursor> -->
         </a-camera>
       </a-entity>
      
@@ -147,8 +145,7 @@
          <a-entity position="-0.8 1.7 2.01" text="value: COPYRIGHT © 2025 SLUMBEROUS CAT; font: Barrio-Regular-msdf.json; width: 5; color: lightgray; shader: msdf; negate: false"
             material="shader: msdf; color: lightgray"
             scale="0.5 0.5 0.5"
-            class="raycastable"
-            hoverColor="color: yellow; original: white">
+            class="raycastable">
           </a-entity>
 
         <a-plane position="2.6 3.4 2.02" width="0.4" height="0.1" color="white"><a-text value="Main" color="black" scale="0.4 0.4 0.4" align="center"></a-text></a-plane>
@@ -266,8 +263,7 @@
   material="shader: msdf; color: black"
   position="0.8 -0.8 2.01"
   scale="0.5 0.5 0.5"
-  class="raycastable"
-  hoverColor="color: yellow; original: white">
+  class="raycastable">
 </a-entity>
 
 <a-entity
@@ -276,8 +272,7 @@
   position="0.8 -0.8 2"
   scale="0.5 0.5 0.5"
   class="raycastable"
-  opacity="0.5"
-  hoverColor="color: yellow; original: white">
+  opacity="0.5">
 </a-entity>
 
   <a-box position="0 2 1" depth="0.01" height="1" width="4" color="#444" opacity="0.1" class="raycastable"></a-box>
@@ -324,13 +319,14 @@
        <a-plane class="rm1" position="1.5 0 1.5" rotation="0 135 0" width="1.5" height="2" color="orange" material="side: back" set-layer="1"></a-plane> 
        <a-plane class="rm1" position="-1.5 0 1.5" rotation="0 -135 0" width="1.5" height="2" color="orange" material="side: back" set-layer="1"></a-plane> 
 
+      <a-gltf-model src="file/storageRack.glb" position="1.3 -1 -1.1" scale="0.02 0.01 0.015" rotation="-90 90 0"></a-gltf-model>
+
       <a-entity 
         position="1.2 0 0.5"
         rotation="0 90 0"
         scale="2 2 2"
         class="raycastable clickable hoverable"
-        hover-color
-        link-handler>
+        hover-color>
   
       <!-- <a-plane 
         width="1.6" 
@@ -357,7 +353,7 @@
       </a-entity>
       -->
 
-      <a-plane id="resume" class="raycastable" width="1.1" height="1.5" scale="0.3 0.3 0.3" color="white" material="src: images/resume_preview.png; shader: flat; transparent: true"></a-plane>
+      <a-plane id="resume" class="raycastable" width="1.1" height="1.5" scale="0.3 0.3 0.3" color="white" material="src: images/resume_preview.png; shader: flat; transparent: true" link-handler></a-plane>
       
        <a-plane
   src="images/burst.png"
@@ -409,20 +405,69 @@
      font="mozillavr"
     negate="false"
     position="1.2 0.6 -1" 
-    rotation="0 50 0"
+    rotation="0 40 0"
     scale="2.5 2.5 2.5"
     color="#f7ce08"
     width="0.6">
   </a-text>
+  </a-entity>
+  <a-entity position="0 0.3 0">
+     <a-plane
+     id="histBtn"
+  src="images/roundCor.png"
+  transparent="true"
+  width="0.5"
+  height="0.4"
+  position="1.3 0 -1.2" 
+  rotation="0 40 0"
+  color="#f6f8a5"
+  class="raycastable"
+  event-set__enter="_event: mouseenter; _target: #history; text.color: #81C784;"
+  event-set__leave="_event: mouseleave; _target: #history; text.color: white;"
+  link-handler
+></a-plane>
     <a-text 
-    value="Example Title.;"
+    id="history"
+    value="Portfolio History;"
      font="mozillavr"
     negate="false"
-    position="1.2 -0.5 -1" 
-    rotation="0 50 0"
+    position="1.3 0.02 -1.2" 
+    align="center"
+    rotation="0 40 0"
     scale="2 2 2"
     color="white"
-    width="0.6">
+    width="0.6"
+    class="raycastable"
+    hover_color>
+  </a-text>
+
+   <a-plane
+   id="otherWkBtn"
+  src="images/roundCor.png"
+  transparent="true"
+  width="0.5"
+  height="0.4"
+  position="1.8 0 -1.6" 
+  rotation="0 40 0"
+  color="#f6f8a5"
+  class="raycastable"
+  event-set__enter="_event: mouseenter; _target: #otherWorks; text.color: #81C784;"
+  event-set__leave="_event: mouseleave; _target: #otherWorks; text.color: white;"
+  link-handler
+></a-plane>
+    <a-text 
+    id="otherWorks"
+    value="Other digital\n works;"
+     font="mozillavr"
+    negate="false"
+    position="1.8 0.02 -1.6" 
+    align="center"
+    rotation="0 40 0"
+    scale="2 2 2"
+    color="white"
+    width="0.6"
+    class="raycastable"
+    hover_color>
   </a-text>
   </a-entity> 
         

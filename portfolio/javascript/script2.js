@@ -1,35 +1,28 @@
 AFRAME.registerComponent('link-handler', {
   init: function () {
     this.el.addEventListener('click', () => {
-      // Try to find any child entity with an ID (text or otherwise)
-      const targetE1 = this.el.querySelector('[id]');
+      const id = this.el.id;
 
-      if (!targetE1) {
-        console.warn('No target with ID found inside:', this.el);
+      if (!id) {
+        console.warn('Clicked element has no ID:', this.el);
         return;
       }
-
-      const id = targetE1.id;
 
       switch (id) {
         case 'txt':
           resetRoom();
           break;
         case 'resume':
-          openModal();
-          console.log('Resume button clicked');
-          
-          break;
-        case 'go-to-about':
-          rotateRoom(90);
+        case 'histBtn':
+        case 'otherWkBtn':
+          openModal(id); 
           break;
         default:
-          console.log('No action defined for:', id);
+          console.log('Unhandled click from:', id);
       }
     });
   }
 });
-
 
     
     let currentYRotation = 0;
@@ -118,8 +111,6 @@ AFRAME.registerComponent('flicker-light', {
     }
   }
 });
-
-
 
 
 
@@ -237,9 +228,14 @@ function resetRoom() {
   updateLights(0);
 }
 
-function openModal() {
-    document.getElementById('pdfModal').style.display = 'flex';
-    // Lazy load PDF only when modal is opened
+function openModal(triggerId) {
+  const modal = document.getElementById('pdfModal');
+  const container = document.getElementById('pdfContainer');
+
+  modal.style.display = 'flex';
+
+  if (triggerId === 'resume') {
+    // Lazy-load PDF: only add iframe if it doesn't exist
     if (!document.getElementById('pdfIframe')) {
       const iframe = document.createElement('iframe');
       iframe.id = 'pdfIframe';
@@ -247,12 +243,40 @@ function openModal() {
       iframe.style.width = '100%';
       iframe.style.height = '100%';
       iframe.style.border = 'none';
-      document.getElementById('pdfContainer').appendChild(iframe);
+      container.appendChild(iframe);
+      console.log('PDF iframe added to modal.');
     }
-  }
+  } else {
+    // Clear old content
+    container.innerHTML = '';
 
-  function closeModal() {
-    document.getElementById('pdfModal').style.display = 'none';
-    // Optional: remove iframe to free memory
-    // document.getElementById('pdfContainer').innerHTML = '';
+    // Load generic HTML content
+    const content = document.createElement('div');
+    content.innerHTML = getModalContent(triggerId);
+    content.style.padding = '20px';
+    content.style.color = '#333';
+    container.appendChild(content);
   }
+}
+
+function closeModal() {
+  document.getElementById('pdfModal').style.display = 'none';
+  
+  // Only clear content if it's NOT the PDF
+  const pdfIframe = document.getElementById('pdfIframe');
+  if (!pdfIframe) {
+    document.getElementById('pdfContainer').innerHTML = '';
+  }
+}
+
+function getModalContent(id) {
+  switch(id) {
+    case 'histBtn':
+      return `<h2>Portfolio History</h2><p>This is a history of the portfolio and how it evolved over time...</p>`;
+    case 'otherWkBtn':
+      return `<h2>Other Content</h2><p>Something else goes here.</p>`;
+    default:
+      return `<p>No content found for this section.</p>`;
+  }
+}
+
