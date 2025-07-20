@@ -9,7 +9,7 @@ AFRAME.registerComponent('link-handler', {
       }
 
       switch (id) {
-        case 'txt':
+        case 'mainLogo':
           resetRoom();
           break;
         case 'resume':

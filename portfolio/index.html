@@ -117,10 +117,10 @@
         position="0 5 1"
         scale="2 2 2"
         class="raycastable clickable hoverable"
-        hover-color
-        link-handler>
+        hover-color>
   
       <a-plane 
+        id="mainLogo"
         width="1.6" 
         height="0.5" 
         color="none" 
@@ -130,7 +130,8 @@
         visible="false"
         class="raycastable"
         event-set__enter="_event: mouseenter; _target: #txt; text.color: #81C784;"
-        event-set__leave="_event: mouseleave; _target: #txt; text.color: white;">
+        event-set__leave="_event: mouseleave; _target: #txt; text.color: white;"
+        link-handler>
       </a-plane>
 
       <a-entity
