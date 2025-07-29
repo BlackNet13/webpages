@@ -53,6 +53,18 @@ body {
         color: white;
       }
 
+      .box {
+  float: left;
+  width: 43.33%;
+  padding: 20px;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
 
 
 

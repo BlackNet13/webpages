@@ -121,6 +121,7 @@ AFRAME.registerComponent('flicker-light', {
   // Get your lights
   const light = document.getElementById('light');
   let color = '#2c7ac1'; // Default color 
+  let intensity = 3; 
   let targetEl = '.rm1';
   let enabledFlicker = true;
 
@@ -131,7 +132,7 @@ AFRAME.registerComponent('flicker-light', {
     targetEl = document.querySelector('.rm1');
     startSlideshow();
   } else if (yRot >= 45 && yRot < 135) {
-   color = 'green'; 
+   color = 'green';
     targetEl = document.querySelector('.rm4');
     stopSlideshow();
     enabledFlicker = false;
@@ -142,18 +143,23 @@ AFRAME.registerComponent('flicker-light', {
     stopSlideshow();
   } else if (yRot >= 225 && yRot < 315) {
     color = 'pink';
+    intensity = 2;
     targetEl = document.querySelector('.rm2');
     enabledFlicker = false;
     stopSlideshow();
   }
 
+  
+   document.querySelector('.lghtMain').setAttribute('light', {color: color, intensity: intensity});
+  // light.setAttribute('light', {color: color, intensity: intensity });
+
   document.querySelectorAll('.lght').forEach(light => {
   light.setAttribute('flicker-light', 'enabled', enabledFlicker);
 });
 
-
-   light.setAttribute('light', 'color', color);
-
+//   document.querySelectorAll('.lght').forEach(light => {
+//   light.setAttribute('light', {color: color, intensity: intensity });
+// });
     const lightObj = light.getObject3D('light');
   if (lightObj && targetEl) {
     lightObj.target = targetEl.object3D;
@@ -272,11 +278,30 @@ function closeModal() {
 function getModalContent(id) {
   switch(id) {
     case 'histBtn':
-      return `<h2>Portfolio History</h2><p>This is a history of the portfolio and how it evolved over time...</p>`;
+  return `
+    <div style="
+      overflow-y: auto;
+      padding: 0; margin:10px;
+      height: 75vh; 
+    ">
+      <h2>Portfolio History</h2>
+      <p>This is a history of the portfolio and how it evolved over time...</p>
+      <br>
+      <div class="clearfix">
+        <div class="box" style="background-color:#bbb"><p>Some text inside the box.</p></div>
+        <div class="box" style="background-color:#ccc"><p>Some text inside the box.</p></div>
+        <div class="box" style="background-color:#bbb"><p>Some text inside the box.</p></div>
+        <div class="box" style="background-color:#ccc"><p>Some text inside the box.</p></div>
+        <div class="box" style="background-color:#bbb"><p>Some text inside the box.</p></div>
+        <div class="box" style="background-color:#ccc"><p>Some text inside the box.</p></div>
+      </div>
+    </div>
+  `;
     case 'otherWkBtn':
       return `<h2>Other Content</h2><p>Something else goes here.</p>`;
     default:
       return `<p>No content found for this section.</p>`;
   }
 }
+
 
