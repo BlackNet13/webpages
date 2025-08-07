@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"> <!--https://dequeuniversity.com/rules/axe/4.7/html-has-lang-->
+    <head>
+        <title>SlumberousCat: Home</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Index Home Page of Slumberous Cat , Yvonne's Portfolio">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/peterhry/CircleType@2.3.1/dist/circletype.min.js"></script>
+
+        <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
+
+
+        <link rel="stylesheet" href="https://use.typekit.net/gyc1igq.css">
+        <link rel="icon" type="image/webp" sizes="32x32" href="images/favicon-32x32.webp">
+        <script src="javascript/script.js"></script>
+        <link href="stylesheet/style.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+
+        <div class="transition-Holder" id="transitionHolder">
+            <div class="transition-bars"></div>
+            <div class="transition-bars"></div>
+            <div class="transition-bars"></div>
+            <div class="transition-bars"></div>
+            <div class="transition-bars"></div>
+            <div class="transition-bars"></div>
+        </div>
+
+
+        <div id="hero">
+
+
+            <p class="copyright">Copyright © Slumberous Cat 2023</p>
+
+            <div class="sticky-icon-bar"> <!--https://lenadesign.org/2021/08/06/css-sticky-social-media-bar/-->
+                <a href="https://www.linkedin.com/in/yvonyen8/" aria-label='Connect on Linkedin' class="linkedin link"><i class="fa-brands fa-linkedin-in"></i></a> 
+                <a href="https://github.com/BlackNet13" aria-label='Connect on github' class="github link"><i class="fa-brands fa-github"></i></a> 
+            </div>
+
+
+
+
+            <!---Main-->
+            <div id='container1'>
+                
+                <div class="center">
+                        <div class="carousel">
+                            <div class="change_outer">
+                                <div class="change_inner">
+                                    <div class="element"><img src="images/covid19Poster.webp" height="100"/></div>
+                                    <div class="element"><img src="images/diners.webp" height="100"/></div>
+                                    <div class="element"><img src="images/movieReview.webp" height="100"/></div>
+                                    <div class="element"><img src="images/mag2.webp" height="100"/></div>
+                                    <div class="element"><img src="images/mag4.webp" height="100"/></div>
+                                    <div class="element"><img src="images/main.webp" height="100" width="150" style="object-fit: contain;"/></div>
+                                    <div class="element"><img src="images/login.webp" height="100" width="150" style="object-fit: contain;"/></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+            
+                    <!--<div class="center">
+                        <div class="carousel">
+                            <div class="pre">I'm a </div>
+                            <div class="change_outer">
+                                <div class="change_inner">
+                                    <div class="element">coder</div>
+                                    <div class="element">designer</i></div>
+                                    <div class="element">gamer</i></div>
+                                    <div class="element">reader</i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>-->
+
+                <div id='sideContent'><p id="round" style="margin-top:-200px; opacity:0.3; float:left;  animation: orbitAnimation 40s linear infinite;">Slumberous Cat, creative code and design◉</p><p><b>Slumberous Cat</b><br><span class='op'>Creative Design and Code</span></p></div>
+                <img src='images/cat.webp' alt='cat lounging on its back playfully' style='margin-left:40vw; height:90%; position:fixed;'/>
+
+            </div>
+
+            <!--end of main-->
+
+
+
+            <nav class="navbar fixed-bottom navbar-expand bg-custom navbar-text">
+
+                <div class='nav-bg'>
+
+
+
+                    <div class="container-fluid" >
+                        <ul id="nav" class="navbar-nav right" style='font-size:1rem; margin-top:30px;' >
+                            <li class="nav-item selected">
+                                <b><a class="nav-link link" href="index.html" aria-label='link to index page' onclick="goTo()">Home</a></b>
+                            </li>
+                            <li class="nav-item">
+
+                                <b><a class="nav-link link" href="about.html" aria-label='link to about page' onclick="goTo()">About</a></b>
+                            </li>
+                            <li class="nav-item">
+                                <b><a class="nav-link link" href="portfolio.html" aria-label='link to portfolio page' onclick="goTo()">Portfolio</a></b>
+                            </li>
+                            <li class="nav-item">
+                                <b><a class="nav-link link" href="contact.html" aria-label='link to contact page' onclick="goTo()">Contact</a></b>
+                            </li>  
+                            <li id="nav_indicator"></li>
+
+                        </ul>
+                    </div>
+                    <a class="nav-link link" id="logoLink" href="index.html" aria-label='link to index page' style='width:70vw;'><span id='logo1'><img src='images/catLogo.webp' alt='cat logo' style='width: 3rem; margin-top: 20px'/></span>
+                        <span class='logo2'><span class='big' style='font-family: "minion-pro", serif;
+                                                  font-weight: 400;
+                                                  font-style: normal; font-size:1.2rem;'>Slumberous Cat</span>by Yvonne</span></a>
+
+
+                </div>
+
+
+
+            </nav>
+
+
+        </div>
+
+        <script>
+            new CircleType(document.getElementById('round'));
+
+
+
+
+        </script>
+
+
+    </body>
+</html>

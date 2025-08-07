@@ -3,6 +3,11 @@ body {
         overflow: hidden;
         background: #111;
         font-family: sans-serif;
+        user-select: none; /* For Chrome and Opera */
+        -ms-user-select: none; /* For Internet Edge and Explorer*/
+        -webkit-user-select: none; /* For Safari */
+        -moz-user-select: none; /* For Firefox */
+        -khtml-user-select: none; /* Konqueror HTML */
       }
       .controls {
         position: absolute;
@@ -40,7 +45,7 @@ body {
     #pdfModal > div {
         width:80vw; 
         height:80vh; 
-        background:#fff; 
+        background:#720a0a; 
         position:relative;
       }
 
@@ -49,20 +54,41 @@ body {
         height: 100%;
       }
 
+      div > h2, div > p{
+        color:white;
+      }
+
+
       a-text {
         color: white;
       }
 
-      .box {
+      .box1 {
   float: left;
-  width: 43.33%;
+  width: 40%;
+  height:100%;
   padding: 20px;
+}
+
+      .box2 {
+  float: left;
+  width: 40%;
+  height:60%;
+  padding: 20px;
+}
+
+.clearfix > div > p{
+  color:black;
 }
 
 .clearfix::after {
   content: "";
   clear: both;
   display: table;
+}
+
+img {
+  pointer-events: none;
 }
 
 

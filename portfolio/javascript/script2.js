@@ -282,18 +282,45 @@ function getModalContent(id) {
     <div style="
       overflow-y: auto;
       padding: 0; margin:10px;
-      height: 75vh; 
+      height: 75vh;
     ">
       <h2>Portfolio History</h2>
       <p>This is a history of the portfolio and how it evolved over time...</p>
       <br>
       <div class="clearfix">
-        <div class="box" style="background-color:#bbb"><p>Some text inside the box.</p></div>
-        <div class="box" style="background-color:#ccc"><p>Some text inside the box.</p></div>
-        <div class="box" style="background-color:#bbb"><p>Some text inside the box.</p></div>
-        <div class="box" style="background-color:#ccc"><p>Some text inside the box.</p></div>
-        <div class="box" style="background-color:#bbb"><p>Some text inside the box.</p></div>
-        <div class="box" style="background-color:#ccc"><p>Some text inside the box.</p></div>
+        <div style="float:left; height:40px; width:95%; background:orange;"><p style="padding-left:10px;"><b>2013</b></p></div><br/>
+        <div class="box1" style="background-color:#bbb; display:flex; justify-content:center; margin-top: 1%;">
+          <img src="images/2013.gif" width="60%" height:"60%"; style="margin-right:20px;"/>
+          <img src="images/2013_gallery.gif" width="60%" height:"60%"; />
+        </div>
+        <div class="box2" style="background-color:#ccc"><p>This was created for my final module for the study of interactive media design in ITE,
+        it was my first portfolio,it may be abit lacking but things have change since then.<br/><br/> The gallery can no longer be played together inside of the webpage as it's a flash swf object, but it can be played with a standalone flashplayer.</p></div>
+
+        <div style="float:left; height:40px; width:95%; background:orange;"><p style="padding-left:10px;"><b>EO2022-2023</b></p></div>
+        <div class="box1" style="background-color:#bbb; display:flex; justify-content:center; margin-top: 1%;">
+          <img src="images/2022_2023.gif" width="50%" height:"50%";/>
+        </div>
+        <div class="box2" style="background-color:#ccc"><p>After quite a period of time I actually got back into tech and design doing digital design and development, this was a portfolio design during my second year. <br/><br/>It felt like a tribute to my portfolio in the past therefore I stuck with the bear theme. This did not get a chance to be coded but I was quite satisfied with it.</p></div>
+        
+        <div style="float:left; height:40px; width:95%; background:orange;"><p style="padding-left:10px;"><b>2023</b></p></div>
+        <div class="box1" style="background-color:#bbb; display:flex; justify-content:center; margin-top: 1%;">
+          <img src="images/2023.gif" width="30%" height:"30%";/>
+        </div>
+        <div class="box2" style="background-color:#ccc; padding-bottom:210px;"><p>Tried another style for this other module for portfolio,up to prototype level. This also comes with a splash screen, with an ocean theme. Was also working with the idea of having mobile friendly portfolio. <br/> <br/> The animation for the splash screen was fun to create.</p></div>
+
+         <div style="float:left; height:40px; width:95%; background:orange;"><p style="padding-left:10px;"><b>EO2023-2024</b></p></div>
+        <div class="box1" style="background-color:#bbb; display:flex; justify-content:center; margin-top: 5%;">
+          <img src="images/2023_2024.gif" width="80%" height:"80%";/>
+        </div>
+        <div class="box2" style="background-color:#ccc"><p>This was the portfolio created at the end of my time in polytechnic. It went through many iterations and designs. Slumberous Cat is a symbol of embracing my fatigue from life. 
+        Had wanted to keep to a purple accent instead but was told that was not viable therefore the final design was this. the front page animation was to keep animation minimal yet interesting. The transition animation as shown sometimes would bug out 
+        and not show.<br/> <br/> A very functional portfolio with working contact page, I tried to incorporate the teacher's advice of having something different on the side , like a tab to allow easy access to social media like linkedin or github. This was also mobile friendly from the start but was not encouraged.</p></div>
+
+          <div style="float:left; height:40px; width:95%; background:orange;"><p style="padding-left:10px;"><b>2025</b></p></div>
+        <div class="box1" style="background-color:#bbb; display:flex; justify-content:center; margin-top: 1%;">
+          <img src="images/_.gif" width="50%" height:"50%";/>
+        </div>
+        <div class="box2" style="background-color:#ccc"><p>My current portfolio, this was created via experimenting with a-frame and the idea of using rooms as pages instead. This got develop further into a CCTV type of camera view which is quite interesting.<br/><br/>Working with 3D space really makes things quite tough but it's really something else to be able to put simple tinkercad items into the scene as well. Will be updating the gif once the portfolio is completed.</p></div>
       </div>
     </div>
   `;
