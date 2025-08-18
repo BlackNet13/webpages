@@ -234,6 +234,59 @@ function resetRoom() {
   updateLights(0);
 }
 
+const dialogueBox = document.getElementById("dialogue-box");
+const dialogueText = document.getElementById("dialogue-text");
+
+let typingInterval = null;
+
+function showDialogue(text) {
+  dialogueBox.style.display = "block"; // make sure box is visible
+  typeText(text, 40);                  // type the text
+}
+
+function hideDialogue() {
+  dialogueBox.style.display = "none";  // hide the box
+  clearInterval(typingInterval);       // stop any ongoing typing
+}
+
+// Plane 1 events
+document.querySelector("#plane1").addEventListener("mouseenter", () => {
+  showDialogue("Click here to view my design works, currently work in progress");
+});
+document.querySelector("#plane1").addEventListener("mouseleave", hideDialogue);
+
+// Plane 2 events
+document.querySelector("#plane2").addEventListener("mouseenter", () => {
+  showDialogue("This is the calm blue plane!");
+});
+document.querySelector("#plane2").addEventListener("mouseleave", hideDialogue);
+
+// Typing effect using setInterval
+function typeText(text, speed = 50) {
+  dialogueText.textContent = ""; // clear old text
+  let i = 0;
+
+  // stop previous typing if any
+  if (typingInterval) clearInterval(typingInterval);
+
+  typingInterval = setInterval(() => {
+    if (i < text.length) {
+      dialogueText.textContent += text.charAt(i);
+      i++;
+    } else {
+      clearInterval(typingInterval); // stop interval when done
+      typingInterval = null;
+    }
+  }, speed);
+}
+
+
+
+
+
+  
+
+
 function openModal(triggerId) {
   const modal = document.getElementById('pdfModal');
   const container = document.getElementById('pdfContainer');
