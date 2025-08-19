@@ -1,3 +1,5 @@
+let currentPage = "main"; // default
+
 AFRAME.registerComponent('link-handler', {
   init: function () {
     this.el.addEventListener('click', () => {
@@ -130,20 +132,24 @@ AFRAME.registerComponent('flicker-light', {
   if (yRot >= 315 || yRot < 45) {
     color = '#2c7ac1'; // Default color
     targetEl = document.querySelector('.rm1');
+    currentPage = "main";
     startSlideshow();
   } else if (yRot >= 45 && yRot < 135) {
    color = 'green';
     targetEl = document.querySelector('.rm4');
+    currentPage = "contact";
     stopSlideshow();
     enabledFlicker = false;
   } else if (yRot >= 135 && yRot < 225) {
     color = 'red'; 
     targetEl = document.querySelector('.rm3');
+    currentPage = "portfolio";
     enabledFlicker = false;
     stopSlideshow();
   } else if (yRot >= 225 && yRot < 315) {
     color = 'pink';
     intensity = 2;
+    currentPage = "about";
     targetEl = document.querySelector('.rm2');
     enabledFlicker = false;
     stopSlideshow();
@@ -182,12 +188,13 @@ AFRAME.registerComponent('flicker-light', {
 
           // Now rotate based on face
           let rotation = { x: 0, y: 0, z: 0 };
+          
 
           switch (face) {
-            case 'main': rotation = { x: 0, y: 0, z: 0 }; break;
-            case 'about': rotation = { x: 0, y: -90, z: 0 }; break;
-            case 'portfolio': rotation = { x: 0, y: -180, z: 0 }; break;
-            case 'contact': rotation = { x: 0, y: -270, z: 0 }; break;
+            case 'main': rotation = { x: 0, y: 0, z: 0 }; currentPage = "main"; break;
+            case 'about': rotation = { x: 0, y: -90, z: 0 }; currentPage = "about"; break;
+            case 'portfolio': rotation = { x: 0, y: -180, z: 0 }; currentPage = "portfolio"; break;
+            case 'contact': rotation = { x: 0, y: -270, z: 0 }; currentPage = "contact"; break;
           }
 
            // Animate rotation smoothly
@@ -216,6 +223,7 @@ function resetRoom() {
 
   if (isAtRest) {
     // Reload the page
+    currentPage = "main";
     location.reload();
     return;
   }
@@ -247,19 +255,30 @@ function showDialogue(text) {
 function hideDialogue() {
   dialogueBox.style.display = "none";  // hide the box
   clearInterval(typingInterval);       // stop any ongoing typing
+  typingInterval = null;
+   typingSound.pause();
+  typingSound.currentTime = 0;
 }
 
-// Plane 1 events
-document.querySelector("#plane1").addEventListener("mouseenter", () => {
+// designF events
+document.querySelector("#designF").addEventListener("mouseenter", () => {
+  if (currentPage === "portfolio") {
   showDialogue("Click here to view my design works, currently work in progress");
+  }
 });
-document.querySelector("#plane1").addEventListener("mouseleave", hideDialogue);
+document.querySelector("#designF").addEventListener("mouseleave", hideDialogue);
 
-// Plane 2 events
-document.querySelector("#plane2").addEventListener("mouseenter", () => {
-  showDialogue("This is the calm blue plane!");
+// othersF events
+document.querySelector("#othersF").addEventListener("mouseenter", () => {
+  if (currentPage === "portfolio") {
+  showDialogue("Click here to view my other works, currently work in progress");
+  }
 });
-document.querySelector("#plane2").addEventListener("mouseleave", hideDialogue);
+document.querySelector("#othersF").addEventListener("mouseleave", hideDialogue);
+
+const typingSound = new Audio("sounds/typing.mp3"); 
+typingSound.loop = true;
+typingSound.volume = 0.5;
 
 // Typing effect using setInterval
 function typeText(text, speed = 50) {
@@ -269,6 +288,13 @@ function typeText(text, speed = 50) {
   // stop previous typing if any
   if (typingInterval) clearInterval(typingInterval);
 
+  // stop and reset sound if already playing
+  typingSound.pause();
+  typingSound.currentTime = 0;
+
+  // start typing sound
+  typingSound.play();
+
   typingInterval = setInterval(() => {
     if (i < text.length) {
       dialogueText.textContent += text.charAt(i);
@@ -276,6 +302,9 @@ function typeText(text, speed = 50) {
     } else {
       clearInterval(typingInterval); // stop interval when done
       typingInterval = null;
+
+      typingSound.pause();
+      typingSound.currentTime = 0;
     }
   }, speed);
 }
