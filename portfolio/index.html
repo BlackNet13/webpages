@@ -502,7 +502,12 @@
        <a-plane class="rm2" position="1.5 0 -1.5" rotation="0 -135 0" width="1.42" height="2" color="teal" material="side: back" src="images/pattern2.jpg"></a-plane> 
 
 
-      <a-gltf-model src="file/frame_D.glb" id="designF" class="raycastable" position="1.3 0.2 -1.5" scale="0.01 0.01 0.01" rotation="0 220 5" ></a-gltf-model>
+       <a-entity id="designBtn" class="raycastable" link-handler>
+  <a-box visible="false" depth="1" height="1" width="1"></a-box>
+  <a-gltf-model src="file/frame_D.glb" id="designF" class="raycastable" position="1.3 0.2 -1.5" scale="0.01 0.01 0.01" rotation="0 220 5"></a-gltf-model>
+</a-entity>
+
+      <!-- <a-gltf-model src="file/frame_D.glb" id="designF" class="raycastable" position="1.3 0.2 -1.5" scale="0.01 0.01 0.01" rotation="0 220 5" link-handler ></a-gltf-model> -->
       <a-gltf-model src="file/frame_C.glb" id="codeF" class="raycastable" position="-1.35 0.2 -1.6" scale="0.01 0.01 0.01" rotation="0 -225 5" ></a-gltf-model>
       <a-gltf-model src="file/frame_O.glb" id="othersF" class="raycastable" position="-0.1 -0.1 -1.2" scale="0.01 0.01 0.01" rotation="10 185 -5" ></a-gltf-model>
 
